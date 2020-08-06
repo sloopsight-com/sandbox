@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<fileset-config file-format-version="1.2.0" simple-config="false" sync-formatter="false">
+  <local-check-config name="maven-checkstyle-plugin check-style" location="jar:file:/C:/Users/subhanshu/.m2/repository/com/oxymoney/cashflow/CheckStyle/1.0.2/CheckStyle-1.0.2.jar!/checkstyle/checkstyle.xml" type="remote" description="maven-checkstyle-plugin configuration check-style">
+    <property name="checkstyle.cache.file" value="${project_loc}/target/checkstyle-cachefile"/>
+    <property name="checkstyle.header.file" value="C:\Users\subhanshu\Documents\Workspaces\vue_learn\.metadata\.plugins\org.eclipse.core.resources\.projects\sandbox-app\com.basistech.m2e.code.quality.checkstyleConfigurator\checkstyle-header-check-style.txt"/>
+    <property name="suppressionFile" value="C:\Users\subhanshu\git\repository\sandbox\app\suppressions.xml"/>
+  </local-check-config>
+  <fileset name="java-sources-check-style" enabled="true" check-config-name="maven-checkstyle-plugin check-style" local="true">
+    <file-match-pattern match-pattern="^src/main/java/.*\.java" include-pattern="true"/>
+    <file-match-pattern match-pattern="^src/test/java/.*\.java" include-pattern="true"/>
+    <file-match-pattern match-pattern="^src/main/java.*.*$logger\.java" include-pattern="false"/>
+    <file-match-pattern match-pattern="^src/main/java.*.*$bundle\.java" include-pattern="false"/>
+    <file-match-pattern match-pattern="^src/test/java.*.*$logger\.java" include-pattern="false"/>
+    <file-match-pattern match-pattern="^src/test/java.*.*$bundle\.java" include-pattern="false"/>
+    <file-match-pattern match-pattern="^src/main/resources/.*\.properties" include-pattern="true"/>
+    <file-match-pattern match-pattern="^src/main/resources/.*\.properties" include-pattern="true"/>
+    <file-match-pattern match-pattern="^src/test/resources/.*\.properties" include-pattern="true"/>
+  </fileset>
+</fileset-config>
