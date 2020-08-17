@@ -27,6 +27,40 @@ const router = new Router({
           }
         },
         {
+          path: '/users',
+          name: 'users',
+          // route level code-splitting
+          // this generates a separate chunk (about.[hash].js) for this route
+          // which is lazy-loaded when the route is visited.
+          component: () => import(/* webpackChunkName: "demo" */ './views/Users.vue'),
+          meta: {
+            requiresAuth: true
+          }
+        },
+        {
+          path: '/user',
+          name: 'Create User',
+          // route level code-splitting
+          // this generates a separate chunk (about.[hash].js) for this route
+          // which is lazy-loaded when the route is visited.
+          component: () => import(/* webpackChunkName: "demo" */ './views/User.vue'),
+          meta: {
+            requiresAuth: true
+          }
+        },
+        {
+          path: '/user/:id',
+          name: 'Edit User',
+          // route level code-splitting
+          // this generates a separate chunk (about.[hash].js) for this route
+          // which is lazy-loaded when the route is visited.
+          component: () => import(/* webpackChunkName: "demo" */ './views/User.vue'),
+          meta: {
+            requiresAuth: true
+          }
+        }
+        ,
+        {
           path: '/projects',
           name: 'projects',
           // route level code-splitting
@@ -45,6 +79,18 @@ const router = new Router({
           // this generates a separate chunk (about.[hash].js) for this route
           // which is lazy-loaded when the route is visited.
           component: () => import(/* webpackChunkName: "demo" */ './views/Project.vue'),
+          meta: {
+            requiresAuth: true
+          }
+        }
+        ,
+        {
+          path: '/settings',
+          name: 'Settings',
+          // route level code-splitting
+          // this generates a separate chunk (about.[hash].js) for this route
+          // which is lazy-loaded when the route is visited.
+          component: () => import(/* webpackChunkName: "demo" */ './views/Settings.vue'),
           meta: {
             requiresAuth: true
           }

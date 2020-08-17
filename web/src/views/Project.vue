@@ -38,6 +38,25 @@
                 <div class="pl-lg-4">
                   <div class="row">
                     <div class="col-lg-6">
+                      <label class="typo__label form-control-label">Select Project Members</label>
+                      <multiselect
+                        v-model="model.members"
+                        tag-placeholder="Add this user to project"
+                        placeholder="Select Members"
+                        label="name"
+                        track-by="id"
+                        :options="options"
+                        :multiple="true"
+                        :taggable="true"
+                        @tag="addTag"
+                      ></multiselect>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="pl-lg-4">
+                  <div class="row">
+                    <div class="col-lg-6">
                       <base-input
                         alternative
                         required
@@ -75,19 +94,24 @@
 import { codemirror } from "vue-codemirror";
 // require styles
 import "codemirror/lib/codemirror.css";
+import "vue-multiselect/dist/vue-multiselect.min.css";
+
 import "codemirror/theme/base16-dark.css";
 import "codemirror/mode/javascript/javascript.js";
+import Multiselect from "vue-multiselect";
 import ProjectService from "../services/project-service";
 
 export default {
   name: "user-profile",
   data() {
     return {
+      options: [],
       error: null,
       error_message: null,
       model: {
         name: "",
         openApiSpec: "",
+        members: [],
       },
       cmOptions: {
         // codemirror options
@@ -102,6 +126,7 @@ export default {
   },
   components: {
     codemirror,
+    Multiselect,
   },
   methods: {
     checkForm() {
@@ -121,6 +146,7 @@ export default {
       }
     },
     init() {},
+
     saveProject() {
       if (this.checkForm()) {
         var projectPromise = null;
@@ -129,13 +155,15 @@ export default {
             this.$route.params.id,
             this.model.name,
             this.model.openApiSpec,
-            this.model.description
+            this.model.description,
+            this.model.members
           );
         } else {
           projectPromise = ProjectService.save(
             this.model.name,
             this.model.openApiSpec,
-            this.model.description
+            this.model.description,
+            this.model.members
           );
         }
         projectPromise
@@ -155,7 +183,9 @@ export default {
   },
   mounted() {
     this.$log.info(this.$route.params.id);
+    var id = 0;
     if (this.$route.params.id) {
+      id = this.$route.params.id;
       ProjectService.getOne(this.$route.params.id)
         .then((response) => {
           this.model.name = response.data.name;
@@ -166,7 +196,24 @@ export default {
           this.error = true;
           this.error_message = error;
         });
+
+      ProjectService.getExistingMember(id)
+        .then((response) => {
+          this.model.members = response.data;
+        })
+        .catch((error) => {
+          this.error = true;
+          this.error_message = error;
+        });
     }
+    ProjectService.getAvailableMember(id)
+      .then((response) => {
+        this.options = response.data;
+      })
+      .catch((error) => {
+        this.error = true;
+        this.error_message = error;
+      });
   },
 };
 </script>

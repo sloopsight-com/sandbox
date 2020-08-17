@@ -1,8 +1,5 @@
 <template>
-  <div
-    class="custom-control custom-checkbox"
-    :class="{'disabled': disabled, 'form-check-inline': inline}"
-  >
+  <label class="custom-toggle">
     <input
       :id="cbId"
       class="custom-control-input"
@@ -12,18 +9,14 @@
       v-model="model"
     />
 
-    <label :for="cbId" class="custom-control-label">
-      <slot>
-        <span v-if="inline">&nbsp;</span>
-      </slot>
-    </label>
-  </div>
+    <span class="custom-toggle-slider rounded-circle"></span>
+  </label>
 </template>
 <script>
 import { randomString } from "./stringUtils";
 
 export default {
-  name: "base-checkbox",
+  name: "base-switch",
   model: {
     prop: "checked",
   },
@@ -65,3 +58,4 @@ export default {
   },
 };
 </script>
+

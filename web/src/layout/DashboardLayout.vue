@@ -13,6 +13,11 @@
         <sidebar-item
           :link="{name: 'My Projects', icon: 'ni ni-app text-green', path: '/projects'}"
         />
+
+        <sidebar-item :link="{name: 'Users', icon: 'fa fa-users text-green', path: '/users'}" />
+        <sidebar-item
+          :link="{name: 'Settings', icon: 'ni ni-settings-gear-65 text-green', path: '/settings'}"
+        />
       </template>
     </side-bar>
     <div class="main-content" :data="sidebarBackground">

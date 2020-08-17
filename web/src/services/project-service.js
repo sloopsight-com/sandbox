@@ -32,20 +32,32 @@ export default {
         return HTTP.delete('v1/project/' + id);
     },
 
-    update(id, name, openApiSpec, _description) {
+    update(id, name, openApiSpec, _description, _members) {
         return HTTP.put('/v1/project/' + id, {
             name: name,
             openApiSpec: openApiSpec,
-            description: _description
+            description: _description,
+            members: _members
         });
     },
 
-    save(name, openApiSpec, _description) {
+
+    getExistingMember(id) {
+        return HTTP.get('/v1/project/' + id + '/existing/members');
+    },
+
+
+    getAvailableMember(id) {
+        return HTTP.get('/v1/project/' + id + '/available/members');
+    },
+
+
+    save(name, openApiSpec, _description, _members) {
         return HTTP.post(`/v1/project`, {
             name: name,
             openApiSpec: openApiSpec,
-            description: _description
-
+            description: _description,
+            members: _members
         });
     }
 }
