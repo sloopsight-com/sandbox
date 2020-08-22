@@ -78,7 +78,7 @@
         <hr class="my-3" />
         <!--Heading-->
 
-        <!--Navigation-->
+        <!--Navigation-
         <ul class="navbar-nav mb-md-3">
           <li class="nav-item">
             <a class="nav-link" href="#">
@@ -96,6 +96,7 @@
             </a>
           </li>
         </ul>
+        -->
       </div>
     </div>
   </nav>
@@ -106,24 +107,24 @@ import NavbarToggleButton from "@/components/NavbarToggleButton";
 export default {
   name: "sidebar",
   components: {
-    NavbarToggleButton
+    NavbarToggleButton,
   },
   props: {
     logo: {
       type: String,
       default: "img/brand/green.png",
-      description: "Sidebar app logo"
+      description: "Sidebar app logo",
     },
     autoClose: {
       type: Boolean,
       default: true,
       description:
-        "Whether sidebar should autoclose on mobile when clicking an item"
-    }
+        "Whether sidebar should autoclose on mobile when clicking an item",
+    },
   },
   provide() {
     return {
-      autoClose: this.autoClose
+      autoClose: this.autoClose,
     };
   },
   methods: {
@@ -132,12 +133,12 @@ export default {
     },
     showSidebar() {
       this.$sidebar.displaySidebar(true);
-    }
+    },
   },
   beforeDestroy() {
     if (this.$sidebar.showSidebar) {
       this.$sidebar.showSidebar = false;
     }
-  }
+  },
 };
 </script>

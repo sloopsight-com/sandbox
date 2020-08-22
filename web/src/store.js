@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import api from './services/login-api'
+import guards from './services/guards'
+
 import createPersistedState from 'vuex-persistedstate'
 Vue.use(Vuex);
 
@@ -27,6 +29,9 @@ export default new Vuex.Store({
             state.userName = payload.userName;
             state.loginSuccess = false;
 
+        },
+        set_roles(state, roles) {
+            state.roles = roles;
         }
     },
     actions: {
@@ -42,6 +47,7 @@ export default new Vuex.Store({
                                 accessToken: response.data.accessToken,
                                 userName: user
                             });
+                            this.dispatch("update_roles");
                         }
                         resolve(response)
                     })
@@ -62,6 +68,19 @@ export default new Vuex.Store({
                 userName: ''
             });
             window.sessionStorage.clear();
+        },
+        update_roles({ commit }) {
+            guards.isLoggedId(this.state.accessToken).then((response) => {
+
+                const roles = new Array();
+                for (const role in response.data.authorities) {
+                    roles.push(response.data.authorities[role].authority);
+                }
+                Vue.$log.info("placing roles " + JSON.stringify(roles));
+                commit('set_roles', roles);
+
+            })
+
         }
     },
     getters: {
@@ -69,7 +88,8 @@ export default new Vuex.Store({
         ,
         hasLoginErrored: state => state.loginError,
         getToken: state => state.accessToken,
-        getLoggedInUser: state => state.userName
+        getLoggedInUser: state => state.userName,
+        getLoggedInUserRoles: state => state.roles
 
     }
 })

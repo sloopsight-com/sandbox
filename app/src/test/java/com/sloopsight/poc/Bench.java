@@ -14,10 +14,10 @@ import io.swagger.v3.parser.OpenAPIV3Parser;
 public class Bench {
 
     public static void main(String[] args) throws IOException {
-        String spec=IOUtils.toString(new ClassPathResource("swager.yaml").getInputStream());
+        String spec = IOUtils.toString(new ClassPathResource("swager.yaml").getInputStream());
         OpenAPI openAPI = new OpenAPIV3Parser().readContents(spec).getOpenAPI();
         System.out.println(new ObjectMapper().writeValueAsString(openAPI.getPaths().get("/pet/{petId}")));
-        System.out.println( new OpenAPIV3Parser().readContents(spec));
+        System.out.println(new OpenAPIV3Parser().readContents(spec));
     }
 
 }

@@ -1,6 +1,11 @@
 package com.sloopsight.sandbox.app.dto.request;
 
+import java.util.LinkedList;
+import java.util.List;
+
 import javax.validation.constraints.NotBlank;
+
+import com.sloopsight.sandbox.app.dto.response.Member;
 
 public class ProjectRequest {
 
@@ -12,6 +17,8 @@ public class ProjectRequest {
 
     @NotBlank
     private String openApiSpec;
+
+    private List<Member> members = new LinkedList<Member>();
 
     public String getName() {
         return name;
@@ -35,6 +42,14 @@ public class ProjectRequest {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public List<Member> getMembers() {
+        return members;
+    }
+
+    public void setMembers(List<Member> members) {
+        this.members = members;
     }
 
 }

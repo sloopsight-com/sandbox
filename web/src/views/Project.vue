@@ -48,7 +48,6 @@
                         :options="options"
                         :multiple="true"
                         :taggable="true"
-                        @tag="addTag"
                       ></multiselect>
                     </div>
                   </div>

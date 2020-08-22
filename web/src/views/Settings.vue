@@ -26,20 +26,26 @@
 
                   <template>
                     <base-alert v-show="error" dismissible type="danger">{{error_message}}</base-alert>
+                    <base-alert
+                      v-show="success_message"
+                      dismissible
+                      type="success"
+                    >{{success_message}}</base-alert>
+
                     <form @submit.prevent>
-                      <base-switch v-model="model.active"></base-switch>
+                      <base-switch v-model="authConfig.enabled"></base-switch>
 
                       <div class="pl-lg-4">
                         <div class="row">
                           <div class="col-lg-6">
                             <base-input
                               alternative
-                              :disabled="!model.active"
+                              :disabled="!authConfig.enabled"
                               required
                               label="Ldap URL"
                               placeholder="ldap[s]://host"
                               input-classes="form-control-alternative"
-                              v-model="model.name"
+                              v-model="authConfig.config.url"
                             />
                           </div>
                         </div>
@@ -49,8 +55,8 @@
                           <div class="col-lg-6">
                             <base-checkbox
                               class="mb-3"
-                              :disabled="!model.active"
-                              v-model="model.anonymous"
+                              :disabled="!authConfig.enabled"
+                              v-model="authConfig.config.anonymous"
                             >Anonymous Access</base-checkbox>
                           </div>
                         </div>
@@ -60,14 +66,14 @@
                         <div class="row">
                           <div class="col-lg-6">
                             <base-input
-                              :disabled="!model.active"
+                              :disabled="!authConfig.enabled"
                               alternative
                               required
                               label="Root Bind Dn"
                               placeholder="Enter root dn"
                               input-classes="form-control-alternative"
-                              v-model="model.bindDn"
-                              v-if="!model.anonymous"
+                              v-model="authConfig.config.bindDn"
+                              v-if="!authConfig.config.anonymous"
                             />
                           </div>
                         </div>
@@ -78,13 +84,13 @@
                           <div class="col-lg-6">
                             <base-input
                               alternative
-                              :disabled="!model.active"
+                              :disabled="!authConfig.enabled"
                               required
-                              v-if="!model.anonymous"
+                              v-if="!authConfig.config.anonymous"
                               label="Root Bind Password"
                               placeholder="Enter root bind password"
                               input-classes="form-control-alternative"
-                              v-model="model.bindPassword"
+                              v-model="authConfig.config.bindPassword"
                             />
                           </div>
                         </div>
@@ -94,13 +100,13 @@
                         <div class="row">
                           <div class="col-lg-6">
                             <base-input
-                              :disabled="!model.active"
+                              :disabled="!authConfig.enabled"
                               alternative
                               required
                               label="Search Base"
                               placeholder="ou=people,dc=company,dc=com"
                               input-classes="form-control-alternative"
-                              v-model="model.searchBase"
+                              v-model="authConfig.config.searchBase"
                             />
                           </div>
                         </div>
@@ -110,13 +116,13 @@
                         <div class="row">
                           <div class="col-lg-6">
                             <base-input
-                              :disabled="!model.active"
+                              :disabled="!authConfig.enabled"
                               alternative
                               required
                               label="Search Filter"
                               placeholder="(uid=${username})"
                               input-classes="form-control-alternative"
-                              v-model="model.searchFilter"
+                              v-model="authConfig.config.searchFilter"
                             />
                           </div>
                         </div>
@@ -126,13 +132,13 @@
                         <div class="row">
                           <div class="col-lg-6">
                             <base-input
-                              :disabled="!model.active"
+                              :disabled="!authConfig.enabled"
                               alternative
                               required
                               label="Username Field"
                               placeholder="uid"
                               input-classes="form-control-alternative"
-                              v-model="model.usernameField"
+                              v-model="authConfig.config.usernameField"
                             />
                           </div>
                         </div>
@@ -142,13 +148,13 @@
                         <div class="row">
                           <div class="col-lg-6">
                             <base-input
-                              :disabled="!model.active"
+                              :disabled="!authConfig.enabled"
                               alternative
                               required
                               label="Email Field"
                               placeholder="mail"
                               input-classes="form-control-alternative"
-                              v-model="model.emailField"
+                              v-model="authConfig.config.emailField"
                             />
                           </div>
                         </div>
@@ -156,7 +162,11 @@
 
                       <div class="row">
                         <div class="col text-right">
-                          <base-button type="primary" size="lg" v-on:click="saveProject()">Submit</base-button>
+                          <base-button
+                            type="primary"
+                            size="lg"
+                            v-on:click="saveConfig('ldap')"
+                          >Submit</base-button>
                         </div>
                       </div>
                     </form>
@@ -171,45 +181,94 @@
   </div>
 </template>
  <script>
+import AuthService from "../services/auth-service";
+
 export default {
   name: "user-profile",
   data() {
     return {
-      model: {
-        name: "",
-        active: true,
-        anonymous: false,
-        openApiSpec: "",
-        members: [],
+      authConfig: {
+        enabled: true,
+        config: {},
       },
       error: null,
       error_message: null,
+      success_message: null,
     };
   },
   components: {},
   methods: {
     checkForm() {
-      if (this.model.name && this.model.openApiSpec) {
+      if (!this.authConfig.enabled) {
         return true;
       }
-      if (!this.model.name) {
+
+      if (this.authConfig.config.anonymous) {
+        if (!this.authConfig.config.bindDn) {
+          this.error = true;
+          this.error_message = "Bind dn is missing";
+          return false;
+        }
+        if (!this.authConfig.config.bindPassword) {
+          this.error = true;
+          this.error_message = "Nind password is missing";
+          return false;
+        }
+      }
+      if (!this.authConfig.config.searchBase) {
         this.error = true;
-        this.error_message = "Name is missing";
+        this.error_message = "Search base is missing";
+        return false;
+      }
+      if (!this.authConfig.config.searchFilter) {
+        this.error = true;
+        this.error_message = "Search filter is missing";
+        return false;
+      }
+      if (!this.authConfig.config.userField) {
+        this.error = true;
+        this.error_message = "User field is missing";
+        return false;
+      }
+      if (!this.authConfig.config.emailField) {
+        this.error = true;
+        this.error_message = "Email field is missing";
         return false;
       }
 
-      if (!this.model.openApiSpec) {
-        this.error = true;
-        this.error_message = "Spec are missing";
-        return false;
-      }
+      return true;
     },
-    init() {},
+    initLdap() {
+      AuthService.getConfig("ldap")
+        .then((response) => {
+          this.authConfig = response.data;
+        })
+        .catch((error) => {
+          this.error = true;
+          this.error_message = error;
+        });
+    },
 
-    saveProject() {},
+    saveConfig(name) {
+      this.$log.info(JSON.stringify(this.authConfig));
+
+      AuthService.updateConfig(name, {
+        enabled: this.authConfig.enabled,
+        config: this.authConfig.config,
+      })
+        .then((response) => {
+          this.authConfig = response.data;
+          this.success_message = "Config updated successfully";
+        })
+        .catch((error) => {
+          this.error = true;
+          this.error_message = error;
+        });
+    },
   },
+
   mounted() {
-    this.$log.info(this.$route.params.id);
+    this.initLdap();
   },
 };
 </script>

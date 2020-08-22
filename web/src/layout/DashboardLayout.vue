@@ -14,8 +14,12 @@
           :link="{name: 'My Projects', icon: 'ni ni-app text-green', path: '/projects'}"
         />
 
-        <sidebar-item :link="{name: 'Users', icon: 'fa fa-users text-green', path: '/users'}" />
         <sidebar-item
+          v-if="hasRole('ROLE_ADMIN')"
+          :link="{name: 'Users', icon: 'fa fa-users text-green', path: '/users'}"
+        />
+        <sidebar-item
+          v-if="hasRole('ROLE_ADMIN')"
           :link="{name: 'Settings', icon: 'ni ni-settings-gear-65 text-green', path: '/settings'}"
         />
       </template>
@@ -54,6 +58,12 @@ export default {
       if (this.$sidebar.showSidebar) {
         this.$sidebar.displaySidebar(false);
       }
+    },
+    hasRole(role) {
+      this.$log.info(
+        "Checking " + role + " in " + this.$store.getters.getLoggedInUserRoles
+      );
+      return this.$store.getters.getLoggedInUserRoles.includes(role);
     },
   },
 };

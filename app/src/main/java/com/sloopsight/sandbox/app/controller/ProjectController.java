@@ -1,5 +1,7 @@
 package com.sloopsight.sandbox.app.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
@@ -20,6 +22,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.sloopsight.sandbox.app.dto.request.ProjectRequest;
+import com.sloopsight.sandbox.app.dto.response.Member;
 import com.sloopsight.sandbox.app.entity.Endpoint;
 import com.sloopsight.sandbox.app.entity.Project;
 import com.sloopsight.sandbox.app.services.EndpointService;
@@ -60,6 +63,20 @@ public class ProjectController {
     public ResponseEntity<Project> findOne(@PathVariable("projectId") Long projectId) {
         return ResponseEntity.of(projectService.findOne(projectId));
 
+    }
+
+    @Operation(summary = "Read available member", security = @SecurityRequirement(name = "bearerAuth"))
+    @GetMapping("/project/{projectId}/available/members")
+    @PreAuthorize("hasRole('USER')")
+    public ResponseEntity<List<Member>> findAvailableMembers(@PathVariable("projectId") Long projectId) {
+        return ResponseEntity.ok(projectService.getAvailableMembers(projectId));
+    }
+
+    @Operation(summary = "Read existing member", security = @SecurityRequirement(name = "bearerAuth"))
+    @GetMapping("/project/{projectId}/existing/members")
+    @PreAuthorize("hasRole('USER')")
+    public ResponseEntity<List<Member>> findExistingMembers(@PathVariable("projectId") Long projectId) {
+        return ResponseEntity.ok(projectService.getExisitingMembers(projectId));
     }
 
     @Operation(summary = "Get swaggger Json", security = @SecurityRequirement(name = "bearerAuth"))

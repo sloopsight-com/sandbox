@@ -2,6 +2,7 @@ package com.sloopsight.sandbox.app.util;
 
 import java.util.Collection;
 
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -20,7 +21,7 @@ public class SecurityHelper {
         Collection<? extends GrantedAuthority> authorities = auth.getAuthorities();
 
         for (GrantedAuthority grantedAuthority : authorities) {
-            if (grantedAuthority.getAuthority().equalsIgnoreCase( role.name())) {
+            if (grantedAuthority.getAuthority().equalsIgnoreCase(role.name())) {
                 return true;
             } else {
                 continue;
@@ -29,4 +30,12 @@ public class SecurityHelper {
 
         return false;
     }
+
+    public static boolean isValidPassword(String password) {
+        if (StringUtils.isNoneBlank(password)) {
+            return password.length() > 5 && password.length() < 50;
+        }
+        return false;
+    }
+
 }

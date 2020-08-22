@@ -8,10 +8,7 @@ import javax.validation.constraints.Size;
 
 import com.sloopsight.sandbox.app.entity.Role;
 
-public class SignupRequest {
-    @NotBlank
-    @Size(min = 3, max = 20)
-    private String username;
+public class UserUpdationRequest {
 
     @NotBlank
     @Size(max = 50)
@@ -20,17 +17,7 @@ public class SignupRequest {
 
     private Set<Role> role;
 
-    @NotBlank
-    @Size(min = 6, max = 40)
     private String password;
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
 
     public String getEmail() {
         return email;

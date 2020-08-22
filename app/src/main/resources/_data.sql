@@ -1,0 +1,1 @@
+INSERT INTO `users` VALUES (1,'admin@example.com','{bcrypt}$2a$10$a.IFs6JVH5YiigBP2nju0.5ez/0305iO0H3wLpIAJaVSWLaIsrQxK','admin');

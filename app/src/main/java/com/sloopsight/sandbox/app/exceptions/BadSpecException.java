@@ -1,6 +1,6 @@
 package com.sloopsight.sandbox.app.exceptions;
 
-public class BadSpecException extends RuntimeException {
+public class BadSpecException extends SandBoxException {
 
     private static final long serialVersionUID = 1L;
 

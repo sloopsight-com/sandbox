@@ -21,7 +21,7 @@
 
 	<properties>
 		<java.version>1.8</java.version>
-        <maven-check-style-version>3.1.0</maven-check-style-version>
+		<maven-check-style-version>3.1.0</maven-check-style-version>
 
 	</properties>
 
@@ -32,7 +32,7 @@
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-checkstyle-plugin</artifactId>
 					<version>${maven-check-style-version}</version>
- 				</plugin>
+				</plugin>
 
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
@@ -93,8 +93,9 @@
 	</build>
 
 	<modules>
-		<module>sandbox-app</module>
-		<module>sandbox-ui</module>
+		<module>../app</module>
+		<module>../web</module>
 	</modules>
+
 
 </project>

@@ -1,8 +1,6 @@
 package com.sloopsight.sandbox.app.controller;
 
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 import java.util.stream.Collectors;
 
 import javax.validation.Valid;
@@ -14,45 +12,51 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.util.CollectionUtils;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.sloopsight.sandbox.app.config.JwtUtils;
+import com.sloopsight.sandbox.app.dto.request.AuthConfigRequest;
 import com.sloopsight.sandbox.app.dto.request.LoginRequest;
-import com.sloopsight.sandbox.app.dto.request.SignupRequest;
 import com.sloopsight.sandbox.app.dto.response.JwtResponse;
-import com.sloopsight.sandbox.app.dto.response.MessageResponse;
-import com.sloopsight.sandbox.app.entity.ERole;
-import com.sloopsight.sandbox.app.entity.Role;
-import com.sloopsight.sandbox.app.entity.User;
-import com.sloopsight.sandbox.app.repo.RoleRepository;
-import com.sloopsight.sandbox.app.repo.UserRepository;
+import com.sloopsight.sandbox.app.services.AuthConfigService;
 import com.sloopsight.sandbox.app.services.UserDetailsImpl;
+
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
 @RequestMapping("/api/auth")
 public class AuthController {
     @Autowired
-    AuthenticationManager authenticationManager;
+    private AuthenticationManager authenticationManager;
 
     @Autowired
-    private UserRepository userRepository;
-
-    @Autowired
-    private RoleRepository roleRepository;
-
-    @Autowired
-    private PasswordEncoder encoder;
+    private AuthConfigService authConfigService;
 
     @Autowired
     private JwtUtils jwtUtils;
+
+    @Operation(summary = "Save provided config", security = @SecurityRequirement(name = "bearerAuth"))
+    @PreAuthorize("hasRole('ADMIN')")
+    @PutMapping("/config/{name}")
+    public ResponseEntity<?> updateConfig(@PathVariable("name") String name, @Valid @RequestBody AuthConfigRequest authConfig) {
+        return ResponseEntity.of(authConfigService.save(name, authConfig));
+    }
+
+    @Operation(summary = "Read provided config", security = @SecurityRequirement(name = "bearerAuth"))
+    @PreAuthorize("hasRole('ADMIN')")
+    @GetMapping("/config/{id}")
+    public ResponseEntity<?> readConfig(@PathVariable("id") String name) {
+        return ResponseEntity.of(authConfigService.get(name));
+    }
 
     @PreAuthorize("hasRole('USER')")
     @GetMapping("/signedIn")
@@ -87,41 +91,4 @@ public class AuthController {
                 .ok(new JwtResponse(jwt, userDetails.getId(), userDetails.getUsername(), userDetails.getEmail(), roles));
     }
 
-    @PostMapping("/signup")
-    public ResponseEntity<?> registerUser(@Valid @RequestBody SignupRequest signUpRequest) {
-        if (userRepository.existsByUsername(signUpRequest.getUsername())) {
-            return ResponseEntity.badRequest().body(new MessageResponse("Error: Username is already taken!"));
-        }
-
-        if (userRepository.existsByEmail(signUpRequest.getEmail())) {
-            return ResponseEntity.badRequest().body(new MessageResponse("Error: Email is already in use!"));
-        }
-
-        // Create new user's account
-        User user = new User(signUpRequest.getUsername(), signUpRequest.getEmail(),
-                encoder.encode(signUpRequest.getPassword()));
-
-        Set<ERole> strRoles = signUpRequest.getRole();
-        Set<Role> roles = new HashSet<Role>();
-
-        if (!CollectionUtils.isEmpty(strRoles)) {
-
-            for (ERole role : strRoles) {
-                Role userRole = roleRepository.findByName(role)
-                        .orElseThrow(() -> new RuntimeException("Error: Role is not found."));
-                roles.add(userRole);
-            }
-
-        } else {
-            Role userRole = roleRepository.findByName(ERole.ROLE_USER)
-                    .orElseThrow(() -> new RuntimeException("Error: Role is not found."));
-            roles.add(userRole);
-
-        }
-
-        user.setRoles(roles);
-        userRepository.save(user);
-
-        return ResponseEntity.ok(new MessageResponse("User registered successfully!"));
-    }
 }

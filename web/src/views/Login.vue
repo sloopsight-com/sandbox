@@ -10,8 +10,8 @@
           <form role="form">
             <base-input
               class="input-group-alternative mb-3"
-              placeholder="Email"
-              addon-left-icon="ni ni-email-83"
+              placeholder="User ID"
+              addon-left-icon="ni ni-single-02"
               v-model="model.email"
             ></base-input>
 
@@ -48,8 +48,8 @@ export default {
       error_message: "",
       model: {
         email: "",
-        password: ""
-      }
+        password: "",
+      },
     };
   },
   methods: {
@@ -58,17 +58,17 @@ export default {
       this.$store
         .dispatch("login", {
           user: this.model.email,
-          password: this.model.password
+          password: this.model.password,
         })
         .then(() => {
           this.$router.push("/dashboard");
         })
-        .catch(error => {
+        .catch((error) => {
           this.error = true;
           this.error_message = error;
         });
-    }
-  }
+    },
+  },
 };
 </script>
 <style>
