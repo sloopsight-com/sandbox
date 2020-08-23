@@ -9,8 +9,8 @@ Buit on
 # The Sandbox
 ## Modules
 
-- [Backend *https://cat.generalmobi.mobi*](/projects/sandbox/modulde/app)
-- [UI *https://dev.generalmobi.mobi*](/projects/sandbox/module/ui)
+- Backend
+- UI
 {.links-list}
 
 ## Technology Stack
