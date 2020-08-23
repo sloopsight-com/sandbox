@@ -3,7 +3,7 @@ import store from '../store'
 
 const HTTP = axios.create({
     baseURL: `/api`,
-    timeout: 1000,
+    timeout: 60000,
     headers: {
         "Authorization": "Bearer " + store.getters.getToken
     }

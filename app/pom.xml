@@ -5,7 +5,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<artifactId>sandbox-app</artifactId>
-	<packaging>jar</packaging>
+	<packaging>war</packaging>
 
 	<name>sandbox-app</name>
 	<description>Sandbox Application</description>
@@ -27,13 +27,11 @@
 
 
 	<dependencies>
-
 		<dependency>
 			<groupId>com.sloopsight.sandbox</groupId>
 			<artifactId>sandbox-ui</artifactId>
-			<version>${project.version}</version>
+			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
-
 
 		<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-text -->
 		<dependency>
@@ -162,40 +160,6 @@
 		</dependency>
 	</dependencies>
 
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-				<executions>
-					<execution>
-						<id>build-info</id>
-						<goals>
-							<goal>build-info</goal>
-						</goals>
-					</execution>
-					<execution>
-						<id>default</id>
-						<goals>
-							<goal>repackage</goal>
-						</goals>
-						<configuration>
-							<addResources>true</addResources>
-							<executable>true</executable>
-							<mainClass>${start-class}</mainClass>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
-		</plugins>
-
-		<resources>
-			<resource>
-				<directory>src/main/resources</directory>
-				<filtering>true</filtering>
-			</resource>
-		</resources>
-	</build>
 
 
 	<profiles>
@@ -204,6 +168,41 @@
 			<properties>
 				<spring.profiles.active>dev</spring.profiles.active>
 			</properties>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.springframework.boot</groupId>
+						<artifactId>spring-boot-maven-plugin</artifactId>
+						<executions>
+							<execution>
+								<id>build-info</id>
+								<goals>
+									<goal>build-info</goal>
+								</goals>
+							</execution>
+							<execution>
+								<id>default</id>
+								<goals>
+									<goal>repackage</goal>
+								</goals>
+								<configuration>
+									<addResources>true</addResources>
+									<executable>true</executable>
+									<mainClass>${start-class}</mainClass>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+
+				<resources>
+					<resource>
+						<directory>src/main/resources</directory>
+						<filtering>true</filtering>
+					</resource>
+				</resources>
+			</build>
+
 		</profile>
 		<profile>
 			<id>prod</id>
@@ -214,6 +213,41 @@
 			<properties>
 				<spring.profiles.active>prod</spring.profiles.active>
 			</properties>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.springframework.boot</groupId>
+						<artifactId>spring-boot-maven-plugin</artifactId>
+						<executions>
+							<execution>
+								<id>build-info</id>
+								<goals>
+									<goal>build-info</goal>
+								</goals>
+							</execution>
+							<execution>
+								<id>default</id>
+								<goals>
+									<goal>repackage</goal>
+								</goals>
+								<configuration>
+									<addResources>true</addResources>
+									<executable>true</executable>
+									<mainClass>${start-class}</mainClass>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+
+				<resources>
+					<resource>
+						<directory>src/main/resources</directory>
+						<filtering>true</filtering>
+					</resource>
+				</resources>
+			</build>
+
 		</profile>
 	</profiles>
 </project>

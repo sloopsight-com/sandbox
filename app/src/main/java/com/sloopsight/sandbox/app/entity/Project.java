@@ -1,10 +1,11 @@
 package com.sloopsight.sandbox.app.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
+import javax.persistence.Lob;
 import javax.persistence.Table;
 
 @Entity
@@ -15,13 +16,14 @@ public class Project {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @JoinColumn(name = "name")
+    @Column(name = "name")
     private String name;
 
-    @JoinColumn(name = "description")
+    @Column(name = "description")
     private String description;
 
-    @JoinColumn(name = "spec", columnDefinition = "text")
+    @Lob
+    @Column(name = "spec", length = 90000)
     private String openApiSpec;
 
     public String getName() {

@@ -12,6 +12,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.CollectionUtils;
 
 import com.fasterxml.jackson.databind.JsonNode;
@@ -37,6 +38,7 @@ import io.swagger.v3.oas.models.PathItem;
 import io.swagger.v3.parser.OpenAPIV3Parser;
 import io.swagger.v3.parser.core.models.SwaggerParseResult;
 
+@Transactional
 @Component
 public class ProjectServiceImpl implements ProjectService {
 
@@ -172,11 +174,21 @@ public class ProjectServiceImpl implements ProjectService {
         });
     }
 
+    @Transactional
     @Override
     public Optional<Project> delete(Long id) {
 
         Optional<Project> project = projectRepository.findById(id);
+
+        membershipRepository.findByProjectId(id).forEach(m -> {
+            membershipRepository.delete(m);
+        });
+
+        endpointRepository.findAllByProject(id).forEach(m -> {
+            endpointRepository.delete(m);
+        });
         project.ifPresent(a -> projectRepository.delete(a));
+
         return project;
     }
 

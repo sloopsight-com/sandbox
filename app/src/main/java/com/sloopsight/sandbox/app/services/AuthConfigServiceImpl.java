@@ -8,12 +8,16 @@ import org.springframework.stereotype.Service;
 import com.sloopsight.sandbox.app.dto.request.AuthConfigRequest;
 import com.sloopsight.sandbox.app.entity.AuthConfig;
 import com.sloopsight.sandbox.app.repo.AuthConfigRepository;
+import com.sloopsight.sandbox.app.util.LdapContext;
 
 @Service
 public class AuthConfigServiceImpl implements AuthConfigService {
 
     @Autowired
     private AuthConfigRepository authConfigRepository;
+
+    @Autowired
+    private LdapContext ldapContext;
 
     @Override
     public Optional<AuthConfig> save(String name, AuthConfigRequest authConfigRequest) {
@@ -23,7 +27,8 @@ public class AuthConfigServiceImpl implements AuthConfigService {
             AuthConfig authConfig = configOpt.get();
             authConfig.setEnabled(authConfigRequest.getEnabled());
             authConfig.setConfig(authConfigRequest.getConfig());
-         return   Optional.of(authConfigRepository.save(authConfig));
+            ldapContext.setUp();
+            return Optional.of(authConfigRepository.save(authConfig));
         }
         return Optional.empty();
     }

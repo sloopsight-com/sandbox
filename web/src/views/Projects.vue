@@ -14,7 +14,7 @@
               <div class="pl-lg-12">
                 <div class="row">
                   <!--Table-->
-                  <project-grid t></project-grid>
+                  <project-grid></project-grid>
                   <!--Table-->
                 </div>
               </div>

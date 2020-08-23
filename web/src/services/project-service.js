@@ -1,9 +1,10 @@
 import axios from 'axios'
 import store from '../store'
+import Vue from 'vue'
 
 const HTTP = axios.create({
     baseURL: `/api`,
-    timeout: 1000,
+    timeout: 60000,
     headers: {
         "Authorization": "Bearer " + store.getters.getToken
     }
@@ -12,6 +13,8 @@ const HTTP = axios.create({
 export default {
 
     get(_page, _limit) {
+
+        Vue.$log.info("Calling with client with 60 sec timeout");
         return HTTP.get('v1/project', {
             params: {
                 page: _page,

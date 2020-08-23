@@ -1,5 +1,6 @@
 package com.sloopsight.sandbox.app.entity;
 
+import java.util.HashMap;
 import java.util.Map;
 
 import javax.persistence.Column;
@@ -29,7 +30,7 @@ public class AuthConfig {
 
     @Type(type = "json")
     @Column(name = "config", columnDefinition = "text")
-    private Map<String, Object> config;
+    private Map<String, Object> config=new HashMap<String, Object>();
 
     public String getName() {
         return name;

@@ -93,8 +93,8 @@
 	</build>
 
 	<modules>
-		<module>../app</module>
 		<module>../web</module>
+		<module>../app</module>
 	</modules>
 
 

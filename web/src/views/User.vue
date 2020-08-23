@@ -160,7 +160,7 @@ export default {
           projectPromise = UserService.update(this.$route.params.id, {
             email: this.model.email,
             password: this.model.password,
-            role: this.model.roles,
+            role: this.model.role,
           });
         } else {
           projectPromise = UserService.save(this.model);

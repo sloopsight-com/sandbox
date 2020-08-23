@@ -6,6 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
@@ -24,7 +25,8 @@ public class Endpoint {
     @Column(name = "method")
     private String method;
 
-    @Column(name = "logic", columnDefinition = "text")
+    @Lob
+    @Column(name = "spec", length = 90000)
     private String logic;
 
     @Column(name = "description", columnDefinition = "text")
