@@ -6,12 +6,11 @@ Support ldap authentication.
 Buit on 
 
 
-# The Sandbox
 ## Modules
 
 - Backend
 - UI
-{.links-list}
+{.lnks-list}
 
 ## Technology Stack
 
