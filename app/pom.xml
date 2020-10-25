@@ -27,6 +27,11 @@
 
 
 	<dependencies>
+		<!-- https://mvnrepository.com/artifact/net.sf.ehcache/ehcache -->
+		<dependency>
+			<groupId>net.sf.ehcache</groupId>
+			<artifactId>ehcache</artifactId>
+ 		</dependency>
 		<dependency>
 			<groupId>com.sloopsight.sandbox</groupId>
 			<artifactId>sandbox-ui</artifactId>
@@ -158,6 +163,14 @@
 			<artifactId>spring-security-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+
+
+		<dependency>
+			<groupId>org.rocksdb</groupId>
+			<artifactId>rocksdbjni</artifactId>
+			<version>6.6.4</version>
+		</dependency>
+
 	</dependencies>
 
 

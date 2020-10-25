@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <notifications></notifications>
-    <router-view/>
+    <router-view />
+    <VuePNotify></VuePNotify>
   </div>
 </template>

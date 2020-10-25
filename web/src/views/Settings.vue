@@ -239,9 +239,11 @@ export default {
       return true;
     },
     initLdap() {
+      const loader = this.$loading.show({ loader: "bars", color: "#2dce89" });
       AuthService.getConfig("ldap")
         .then((response) => {
           this.authConfig = response.data;
+          loader.hide();
         })
         .catch((error) => {
           this.error = true;
@@ -258,7 +260,12 @@ export default {
       })
         .then((response) => {
           this.authConfig = response.data;
-          this.success_message = "Config updated successfully";
+          this.$notify({
+            title: "Config updated successfully",
+            delay: 3000,
+            type: "success",
+            icon: "fa fa-info",
+          });
         })
         .catch((error) => {
           this.error = true;

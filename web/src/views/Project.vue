@@ -4,6 +4,27 @@
       <!-- Card stats -->
     </base-header>
 
+    <api
+      :tags.sync="selectedTags"
+      v-if="addApi"
+      :show.sync="addApi"
+      @on-close="addApi = false"
+      @on-add="addNewApi"
+    ></api>
+    <api-param
+      v-if="addParam"
+      :show.sync="addParam"
+      :api.sync="currentApi"
+      @on-close="addParam = false"
+      @onSubmit="addParam = false"
+    >
+    </api-param>
+    <params
+      v-if="showParams"
+      :show.sync="showParams"
+      @on-close="showParams = false"
+      :tableData.sync="currentApi.params"
+    ></params>
     <div class="container-fluid mt--7">
       <div class="row">
         <div class="col-xl-12 order-xl-1">
@@ -11,16 +32,23 @@
             <div slot="header" class="bg-white border-0">
               <div class="row align-items-center">
                 <div class="col-8">
-                  <h3 class="mb-0">Create project by providing OpenApi Specification</h3>
+                  <h3 class="mb-0">
+                    Create project by providing OpenApi Specification
+                  </h3>
                 </div>
               </div>
             </div>
+            <api></api>
 
             <template>
-              <base-alert v-show="error" dismissible type="danger">{{error_message}}</base-alert>
+              <base-alert v-show="error" dismissible type="danger">{{
+                error_message
+              }}</base-alert>
 
               <form @submit.prevent>
-                <h6 class="heading-small text-muted mb-4">Project information</h6>
+                <h6 class="heading-small text-muted mb-4">
+                  Project information
+                </h6>
                 <div class="pl-lg-4">
                   <div class="row">
                     <div class="col-lg-6">
@@ -38,7 +66,9 @@
                 <div class="pl-lg-4">
                   <div class="row">
                     <div class="col-lg-6">
-                      <label class="typo__label form-control-label">Select Project Members</label>
+                      <label class="typo__label form-control-label"
+                        >Select Project Members</label
+                      >
                       <multiselect
                         v-model="model.members"
                         tag-placeholder="Add this user to project"
@@ -53,7 +83,7 @@
                   </div>
                 </div>
 
-                <div class="pl-lg-4">
+                <div class="pl-lg-4" style="padding-top:25px">
                   <div class="row">
                     <div class="col-lg-6">
                       <base-input
@@ -68,17 +98,53 @@
                   </div>
                 </div>
                 <!-- Description -->
-                <h6 class="heading-small text-muted mb-4">Open API Specification</h6>
+
                 <div class="pl-lg-4">
-                  <div class="form-group">
-                    <base-input alternative label="Open Api Json">
-                      <codemirror v-model="model.openApiSpec" :options="cmOptions"></codemirror>
-                    </base-input>
+                  <div class="row">
+                    <div class="col-lg-4">
+                      <label class="typo__label form-control-label">Tags</label>
+                      <multiselect
+                        v-model="selectedTags"
+                        tag-placeholder="Select available tags"
+                        placeholder="Select available tags"
+                        :options="tags"
+                        label="name"
+                        track-by="name"
+                        :multiple="true"
+                        :taggable="true"
+                      ></multiselect>
+                    </div>
+                    <div class="col-lg-2" style="padding-top:30px">
+                      <base-button
+                        type="primary"
+                        @click="addTag"
+                        icon="ni ni-fat-add"
+                      ></base-button>
+                    </div>
                   </div>
                 </div>
+
+                <div class="pl-lg-4" style="padding-top:25px">
+                  <div class="row">
+                    <div class="col-lg-6">
+                      <apis
+                        @onCreateApi="addApi = true"
+                        @onCreateParam="createNewParam"
+                        :tableData.sync="apisData"
+                        @show-params="viewParams"
+                      ></apis>
+                    </div>
+                  </div>
+                </div>
+
                 <div class="row">
                   <div class="col text-right">
-                    <base-button type="primary" size="lg" v-on:click="saveProject()">Submit</base-button>
+                    <base-button
+                      type="primary"
+                      size="lg"
+                      v-on:click="saveProject()"
+                      >Submit</base-button
+                    >
                   </div>
                 </div>
               </form>
@@ -89,45 +155,50 @@
     </div>
   </div>
 </template>
- <script>
-import { codemirror } from "vue-codemirror";
-// require styles
-import "codemirror/lib/codemirror.css";
+<script>
 import "vue-multiselect/dist/vue-multiselect.min.css";
-
-import "codemirror/theme/base16-dark.css";
-import "codemirror/mode/javascript/javascript.js";
 import Multiselect from "vue-multiselect";
 import ProjectService from "../services/project-service";
+import Apis from "./Composer/Apis";
+import Params from "./Composer/Params";
 
+import Api from "./Composer/Api";
+import ApiParam from "./Composer/Param";
+import SwaggerTemplate from "./swagger-template.json";
 export default {
   name: "user-profile",
   data() {
     return {
-      options: [],
+      apiSpec: { paths: {} },
+      showParams: false,
+      currentApi: {},
+      apisData: [],
+      addParam: false,
+      addApi: false,
+      options: ["default"],
+      tags: [],
       error: null,
       error_message: null,
+      selectedTags: ["default"],
       model: {
         name: "",
         openApiSpec: "",
-        members: [],
-      },
-      cmOptions: {
-        // codemirror options
-        tabSize: 4,
-        mode: "text/x-yaml",
-        theme: "base16-dark",
-        lineNumbers: true,
-        line: true,
-        // more codemirror options, 更多 codemirror 的高级配置...
-      },
+        members: []
+      }
     };
   },
   components: {
-    codemirror,
     Multiselect,
+    Apis,
+    Api,
+    ApiParam,
+    Params
   },
   methods: {
+    createNewParam(item) {
+      this.currentApi = item;
+      this.addParam = true;
+    },
     checkForm() {
       if (this.model.name && this.model.openApiSpec) {
         return true;
@@ -137,39 +208,86 @@ export default {
         this.error_message = "Name is missing";
         return false;
       }
-
-      if (!this.model.openApiSpec) {
-        this.error = true;
-        this.error_message = "Spec are missing";
-        return false;
-      }
+      return true;
     },
     init() {},
+
+    viewParams(api) {
+      this.currentApi = api;
+      this.showParams = true;
+    },
+    addNewApi(apiObject) {
+      this.apisData.push(apiObject);
+    },
+    prepareSpec() {
+      this.apiSpec.info.title = this.model.name;
+      this.apiSpec.info.description = this.model.description;
+      this.apiSpec.tags = this.selectedTags;
+      this.apiSpec.paths = {};
+      for (let i = 0; i < this.apisData.length; i++) {
+        let apiData = this.apisData[i];
+        this.apiSpec.paths[apiData.path] = {};
+
+        this.apiSpec.paths[apiData.path][apiData.method] = {
+          tags: [apiData.tag],
+          summary: "",
+          description: apiData.description,
+          operationId: apiData.operationId,
+          parameters: apiData.params
+        };
+      }
+    },
+    addTag() {
+      this.$swal
+        .fire({
+          title: "Input tag name",
+          input: "text",
+          inputLabel: "Tag",
+          inputPlaceholder: "Enter your api tag",
+          showCancelButton: true,
+          inputValidator: value => {
+            if (!value) {
+              return "You need to write something!";
+            }
+          }
+        })
+        .then(tag => {
+          this.tags.push({ name: tag.value, description: "" });
+        });
+    },
 
     saveProject() {
       if (this.checkForm()) {
         var projectPromise = null;
+        this.prepareSpec();
         if (this.$route.params.id) {
           projectPromise = ProjectService.update(
             this.$route.params.id,
             this.model.name,
-            this.model.openApiSpec,
+            JSON.stringify(this.apiSpec),
             this.model.description,
             this.model.members
           );
         } else {
           projectPromise = ProjectService.save(
             this.model.name,
-            this.model.openApiSpec,
+            JSON.stringify(this.apiSpec),
             this.model.description,
             this.model.members
           );
         }
+
         projectPromise
           .then(() => {
+            this.$notify({
+              title: "Project save successfully",
+              delay: 3000,
+              type: "success",
+              icon: "fa fa-info"
+            });
             this.$router.push("/projects");
           })
-          .catch((error) => {
+          .catch(error => {
             this.error = true;
             if (error.response) {
               this.error_message = "Please check your OpenApi Json";
@@ -178,7 +296,7 @@ export default {
             }
           });
       }
-    },
+    }
   },
   mounted() {
     this.$log.info(this.$route.params.id);
@@ -186,34 +304,69 @@ export default {
     if (this.$route.params.id) {
       id = this.$route.params.id;
       ProjectService.getOne(this.$route.params.id)
-        .then((response) => {
+        .then(response => {
           this.model.name = response.data.name;
           this.model.openApiSpec = response.data.openApiSpec;
           this.model.description = response.data.description;
+          let apiSpec = JSON.parse(this.model.openApiSpec);
+          this.apiSpec = apiSpec;
+          let data = this.apisData;
+          this.tags = apiSpec.tags;
+          this.selectedTags = apiSpec.tags;
+          Object.keys(apiSpec.paths).forEach(function(path) {
+            let pathObject = apiSpec.paths[path];
+            Object.keys(pathObject).forEach(function(m) {
+              let method = pathObject[m];
+              let params = [];
+              if (method.parameters) {
+                for (let i = 0; i < method.parameters.length; i++) {
+                  let parameter = method.parameters[i];
+                  if (parameter.schema.length > 0) {
+                    parameter.schema = JSON.parse(parameter.schema);
+                  }
+                  params.push(parameter);
+                }
+              }
+
+              data.push({
+                path: path,
+                method: m,
+                tags: method.tags,
+                description: method.description,
+                operationId: method.operationId,
+                params: params
+              });
+            });
+          });
         })
-        .catch((error) => {
+        .catch(error => {
           this.error = true;
           this.error_message = error;
+          this.$log.error(error);
         });
 
       ProjectService.getExistingMember(id)
-        .then((response) => {
+        .then(response => {
           this.model.members = response.data;
         })
-        .catch((error) => {
+        .catch(error => {
           this.error = true;
           this.error_message = error;
         });
+    } else {
+      this.apiSpec = SwaggerTemplate;
+      this.tags = this.apiSpec.tags;
+      this.selectedTags = this.apiSpec.tags;
     }
     ProjectService.getAvailableMember(id)
-      .then((response) => {
+      .then(response => {
         this.options = response.data;
       })
-      .catch((error) => {
+      .catch(error => {
         this.error = true;
         this.error_message = error;
       });
-  },
+  }
 };
 </script>
 <style></style>

@@ -1,6 +1,10 @@
 <template>
   <div class="wrapper" :class="{ 'nav-open': $sidebar.showSidebar }">
-    <side-bar :background-color="sidebarBackground" short-title="Sandbox" title="API Sandbox">
+    <side-bar
+      :background-color="sidebarBackground"
+      short-title="Sandbox"
+      title="API Sandbox"
+    >
       <template slot="links">
         <sidebar-item
           :link="{
@@ -11,16 +15,28 @@
         />
 
         <sidebar-item
-          :link="{name: 'My Projects', icon: 'ni ni-app text-green', path: '/projects'}"
+          :link="{
+            name: 'My Projects',
+            icon: 'ni ni-app text-green',
+            path: '/projects'
+          }"
         />
 
         <sidebar-item
-          v-if="hasRole('ROLE_ADMIN')"
-          :link="{name: 'Users', icon: 'fa fa-users text-green', path: '/users'}"
+          v-if="this.$can('manage', 'User')"
+          :link="{
+            name: 'Users',
+            icon: 'fa fa-users text-green',
+            path: '/users'
+          }"
         />
         <sidebar-item
-          v-if="hasRole('ROLE_ADMIN')"
-          :link="{name: 'Settings', icon: 'ni ni-settings-gear-65 text-green', path: '/settings'}"
+          v-if="this.$can('manager', 'Setting')"
+          :link="{
+            name: 'Settings',
+            icon: 'ni ni-settings-gear-65 text-green',
+            path: '/settings'
+          }"
         />
       </template>
     </side-bar>
@@ -46,11 +62,11 @@ export default {
   components: {
     DashboardNavbar,
     ContentFooter,
-    FadeTransition,
+    FadeTransition
   },
   data() {
     return {
-      sidebarBackground: "vue", //vue|blue|orange|green|red|primary
+      sidebarBackground: "orange" //vue|blue|orange|green|red|primary
     };
   },
   methods: {
@@ -58,15 +74,8 @@ export default {
       if (this.$sidebar.showSidebar) {
         this.$sidebar.displaySidebar(false);
       }
-    },
-    hasRole(role) {
-      this.$log.info(
-        "Checking " + role + " in " + this.$store.getters.getLoggedInUserRoles
-      );
-      return this.$store.getters.getLoggedInUserRoles.includes(role);
-    },
-  },
+    }
+  }
 };
 </script>
-<style lang="scss">
-</style>
+<style lang="scss"></style>

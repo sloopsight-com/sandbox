@@ -92,8 +92,8 @@
 		</plugins>
 		<resources>
 			<resource>
-				<directory>${project.basedir}/dist</directory>
-			</resource>
+				<directory >${project.basedir}/dist</directory>
+ 			</resource>
 		</resources>
 	</build>
 </project>

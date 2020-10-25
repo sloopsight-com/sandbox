@@ -1,27 +1,26 @@
-
 // vue.config.js
 module.exports = {
-    // options...
+  // options...
 
-
-    devServer: {
-        proxy: {
-            '/api/*': {
-                target: 'http://localhost:8081/api',
-                ws: true,
-                changeOrigin: true,
-                pathRewrite: {
-                    "^/api": ""
-                }
-            },
-            '/camel/*': {
-                target: 'http://localhost:8081/camel',
-                ws: true,
-                changeOrigin: true,
-                pathRewrite: {
-                    "^/camel": ""
-                }
-            }
+  publicPath: "/app",
+  devServer: {
+    proxy: {
+      "/api/*": {
+        target: "http://localhost:8081/app/api",
+        ws: true,
+        changeOrigin: true,
+        pathRewrite: {
+          "^/app/api": ""
         }
+      },
+      "/camel/*": {
+        target: "http://localhost:8081/app/camel",
+        ws: true,
+        changeOrigin: true,
+        pathRewrite: {
+          "^/app/camel": ""
+        }
+      }
     }
-}
+  }
+};

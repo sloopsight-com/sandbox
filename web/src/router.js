@@ -9,6 +9,7 @@ Vue.use(Router)
 
 const router = new Router({
   linkExactActiveClass: 'active',
+  base: '/app',
   routes: [
     {
       path: '/',

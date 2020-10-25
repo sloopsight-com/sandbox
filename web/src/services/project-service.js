@@ -1,14 +1,8 @@
-import axios from 'axios'
-import store from '../store'
+
 import Vue from 'vue'
 
-const HTTP = axios.create({
-    baseURL: `/api`,
-    timeout: 60000,
-    headers: {
-        "Authorization": "Bearer " + store.getters.getToken
-    }
-});
+import HTTP from './common-client'
+
 
 export default {
 

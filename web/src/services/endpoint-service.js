@@ -1,13 +1,5 @@
-import axios from 'axios'
-import store from '../store'
+import HTTP from './common-client'
 
-const HTTP = axios.create({
-    baseURL: `/api`,
-    timeout: 60000,
-    headers: {
-        "Authorization": "Bearer " + store.getters.getToken
-    }
-});
 
 export default {
     get(id, _page, _limit) {

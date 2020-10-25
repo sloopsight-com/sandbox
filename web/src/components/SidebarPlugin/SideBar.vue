@@ -45,7 +45,7 @@
               <h6 class="text-overflow m-0">Welcome!</h6>
             </div>
             <div class="dropdown-divider"></div>
-            <a href="#!" class="dropdown-item">
+            <a href="#!" class="dropdown-item" @click.prevent="logout">
               <i class="ni ni-user-run"></i>
               <span>Logout</span>
             </a>
@@ -133,6 +133,11 @@ export default {
     },
     showSidebar() {
       this.$sidebar.displaySidebar(true);
+    },
+    logout() {
+      this.$store.dispatch("logout").then(() => {
+        this.$router.push("/login");
+      });
     },
   },
   beforeDestroy() {

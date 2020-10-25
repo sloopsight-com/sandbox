@@ -19,7 +19,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.sloopsight.sandbox.app.config.JwtUtils;
 import com.sloopsight.sandbox.app.dto.request.AuthConfigRequest;
@@ -49,6 +51,11 @@ public class AuthController {
     @PutMapping("/config/{name}")
     public ResponseEntity<?> updateConfig(@PathVariable("name") String name, @Valid @RequestBody AuthConfigRequest authConfig) {
         return ResponseEntity.of(authConfigService.save(name, authConfig));
+    }
+
+    @PostMapping("/upload")
+    public String handleFileUpload(@RequestParam("file") MultipartFile file) {
+        return "ok";
     }
 
     @Operation(summary = "Read provided config", security = @SecurityRequirement(name = "bearerAuth"))

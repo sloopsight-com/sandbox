@@ -1,13 +1,16 @@
 package com.sloopsight.sandbox.app.services;
 
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -16,6 +19,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.CollectionUtils;
 
 import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.sloopsight.sandbox.app.dto.request.ProjectRequest;
 import com.sloopsight.sandbox.app.dto.response.Member;
@@ -56,6 +60,9 @@ public class ProjectServiceImpl implements ProjectService {
 
     @Autowired
     private MembershipRepository membershipRepository;
+
+    @Value("${server.servlet.context-path:/}")
+    private String context;
 
     private Endpoint createOrUpdateEndpoint(Project p, String desc, String method, String path) {
 
@@ -234,10 +241,25 @@ public class ProjectServiceImpl implements ProjectService {
     @Override
     public Optional<JsonNode> getDocs(Long projectId) {
         return projectRepository.findById(projectId).map(p -> {
+
+            String url = "camel/exec/" + projectId;
             JsonNode json = mapper.readTree(p.getOpenApiSpec());
-            JsonNode node = json.get("servers").get(0);
-            ((ObjectNode) node).put("url", "camel/exec/" + projectId);
-            ((ObjectNode) node).put("description", p.getDescription());
+            if (json.has("servers") && json.get("servers").size() > 0) {
+                JsonNode node = json.get("servers").get(0);
+
+                ((ObjectNode) node).put("url", url);
+                ((ObjectNode) node).put("description", p.getDescription());
+            } else {
+                Map<String, String> server = new HashMap<String, String>();
+                server.put("url", url);
+                server.put("description", p.getDescription());
+                if (json.has("servers")) {
+                    ((ArrayNode) json.get("servers")).add(mapper.getMapper().valueToTree(server));
+                } else {
+                    ((ObjectNode) json).putArray("servers").add(mapper.getMapper().valueToTree(server));
+                }
+            }
+
             return json;
 
         });

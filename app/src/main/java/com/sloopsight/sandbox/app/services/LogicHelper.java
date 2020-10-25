@@ -43,7 +43,7 @@ public class LogicHelper {
         return this.httpServletRequest.getParameter(param);
     }
 
-    @MethodHint(name = "param", comment = "Get request body")
+    @MethodHint(name = "body", comment = "Get request body")
     public String body() throws IOException {
         return body;
     }

@@ -33,7 +33,7 @@ public class WebMvcConfig implements WebMvcConfigurer {
                     }
                 });
 
-        registry.addResourceHandler("/index.html").addResourceLocations("classpath:/index.html").setCachePeriod(0);
+        registry.addResourceHandler("/index.html#/dashboard").addResourceLocations("classpath:/index.html").setCachePeriod(0);
 
     }
 }

@@ -83,6 +83,7 @@ export default {
   },
   data() {
     return {
+      isLoading: false,
       total: 2,
       value: 0,
       perPage: 5,
@@ -92,15 +93,19 @@ export default {
   },
   methods: {
     async pageChangeHandle(value) {
+      const loader = this.$loading.show({ loader: "bars", color: "#2dce89" });
       ProjectService.get(value - 1, this.perPage).then((response) => {
         this.tableData = response.data.content;
         this.total = response.data.totalElements;
+        loader.hide();
       });
     },
     init() {
+      const loader = this.$loading.show({ loader: "bars", color: "#2dce89" });
       ProjectService.get(0, this.perPage).then((response) => {
         this.tableData = response.data.content;
         this.total = response.data.totalElements;
+        loader.hide();
       });
     },
     goToCreate() {

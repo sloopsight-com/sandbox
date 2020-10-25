@@ -45,7 +45,7 @@ public class ProjectController {
     @Operation(summary = "List all projects", security = @SecurityRequirement(name = "bearerAuth"))
     @PreAuthorize("hasRole('USER')")
     @GetMapping("/project")
-    public Page<Project> projects(@RequestParam("page") int page, @RequestParam("size") int size) {
+    public Page<Project> projects(@RequestParam("page") int page, @RequestParam("size") int size) throws InterruptedException {
         return projectService.find(SecurityContextHolder.getContext().getAuthentication().getName(), page, size);
     }
 

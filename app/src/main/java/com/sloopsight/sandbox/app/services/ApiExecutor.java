@@ -16,6 +16,7 @@ import org.apache.commons.lang3.math.NumberUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Component;
 import org.springframework.web.util.UriTemplate;
@@ -39,6 +40,9 @@ public class ApiExecutor extends RouteBuilder {
     @Autowired
     private ApplicationContext context;
 
+    @Value("${server.servlet.context-path:/}")
+    private String contextPath;
+
     @Override
     public void configure() throws Exception {
         // TODO Auto-generated method stub
@@ -49,7 +53,7 @@ public class ApiExecutor extends RouteBuilder {
                 // TODO Auto-generated method stub
                 HttpServletRequest request = exchange.getIn().getBody(HttpServletRequest.class);
                 HttpServletResponse response = exchange.getMessage(HttpServletResponse.class);
-                UriTemplate template = new UriTemplate("/camel/exec/{projectId}/");
+                UriTemplate template = new UriTemplate(contextPath + "/camel/exec/{projectId}/");
                 Map<String, String> parameters = template.match(request.getRequestURI());
                 Long projectId = NumberUtils.toLong(parameters.get("projectId"));
                 String method = StringUtils.lowerCase(request.getMethod());
@@ -57,7 +61,7 @@ public class ApiExecutor extends RouteBuilder {
 
                 for (Endpoint endpoint : endpoints) {
                     try {
-                        String path = "/camel/exec/{projectId}" + endpoint.getPath();
+                        String path = contextPath + "/camel/exec/{projectId}" + endpoint.getPath();
                         UriTemplate projectTemplate = new UriTemplate(path);
                         if (projectTemplate.matches(request.getRequestURI())) {
                             Map<String, String> projectParam = projectTemplate.match(request.getRequestURI());
@@ -65,6 +69,7 @@ public class ApiExecutor extends RouteBuilder {
                             bindings.put("req", request);
                             bindings.put("res", response);
                             bindings.put("web", new LogicHelper(exchange, projectParam, context));
+                            bindings.put("localDb", new LocalDb(projectId));
                             executor.execute(request, response, endpoint.getLogic(), bindings);
                             return;
                         }

@@ -88,20 +88,24 @@ export default {
   },
   methods: {
     async pageChangeHandle(value) {
+      const loader = this.$loading.show({ loader: "bars", color: "#2dce89" });
       UserService.get(value - 1, this.perPage).then((response) => {
         this.tableData = response.data.content;
         this.total = response.data.totalElements;
+        loader.hide();
       });
     },
     init() {
+      const loader = this.$loading.show({ loader: "bars", color: "#2dce89" });
+
       UserService.get(0, this.perPage).then((response) => {
         this.tableData = response.data.content;
         this.total = response.data.totalElements;
+        loader.hide();
       });
     },
     goToCreate() {
       this.$log.info("Creating user ");
-
       this.$router.push("/user");
     },
     goToEdit(id) {

@@ -110,6 +110,14 @@ export default {
 
         projectPromise
           .then(() => {
+            this.$notify({
+              title: "Endpoint save successfully",
+              type: "success",
+
+              delay: 3000,
+              icon: "fa fa-info",
+            });
+
             this.$router.push(
               "/project/" + this.$route.params.projectId + "/endpoint"
             );

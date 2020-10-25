@@ -6,8 +6,10 @@
           <div class="text-center text-muted mb-4">
             <small>Sign in with credentials</small>
           </div>
-          <base-alert v-show="error" dismissible type="danger">{{error_message}}</base-alert>
-          <form role="form">
+          <base-alert v-show="error" dismissible type="danger">{{
+            error_message
+          }}</base-alert>
+          <form role="form" v-on:submit.prevent="callLogin()">
             <base-input
               class="input-group-alternative mb-3"
               placeholder="User ID"
@@ -24,7 +26,9 @@
             ></base-input>
 
             <div class="text-center">
-              <base-button type="primary" v-on:click="callLogin()" class="my-4">Sign in</base-button>
+              <base-button type="primary" v-on:click="callLogin()" class="my-4"
+                >Sign in</base-button
+              >
             </div>
           </form>
         </div>
@@ -40,6 +44,8 @@
   </div>
 </template>
 <script>
+import ability from "../ability";
+
 export default {
   name: "login",
   data() {
@@ -48,8 +54,8 @@ export default {
       error_message: "",
       model: {
         email: "",
-        password: "",
-      },
+        password: ""
+      }
     };
   },
   methods: {
@@ -58,18 +64,18 @@ export default {
       this.$store
         .dispatch("login", {
           user: this.model.email,
-          password: this.model.password,
+          password: this.model.password
         })
-        .then(() => {
+        .then(response => {
+          ability.update(response.data.roles, this.$ability);
           this.$router.push("/dashboard");
         })
-        .catch((error) => {
+        .catch(error => {
           this.error = true;
           this.error_message = error;
         });
-    },
-  },
+    }
+  }
 };
 </script>
-<style>
-</style>
+<style></style>
