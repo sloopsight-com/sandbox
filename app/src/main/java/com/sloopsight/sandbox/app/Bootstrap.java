@@ -12,7 +12,9 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
+import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
+import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
@@ -30,7 +32,7 @@ import com.sloopsight.sandbox.app.repo.UserRepository;
 @EnableJpaRepositories({ "com.sloopsight.sandbox.app.repo" })
 @ComponentScan({ "com.sloopsight.sandbox" })
 @SpringBootApplication
-public class Bootstrap {
+public class Bootstrap extends SpringBootServletInitializer{
 
     @Value("${default.user}")
     private String defaultUser;
@@ -38,10 +40,13 @@ public class Bootstrap {
     @Value("${default.password}")
     private String defaultPassword;
 
-    public static void main(String[] args) {
-        SpringApplication.run(Bootstrap.class, args);
+    @Override
+    protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+       return application.sources(Bootstrap.class);
     }
-
+    public static void main(String[] args) {
+       SpringApplication.run(Bootstrap.class, args);
+    }
     @Bean
     public ServletRegistrationBean<?> camelServletRegistrationBean() {
         ServletRegistrationBean<?> registration = new ServletRegistrationBean<>(new CamelHttpTransportServlet(), "/camel/*");
