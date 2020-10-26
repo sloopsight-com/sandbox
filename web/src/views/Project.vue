@@ -28,7 +28,7 @@
     <div class="container-fluid mt--7">
       <div class="row">
         <div class="col-xl-12 order-xl-1">
-          <card shadow type="secondary">
+          <card shadow type="secondary" style="height:600px;overflow:scroll">
             <div slot="header" class="bg-white border-0">
               <div class="row align-items-center">
                 <div class="col-8">

@@ -7,7 +7,7 @@
     <div class="container-fluid mt--7">
       <div class="row">
         <div class="col-xl-12 order-xl-1">
-          <card shadow type="secondary">
+          <card shadow type="secondary" style="height:600px;overflow:scroll">
             <div slot="header" class="bg-white border-0">
               <div class="row align-items-center">
                 <div class="col-8">
@@ -17,7 +17,9 @@
             </div>
 
             <template>
-              <base-alert v-show="error" dismissible type="danger">{{error_message}}</base-alert>
+              <base-alert v-show="error" dismissible type="danger">{{
+                error_message
+              }}</base-alert>
 
               <form @submit.prevent>
                 <!-- Description -->
@@ -28,13 +30,21 @@
                 <div class="pl-lg-4">
                   <div class="form-group">
                     <base-input alternative label="Logic in Nashorn Javasript">
-                      <codemirror v-model="model.logic" :options="cmOptions"></codemirror>
+                      <codemirror
+                        v-model="model.logic"
+                        :options="cmOptions"
+                      ></codemirror>
                     </base-input>
                   </div>
                 </div>
                 <div class="row">
                   <div class="col text-right">
-                    <base-button type="primary" size="lg" v-on:click="saveEndpoint()">Submit</base-button>
+                    <base-button
+                      type="primary"
+                      size="lg"
+                      v-on:click="saveEndpoint()"
+                      >Submit</base-button
+                    >
                   </div>
                 </div>
               </form>
@@ -45,7 +55,7 @@
     </div>
   </div>
 </template>
- <script>
+<script>
 import CodeMirror from "codemirror";
 
 import { codemirror } from "vue-codemirror";
@@ -70,7 +80,7 @@ export default {
       error: null,
       error_message: null,
       model: {
-        logic: "",
+        logic: ""
       },
       cmOptions: {
         // codemirror options
@@ -79,14 +89,14 @@ export default {
         theme: "base16-dark",
         lineNumbers: true,
         line: true,
-        extraKeys: { "Ctrl-Space": "autocomplete" },
+        extraKeys: { "Ctrl-Space": "autocomplete" }
         //hintOptions: { hint: this.synonyms }
         // more codemirror options, 更多 codemirror 的高级配置...
-      },
+      }
     };
   },
   components: {
-    codemirror,
+    codemirror
   },
   methods: {
     checkForm() {
@@ -115,28 +125,28 @@ export default {
               type: "success",
 
               delay: 3000,
-              icon: "fa fa-info",
+              icon: "fa fa-info"
             });
 
             this.$router.push(
               "/project/" + this.$route.params.projectId + "/endpoint"
             );
           })
-          .catch((error) => {
+          .catch(error => {
             this.error = true;
             this.error_message = error;
           });
       }
-    },
+    }
   },
   mounted() {
     this.$log.info(this.$route.params.id);
 
-    EndpointService.getHint().then((response) => {
+    EndpointService.getHint().then(response => {
       this.$log.info("********************");
 
       this.$log.info(response);
-      CodeMirror.hint.javascript = function (editor) {
+      CodeMirror.hint.javascript = function(editor) {
         var list = response.data;
         var cursor = editor.getCursor();
         var currentLine = editor.getLine(cursor.line);
@@ -153,12 +163,12 @@ export default {
         var result = {
           list: (!curWord
             ? list
-            : list.filter(function (item) {
+            : list.filter(function(item) {
                 return item.match(regex);
               })
           ).sort(),
           from: CodeMirror.Pos(cursor.line, start),
-          to: CodeMirror.Pos(cursor.line, end),
+          to: CodeMirror.Pos(cursor.line, end)
         };
 
         return result;
@@ -167,15 +177,15 @@ export default {
 
     if (this.$route.params.id) {
       EndpointService.getOne(this.$route.params.id)
-        .then((response) => {
+        .then(response => {
           this.model.logic = response.data.logic;
         })
-        .catch((error) => {
+        .catch(error => {
           this.error = true;
           this.error_message = error;
         });
     }
-  },
+  }
 };
 </script>
 <style></style>

@@ -61,7 +61,11 @@ public class ApiExecutor extends RouteBuilder {
 
                 for (Endpoint endpoint : endpoints) {
                     try {
-                        String path = contextPath + "/camel/exec/{projectId}" + endpoint.getPath();
+                        String ep = endpoint.getPath();
+                        if (!endpoint.getPath().startsWith("/")) {
+                            ep = "/" + endpoint.getPath();
+                        }
+                        String path = contextPath + "/camel/exec/{projectId}" + ep;
                         UriTemplate projectTemplate = new UriTemplate(path);
                         if (projectTemplate.matches(request.getRequestURI())) {
                             Map<String, String> projectParam = projectTemplate.match(request.getRequestURI());

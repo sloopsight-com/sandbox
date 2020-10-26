@@ -1,7 +1,9 @@
 <template>
   <modal :show.sync="state" @close="close">
     <template slot="header">
-      <h5 class="modal-title" id="apiModel">Add New API</h5>
+      <h5 class="modal-title" id="apiModel">
+        Add New API
+      </h5>
     </template>
     <template>
       <form role="form">
@@ -39,8 +41,9 @@
           style="padding-top:20px"
           v-model="model.tag"
           label="name"
-          track-by="name"
+          value="name"
           :options="tags"
+          :reduce="tag => tag.name"
         ></v-select>
 
         <textarea
