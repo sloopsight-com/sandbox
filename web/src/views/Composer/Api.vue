@@ -1,9 +1,7 @@
 <template>
   <modal :show.sync="state" @close="close">
     <template slot="header">
-      <h5 class="modal-title" id="apiModel">
-        Add New API
-      </h5>
+      <h5 class="modal-title" id="apiModel">Add New API {{ model }}</h5>
     </template>
     <template>
       <form role="form">
@@ -39,10 +37,11 @@
         <v-select
           placeholder="Select Tag"
           style="padding-top:20px"
-          v-model="model.tag"
+          v-model="model.tags"
           label="name"
           value="name"
           :options="tags"
+          multiple
           :reduce="tag => tag.name"
         ></v-select>
 
@@ -50,7 +49,7 @@
           class="form-control form-control-alternative"
           rows="3"
           v-if="model.method === 'post' || model.method === 'put'"
-          v-model="model.requestBody"
+          v-model="model.requestBodyString"
           placeholder="Request Body Info"
         ></textarea>
       </form>
@@ -68,6 +67,24 @@ import "vue-select/dist/vue-select.css";
 export default {
   props: {
     show: Boolean,
+    edit: { type: Boolean, default: false },
+    currentApi: {
+      type: Object,
+      default: () => {
+        {
+          return {
+            requestBody: {},
+            path: "",
+            requestBodyString: {},
+            description: "",
+            tags: ["default"],
+            method: "get",
+            operationId: "",
+            params: []
+          };
+        }
+      }
+    },
     tags: {
       type: Array
     }
@@ -75,6 +92,7 @@ export default {
   computed: {
     validForm() {
       return (
+        !this.model.path.startsWith("/") &&
         this.model.path.length > 0 &&
         this.model.description.length > 5 &&
         this.model.operationId.length > 0
@@ -88,7 +106,13 @@ export default {
     },
     addApi() {
       this.$emit("on-add", this.model);
-      this.state = false;
+      if (this.model.requestBodyString.length > 0) {
+        try {
+          this.model.requestBody = JSON.parse(this.model.requestBodyString);
+        } catch (e) {
+          this.$log.console.error(e);
+        }
+      }
       this.$emit("on-close");
     }
   },
@@ -96,10 +120,11 @@ export default {
   data() {
     return {
       model: {
+        requestBody: {},
         path: "",
-        requestBody: "",
+        requestBodyString: {},
         description: "",
-        tag: "default",
+        tags: ["default"],
         method: "get",
         operationId: "",
         params: []
@@ -110,6 +135,10 @@ export default {
   },
   mounted() {
     this.state = this.show;
+    if (this.edit) {
+      this.model = this.currentApi;
+      this.model.requestBodyString = JSON.stringify(this.model.requestBody);
+    }
   }
 };
 </script>

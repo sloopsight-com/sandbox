@@ -4,31 +4,10 @@
       <!-- Card stats -->
     </base-header>
 
-    <api
-      :tags.sync="selectedTags"
-      v-if="addApi"
-      :show.sync="addApi"
-      @on-close="addApi = false"
-      @on-add="addNewApi"
-    ></api>
-    <api-param
-      v-if="addParam"
-      :show.sync="addParam"
-      :api.sync="currentApi"
-      @on-close="addParam = false"
-      @onSubmit="addParam = false"
-    >
-    </api-param>
-    <params
-      v-if="showParams"
-      :show.sync="showParams"
-      @on-close="showParams = false"
-      :tableData.sync="currentApi.params"
-    ></params>
     <div class="container-fluid mt--7">
       <div class="row">
         <div class="col-xl-12 order-xl-1">
-          <card shadow type="secondary" style="height:600px;overflow:scroll">
+          <card shadow type="secondary" class="o_card">
             <div slot="header" class="bg-white border-0">
               <div class="row align-items-center">
                 <div class="col-8">
@@ -38,7 +17,6 @@
                 </div>
               </div>
             </div>
-            <api></api>
 
             <template>
               <base-alert v-show="error" dismissible type="danger">{{
@@ -47,7 +25,7 @@
 
               <form @submit.prevent>
                 <h6 class="heading-small text-muted mb-4">
-                  Project information
+                  Project information {{ apisData }}
                 </h6>
                 <div class="pl-lg-4">
                   <div class="row">
@@ -128,15 +106,40 @@
                   <div class="row">
                     <div class="col-lg-6">
                       <apis
-                        @onCreateApi="addApi = true"
+                        @onCreateApi="addNewApi"
                         @onCreateParam="createNewParam"
                         :tableData.sync="apisData"
                         @show-params="viewParams"
+                        @on-edit="openApiForEdit"
                       ></apis>
                     </div>
                   </div>
                 </div>
 
+                <api
+                  :tags.sync="selectedTags"
+                  v-if="addApi"
+                  :show.sync="addApi"
+                  :currentApi="currentApi"
+                  :edit="editApiPopUp"
+                  @on-close="addApi = false"
+                  @on-edit="editApiParam"
+                  @on-add="updateExistingApi"
+                ></api>
+                <api-param
+                  v-if="addParam"
+                  :show.sync="addParam"
+                  :api.sync="currentApi"
+                  @on-close="addParam = false"
+                  @onSubmit="addParam = false"
+                >
+                </api-param>
+                <params
+                  v-if="showParams"
+                  :show.sync="showParams"
+                  @on-close="showParams = false"
+                  :tableData.sync="currentApi.params"
+                ></params>
                 <div class="row">
                   <div class="col text-right">
                     <base-button
@@ -169,6 +172,7 @@ export default {
   name: "user-profile",
   data() {
     return {
+      editApiPopUp: false,
       apiSpec: { paths: {} },
       showParams: false,
       currentApi: {},
@@ -199,6 +203,18 @@ export default {
       this.currentApi = item;
       this.addParam = true;
     },
+    editApiParam(item) {
+      this.currentApi = item;
+    },
+    addNewApi() {
+      this.addApi = true;
+      this.editApiPopUp = false;
+    },
+    openApiForEdit(item) {
+      this.currentApi = item;
+      this.addApi = true;
+      this.editApiPopUp = true;
+    },
     checkForm() {
       if (this.model.name && this.model.openApiSpec) {
         return true;
@@ -216,8 +232,15 @@ export default {
       this.currentApi = api;
       this.showParams = true;
     },
-    addNewApi(apiObject) {
-      this.apisData.push(apiObject);
+    updateExistingApi(item) {
+      let indexToDelete = this.apisData.findIndex(
+        tableRow =>
+          tableRow.path === item.path && tableRow.method === item.method
+      );
+      if (indexToDelete >= 0) {
+        this.apisData.splice(indexToDelete, 1);
+      }
+      this.apisData.push(item);
     },
     prepareSpec() {
       this.apiSpec.info.title = this.model.name;
@@ -226,15 +249,27 @@ export default {
       this.apiSpec.paths = {};
       for (let i = 0; i < this.apisData.length; i++) {
         let apiData = this.apisData[i];
+
         this.apiSpec.paths[apiData.path] = {};
 
-        this.apiSpec.paths[apiData.path][apiData.method] = {
-          tags: [apiData.tag],
-          summary: "",
-          description: apiData.description,
-          operationId: apiData.operationId,
-          parameters: apiData.params
-        };
+        if (apiData.method == "post" || apiData.method == "put") {
+          this.apiSpec.paths[apiData.path][apiData.method] = {
+            tags: apiData.tags,
+            summary: "",
+            description: apiData.description,
+            operationId: apiData.operationId,
+            parameters: apiData.params,
+            requestBody: apiData.requestBody
+          };
+        } else {
+          this.apiSpec.paths[apiData.path][apiData.method] = {
+            tags: apiData.tags,
+            summary: "",
+            description: apiData.description,
+            operationId: apiData.operationId,
+            parameters: apiData.params
+          };
+        }
       }
     },
     addTag() {
@@ -255,11 +290,11 @@ export default {
           this.tags.push({ name: tag.value, description: "" });
         });
     },
-
     saveProject() {
       if (this.checkForm()) {
-        var projectPromise = null;
         this.prepareSpec();
+
+        var projectPromise = null;
         const loader = this.$loading.show({ loader: "bars", color: "#2dce89" });
         if (this.$route.params.id) {
           projectPromise = ProjectService.update(
@@ -316,17 +351,16 @@ export default {
           let data = this.apisData;
           this.tags = apiSpec.tags;
           this.selectedTags = apiSpec.tags;
+          //  const log = this.$log;
           Object.keys(apiSpec.paths).forEach(function(path) {
             let pathObject = apiSpec.paths[path];
             Object.keys(pathObject).forEach(function(m) {
               let method = pathObject[m];
+
               let params = [];
               if (method.parameters) {
                 for (let i = 0; i < method.parameters.length; i++) {
                   let parameter = method.parameters[i];
-                  if (parameter.schema.length > 0) {
-                    parameter.schema = JSON.parse(parameter.schema);
-                  }
                   params.push(parameter);
                 }
               }
@@ -337,6 +371,8 @@ export default {
                 tags: method.tags,
                 description: method.description,
                 operationId: method.operationId,
+                requestBodyString: JSON.stringify(method.requestBody),
+                requestBody: method.requestBody,
                 params: params
               });
             });
@@ -372,4 +408,9 @@ export default {
   }
 };
 </script>
-<style></style>
+<style>
+.o_card .card-body {
+  max-height: 600px;
+  overflow: auto;
+}
+</style>

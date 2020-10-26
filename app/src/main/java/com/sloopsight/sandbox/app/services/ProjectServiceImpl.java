@@ -242,7 +242,7 @@ public class ProjectServiceImpl implements ProjectService {
     public Optional<JsonNode> getDocs(Long projectId) {
         return projectRepository.findById(projectId).map(p -> {
 
-            String url = "camel/exec/" + projectId;
+            String url = "camel/exec/" + projectId+"/";
             JsonNode json = mapper.readTree(p.getOpenApiSpec());
             if (json.has("servers") && json.get("servers").size() > 0) {
                 JsonNode node = json.get("servers").get(0);

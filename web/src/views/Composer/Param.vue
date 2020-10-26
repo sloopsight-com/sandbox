@@ -39,7 +39,7 @@
           <textarea
             class="form-control form-control-alternative"
             rows="3"
-            v-model="model.schema"
+            v-model="model.schemaString"
             placeholder="Write a schema Json"
           ></textarea>
         </form>
@@ -63,6 +63,9 @@ export default {
   components: { vSelect },
   methods: {
     onSubmit() {
+      if (this.model.schemaString.length > 0) {
+        this.model.schema = JSON.parse(this.model.schemaString);
+      }
       this.api.params.push(this.model);
       this.$emit("onSubmit", this.model);
       this.state = false;
@@ -80,6 +83,7 @@ export default {
 
   mounted() {
     this.state = this.show;
+    this.model.requestBodyString = JSON.stringify(this.model.requestBody);
   },
   data() {
     return {
@@ -89,7 +93,8 @@ export default {
         description: "",
         required: false,
         type: "query",
-        schema: ""
+        schemaString: "",
+        schema: {}
       },
       types: ["query", "path"]
     };

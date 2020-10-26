@@ -74,6 +74,8 @@ public class ApiExecutor extends RouteBuilder {
                             bindings.put("res", response);
                             bindings.put("web", new LogicHelper(exchange, projectParam, context));
                             bindings.put("localDb", new LocalDb(projectId));
+                            bindings.put("http", new Rest());
+
                             executor.execute(request, response, endpoint.getLogic(), bindings);
                             return;
                         }

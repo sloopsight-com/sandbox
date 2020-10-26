@@ -71,6 +71,7 @@
                 <a class="dropdown-item" @click.prevent="deleteApi(row)"
                   >Delete</a
                 >
+                <a class="dropdown-item" @click.prevent="editApi(row)">Edit</a>
                 <a class="dropdown-item" @click.prevent="onCreateParam(row)"
                   >Add Param</a
                 >
@@ -98,6 +99,10 @@ export default {
     };
   },
   methods: {
+    editApi(item) {
+      this.$emit("on-edit", item);
+      this.$emit("on-close");
+    },
     createNew() {},
     showParams(api) {
       this.$emit("show-params", api);
