@@ -260,6 +260,7 @@ export default {
       if (this.checkForm()) {
         var projectPromise = null;
         this.prepareSpec();
+        const loader = this.$loading.show({ loader: "bars", color: "#2dce89" });
         if (this.$route.params.id) {
           projectPromise = ProjectService.update(
             this.$route.params.id,
@@ -285,9 +286,11 @@ export default {
               type: "success",
               icon: "fa fa-info"
             });
+            loader.hide();
             this.$router.push("/projects");
           })
           .catch(error => {
+            loader.hide();
             this.error = true;
             if (error.response) {
               this.error_message = "Please check your OpenApi Json";

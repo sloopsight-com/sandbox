@@ -60,6 +60,8 @@ export default {
   },
   methods: {
     callLogin() {
+      const loader = this.$loading.show({ loader: "bars", color: "#2dce89" });
+
       this.error = false;
       this.$store
         .dispatch("login", {
@@ -68,11 +70,13 @@ export default {
         })
         .then(response => {
           ability.update(response.data.roles, this.$ability);
+          loader.hide();
           this.$router.push("/dashboard");
         })
         .catch(error => {
           this.error = true;
           this.error_message = error;
+          loader.hide();
         });
     }
   }
