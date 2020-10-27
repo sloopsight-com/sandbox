@@ -1,7 +1,7 @@
 <template>
   <modal :show.sync="state" @close="close">
     <template slot="header">
-      <h5 class="modal-title" id="apiModel">Add New API {{ model }}</h5>
+      <h5 class="modal-title" id="apiModel">Add New API</h5>
     </template>
     <template>
       <form role="form">

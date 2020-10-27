@@ -122,26 +122,26 @@ public class Rest {
 
     }
 
-    @MethodHint(name = "get", comment = "Execute GET API reply : ({headers:{},object:{},code:200})")
+    @MethodHint(name = "get", comment = "Execute GET API response : ({headers:{},object:{},code:200})")
     public String get(@ParamHint(value = "endpoint") String url, @ParamHint("{params:{},headers:{}}") Object jo)
             throws JsonProcessingException {
         return nonData(url, jo, HttpMethod.GET);
     }
 
-    @MethodHint(name = "delete", comment = "Execute DELETE API reply : ({headers:{},object:{},code:200})")
+    @MethodHint(name = "delete", comment = "Execute DELETE API response : ({headers:{},object:{},code:200})")
     public String delete(@ParamHint(value = "endpoint") String url, @ParamHint("{params:{},headers:{}}") Object jo)
             throws JsonProcessingException {
         return nonData(url, jo, HttpMethod.DELETE);
     }
 
-    @MethodHint(name = "put", comment = "Execute PUT API reply : ({headers:{},object:{},code:200})")
+    @MethodHint(name = "put", comment = "Execute PUT API response : ({headers:{},object:{},code:200})")
     public String put(@ParamHint(value = "endpoint") String url, @ParamHint("{params:{},headers:{}}") Object jo)
             throws JsonProcessingException {
         return withData(url, jo, HttpMethod.PUT);
     }
 
-    @MethodHint(name = "post", comment = "Execute POST API reply : ({headers:{},object:{},code:200})")
-    public String post(@ParamHint(value = "endpoint") String url, @ParamHint("{params:{},headers:{},body:{}") Object jo)
+    @MethodHint(name = "post", comment = "Execute POST API response : ({headers:{},object:{},code:200})")
+    public String post(@ParamHint(value = "endpoint") String url, @ParamHint("{params:{},headers:{},body:{}}") Object jo)
             throws JsonProcessingException {
 
         return withData(url, jo, HttpMethod.POST);

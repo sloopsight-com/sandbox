@@ -7,7 +7,7 @@
     <div class="container-fluid mt--7">
       <div class="row">
         <div class="col-xl-12 order-xl-1">
-          <card shadow type="secondary" class="o_card">
+          <card shadow type="secondary">
             <div slot="header" class="bg-white border-0">
               <div class="row align-items-center">
                 <div class="col-8">
@@ -25,7 +25,7 @@
 
               <form @submit.prevent>
                 <h6 class="heading-small text-muted mb-4">
-                  Project information {{ apisData }}
+                  Project information
                 </h6>
                 <div class="pl-lg-4">
                   <div class="row">
@@ -408,9 +408,4 @@ export default {
   }
 };
 </script>
-<style>
-.o_card .card-body {
-  max-height: 600px;
-  overflow: auto;
-}
-</style>
+<style></style>
