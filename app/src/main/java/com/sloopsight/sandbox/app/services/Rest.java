@@ -64,7 +64,7 @@ public class Rest {
         Result result = new Result();
 
         try {
-            ResponseEntity<Object> response = restTemplate.exchange(url, HttpMethod.GET, entity, Object.class, params);
+            ResponseEntity<Object> response = restTemplate.exchange(url, httpMethod, entity, Object.class, params);
 
             result.headers = response.getHeaders();
             result.object = response.getBody();
@@ -106,7 +106,7 @@ public class Rest {
         Result result = new Result();
 
         try {
-            ResponseEntity<Object> response = restTemplate.exchange(url, HttpMethod.GET, entity, Object.class, params);
+            ResponseEntity<Object> response = restTemplate.exchange(url, httpMethod, entity, Object.class, params);
 
             result.headers = response.getHeaders();
             result.object = response.getBody();
