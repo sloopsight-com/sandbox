@@ -103,7 +103,7 @@ export default {
         name: "",
         description: "",
         required: false,
-        type: "query",
+        in: "query",
         style: "form",
         schema: { type: "string" },
         schemaString: ""

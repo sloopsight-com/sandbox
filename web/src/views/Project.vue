@@ -184,6 +184,17 @@ export default {
       error: null,
       error_message: null,
       selectedTags: ["default"],
+      defaultResponses: {
+        "200": {
+          description: "Request accepted successfully!"
+        },
+        "400": {
+          description: "bad input parameter"
+        },
+        "500": {
+          description: "Internal server error"
+        }
+      },
       model: {
         name: "",
         openApiSpec: "",
@@ -255,19 +266,21 @@ export default {
         if (apiData.method == "post" || apiData.method == "put") {
           this.apiSpec.paths[apiData.path][apiData.method] = {
             tags: apiData.tags,
-            summary: "",
+            summary: apiData.description,
             description: apiData.description,
             operationId: apiData.operationId,
             parameters: apiData.params,
-            requestBody: apiData.requestBody
+            requestBody: apiData.requestBody,
+            responses: this.defaultResponses
           };
         } else {
           this.apiSpec.paths[apiData.path][apiData.method] = {
             tags: apiData.tags,
-            summary: "",
+            summary: apiData.description,
             description: apiData.description,
             operationId: apiData.operationId,
-            parameters: apiData.params
+            parameters: apiData.params,
+            responses: this.defaultResponses
           };
         }
       }
