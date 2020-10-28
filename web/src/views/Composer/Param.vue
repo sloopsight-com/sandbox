@@ -63,16 +63,26 @@ export default {
   components: { vSelect },
   methods: {
     onSubmit() {
-      if (this.model.schemaString.length > 0) {
+      if (this.isJsonString(this.model.schemaString)) {
         this.model.schema = JSON.parse(this.model.schemaString);
+      } else {
+        this.model.schema = { type: "string" };
       }
-      this.api.params.push(this.model);
       this.$emit("onSubmit", this.model);
+      this.api.params.push(this.model);
       this.state = false;
     },
     closePopUp() {
       this.$emit("on-close");
       this.state = false;
+    },
+    isJsonString(str) {
+      try {
+        JSON.parse(str);
+      } catch (e) {
+        return false;
+      }
+      return true;
     }
   },
   computed: {
@@ -84,6 +94,7 @@ export default {
   mounted() {
     this.state = this.show;
     this.model.requestBodyString = JSON.stringify(this.model.requestBody);
+    this.model.schema = JSON.stringify(this.model.schemaString);
   },
   data() {
     return {
@@ -93,8 +104,9 @@ export default {
         description: "",
         required: false,
         type: "query",
-        schemaString: "",
-        schema: {}
+        style: "form",
+        schema: { type: "string" },
+        schemaString: ""
       },
       types: ["query", "path"]
     };
