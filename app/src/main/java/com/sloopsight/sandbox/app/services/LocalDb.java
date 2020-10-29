@@ -7,18 +7,18 @@ import com.sloopsight.sandbox.app.meta.Intellisense;
 import com.sloopsight.sandbox.app.meta.MethodHint;
 import com.sloopsight.sandbox.app.meta.ParamHint;
 
-import net.sf.ehcache.Cache;
 import net.sf.ehcache.CacheManager;
+import net.sf.ehcache.Ehcache;
 import net.sf.ehcache.Element;
 
 @Intellisense("localDb")
 public class LocalDb {
     private static final CacheManager cacheManager = CacheManager.create();
-    private Cache cache;
+    private Ehcache cache;
 
     public LocalDb(Long project) {
-        this.cache = cacheManager.getCache("project_" + project);
-    }
+        this.cache = cacheManager.addCacheIfAbsent("project_" + project);
+      }
 
     @MethodHint(name = "set", comment = "set value to key with TTL in Seconds")
     public void set(@ParamHint("key") String key, @ParamHint("value as object") Object value,
