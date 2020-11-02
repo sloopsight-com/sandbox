@@ -1,26 +1,26 @@
-2020-10-29 17:46:27,363 INFO org.springframework.boot.StartupInfoLogger [main] Starting Bootstrap on subhanshu-pc with PID 23476 (C:\Users\subhanshu\git\repository\sandbox\app\target\classes started by subhanshu in C:\Users\subhanshu\git\repository\sandbox\app)
-2020-10-29 17:46:27,368 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.3.1.RELEASE, Spring v5.2.7.RELEASE
-2020-10-29 17:46:27,368 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: dev
-2020-10-29 17:46:28,396 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2020-10-29 17:46:28,486 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 78ms. Found 6 JPA repository interfaces.
-2020-10-29 17:46:29,464 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@3901f6af' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-10-29 17:46:29,471 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-10-29 17:46:29,477 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'org.apache.camel.spring.boot.CamelAutoConfiguration' of type [org.apache.camel.spring.boot.CamelAutoConfiguration$$EnhancerBySpringCGLIB$$686cb9de] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-10-29 17:46:30,259 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8081 (http)
-2020-10-29 17:46:30,270 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8081"]
-2020-10-29 17:46:30,270 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
-2020-10-29 17:46:30,271 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.36]
-2020-10-29 17:46:30,395 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
-2020-10-29 17:46:30,395 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 2953 ms
-2020-10-29 17:46:30,611 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
-2020-10-29 17:46:30,701 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.4.17.Final
-2020-10-29 17:46:30,920 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-2020-10-29 17:46:31,084 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
-2020-10-29 17:46:31,275 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
-2020-10-29 17:46:31,305 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL57InnoDBDialect
-2020-10-29 17:46:31,562 WARN com.vladmihalcea.hibernate.type.util.Configuration [main] You should use Hypersistence Optimizer to speed up your Hibernate application!
-2020-10-29 17:46:31,562 WARN com.vladmihalcea.hibernate.type.util.Configuration [main] For more details, go to https://vladmihalcea.com/hypersistence-optimizer/
-2020-10-29 17:46:31,563 INFO com.vladmihalcea.hibernate.type.util.Configuration [main] 
+2020-11-02 16:26:53,745 INFO org.springframework.boot.StartupInfoLogger [main] Starting Bootstrap on subhanshu-pc with PID 14772 (C:\Users\subhanshu\git\repository\sandbox\app\target\classes started by subhanshu in C:\Users\subhanshu\git\repository\sandbox\app)
+2020-11-02 16:26:53,749 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.3.1.RELEASE, Spring v5.2.7.RELEASE
+2020-11-02 16:26:53,750 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: dev
+2020-11-02 16:26:54,609 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-11-02 16:26:54,678 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 60ms. Found 6 JPA repository interfaces.
+2020-11-02 16:26:55,597 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@7efe7b87' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-02 16:26:55,605 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-02 16:26:55,612 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'org.apache.camel.spring.boot.CamelAutoConfiguration' of type [org.apache.camel.spring.boot.CamelAutoConfiguration$$EnhancerBySpringCGLIB$$d7c3efdd] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-02 16:26:56,360 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8081 (http)
+2020-11-02 16:26:56,370 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8081"]
+2020-11-02 16:26:56,370 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2020-11-02 16:26:56,370 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.36]
+2020-11-02 16:26:56,494 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2020-11-02 16:26:56,494 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 2683 ms
+2020-11-02 16:26:56,707 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-11-02 16:26:56,774 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.4.17.Final
+2020-11-02 16:26:56,942 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-11-02 16:26:57,066 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2020-11-02 16:26:57,246 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2020-11-02 16:26:57,266 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL57InnoDBDialect
+2020-11-02 16:26:57,496 WARN com.vladmihalcea.hibernate.type.util.Configuration [main] You should use Hypersistence Optimizer to speed up your Hibernate application!
+2020-11-02 16:26:57,497 WARN com.vladmihalcea.hibernate.type.util.Configuration [main] For more details, go to https://vladmihalcea.com/hypersistence-optimizer/
+2020-11-02 16:26:57,498 INFO com.vladmihalcea.hibernate.type.util.Configuration [main] 
  _    _                           _     _
 | |  | |                         (_)   | |
 | |__| |_   _ _ __   ___ _ __ ___ _ ___| |_ ___ _ __   ___ ___
@@ -39,238 +39,69 @@
                 | |
                 |_|
 
-2020-10-29 17:46:31,564 INFO com.vladmihalcea.hibernate.type.util.Configuration [main] Check out the README page for more info about the Hypersistence Optimizer banner https://github.com/vladmihalcea/hibernate-types#how-to-remove-the-hypersistence-optimizer-banner-from-the-log
-2020-10-29 17:46:31,643 WARN org.hibernate.mapping.RootClass [main] HHH000038: Composite-id class does not override equals(): com.sloopsight.sandbox.app.entity.MemberShipKey
-2020-10-29 17:46:31,644 WARN org.hibernate.mapping.RootClass [main] HHH000039: Composite-id class does not override hashCode(): com.sloopsight.sandbox.app.entity.MemberShipKey
-2020-10-29 17:46:32,471 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2020-10-29 17:46:32,480 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
-2020-10-29 17:46:33,382 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2020-10-29 17:46:33,464 INFO org.springframework.boot.web.servlet.DynamicRegistrationBean [main] Servlet CamelServlet was not registered (possibly already registered?)
-2020-10-29 17:46:33,491 DEBUG org.springframework.web.filter.GenericFilterBean [main] Filter 'authenticationJwtTokenFilter' configured for use
-2020-10-29 17:46:33,567 INFO org.springframework.ldap.core.support.AbstractContextSource [main] Property 'userDn' not set - anonymous context will be used for read-write operations
-2020-10-29 17:46:34,021 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMethodMapping [main] 31 mappings in 'requestMappingHandlerMapping'
-2020-10-29 17:46:34,636 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7744195, org.springframework.security.web.context.SecurityContextPersistenceFilter@11c25846, org.springframework.security.web.header.HeaderWriterFilter@20155dae, org.springframework.web.filter.CorsFilter@77f529a6, org.springframework.security.web.authentication.logout.LogoutFilter@13c18bba, com.sloopsight.sandbox.app.config.AuthTokenFilter@174b8d0e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6cb662e8, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@52a75c12, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7d47b021, org.springframework.security.web.session.SessionManagementFilter@b842275, org.springframework.security.web.access.ExceptionTranslationFilter@7e2a76be, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@3700994c]
-2020-10-29 17:46:34,696 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
-2020-10-29 17:46:34,709 DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter [main] ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-2020-10-29 17:46:34,758 DEBUG org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver [main] ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
-2020-10-29 17:46:34,985 INFO org.apache.camel.impl.converter.DefaultTypeConverter [main] Type converters loaded (core: 195, classpath: 7)
-2020-10-29 17:46:35,303 INFO org.springframework.ldap.core.support.AbstractContextSource [main] Property 'userDn' not set - anonymous context will be used for read-write operations
-2020-10-29 17:46:35,367 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8081"]
-2020-10-29 17:46:35,391 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8081 (http) with context path '/app'
-2020-10-29 17:46:35,445 INFO org.apache.camel.spring.boot.RoutesCollector [main] Loading additional Camel XML routes from: classpath:camel/*.xml
-2020-10-29 17:46:35,445 INFO org.apache.camel.spring.boot.RoutesCollector [main] Loading additional Camel XML rests from: classpath:camel-rest/*.xml
-2020-10-29 17:46:35,453 INFO org.apache.camel.impl.DefaultCamelContext [main] Apache Camel 2.25.1 (CamelContext: camel-1) is starting
-2020-10-29 17:46:35,454 INFO org.apache.camel.management.ManagedManagementStrategy [main] JMX is enabled
-2020-10-29 17:46:35,694 INFO org.apache.camel.impl.DefaultCamelContext [main] StreamCaching is not in use. If using streams then its recommended to enable stream caching. See more details at http://camel.apache.org/stream-caching.html
-2020-10-29 17:46:35,741 INFO org.apache.camel.impl.DefaultCamelContext [main] Route: route1 started and consuming from: servlet:/exec?matchOnUriPrefix=true
-2020-10-29 17:46:35,741 INFO org.apache.camel.impl.DefaultCamelContext [main] Total 1 routes, of which 1 are started
-2020-10-29 17:46:35,742 INFO org.apache.camel.impl.DefaultCamelContext [main] Apache Camel 2.25.1 (CamelContext: camel-1) started in 0.288 seconds
-2020-10-29 17:46:35,745 INFO org.springframework.boot.StartupInfoLogger [main] Started Bootstrap in 8.884 seconds (JVM running for 9.412)
-2020-10-29 17:50:06,513 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8081-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
-2020-10-29 17:50:06,513 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8081-exec-1] Initializing Servlet 'dispatcherServlet'
-2020-10-29 17:50:06,521 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8081-exec-1] Completed initialization in 8 ms
-2020-10-29 17:50:06,545 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-1] Mapped to com.sloopsight.sandbox.app.controller.AuthController#authenticateUser(LoginRequest)
-2020-10-29 17:50:06,572 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-1] Mapped to com.sloopsight.sandbox.app.controller.AuthController#authenticateUser(LoginRequest)
-2020-10-29 17:50:06,628 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8081-exec-1] Read "application/json;charset=utf-8" to [com.sloopsight.sandbox.app.dto.request.LoginRequest@11e1243f]
-2020-10-29 17:50:09,182 ERROR com.sloopsight.sandbox.app.util.LdapContext [http-nio-8081-exec-1] inmg01:636; nested exception is javax.naming.CommunicationException: inmg01:636 [Root exception is java.net.ConnectException: Connection refused: connect]
-2020-10-29 17:50:09,208 DEBUG org.springframework.security.authentication.dao.DaoAuthenticationProvider [http-nio-8081-exec-1] Authentication failed: password does not match stored value
-2020-10-29 17:50:09,293 DEBUG org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor [http-nio-8081-exec-1] Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
-2020-10-29 17:50:09,293 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8081-exec-1] Writing [com.sloopsight.sandbox.app.dto.response.JwtResponse@283206e0]
-2020-10-29 17:50:09,319 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-2] Mapped to com.sloopsight.sandbox.app.controller.AuthController#isLoggedId()
-2020-10-29 17:50:09,324 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-3] Mapped to com.sloopsight.sandbox.app.controller.AuthController#isLoggedId()
-2020-10-29 17:50:09,378 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-3] Mapped to com.sloopsight.sandbox.app.controller.AuthController#isLoggedId()
-2020-10-29 17:50:09,378 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-2] Mapped to com.sloopsight.sandbox.app.controller.AuthController#isLoggedId()
-2020-10-29 17:50:09,395 DEBUG org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor [http-nio-8081-exec-2] Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
-2020-10-29 17:50:09,395 DEBUG org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor [http-nio-8081-exec-3] Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
-2020-10-29 17:50:09,396 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8081-exec-3] Writing [com.sloopsight.sandbox.app.services.UserDetailsImpl@172f4e9f]
-2020-10-29 17:50:09,396 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8081-exec-2] Writing [com.sloopsight.sandbox.app.services.UserDetailsImpl@181cc1f8]
-2020-10-29 17:50:15,710 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-4] Mapped to com.sloopsight.sandbox.app.controller.AuthController#isLoggedId()
-2020-10-29 17:50:15,718 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-4] Mapped to com.sloopsight.sandbox.app.controller.AuthController#isLoggedId()
-2020-10-29 17:50:15,719 DEBUG org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor [http-nio-8081-exec-4] Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
-2020-10-29 17:50:15,720 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8081-exec-4] Writing [com.sloopsight.sandbox.app.services.UserDetailsImpl@5662ea5a]
-2020-10-29 17:50:15,978 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-5] Mapped to com.sloopsight.sandbox.app.controller.ProjectController#projects(int, int)
-2020-10-29 17:50:15,984 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-5] Mapped to com.sloopsight.sandbox.app.controller.ProjectController#projects(int, int)
-2020-10-29 17:50:16,021 DEBUG org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor [http-nio-8081-exec-5] Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
-2020-10-29 17:50:16,022 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8081-exec-5] Writing [Page 1 of 1 containing com.sloopsight.sandbox.app.entity.Project instances]
-2020-10-29 17:50:16,050 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-6] Mapped to com.sloopsight.sandbox.app.controller.ProjectController#projects(int, int)
-2020-10-29 17:50:16,057 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-6] Mapped to com.sloopsight.sandbox.app.controller.ProjectController#projects(int, int)
-2020-10-29 17:50:16,060 DEBUG org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor [http-nio-8081-exec-6] Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
-2020-10-29 17:50:16,061 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8081-exec-6] Writing [Page 1 of 1 containing com.sloopsight.sandbox.app.entity.Project instances]
-2020-10-29 17:50:18,497 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-7] Mapped to com.sloopsight.sandbox.app.controller.AuthController#isLoggedId()
-2020-10-29 17:50:18,506 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-7] Mapped to com.sloopsight.sandbox.app.controller.AuthController#isLoggedId()
-2020-10-29 17:50:18,507 DEBUG org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor [http-nio-8081-exec-7] Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
-2020-10-29 17:50:18,508 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8081-exec-7] Writing [com.sloopsight.sandbox.app.services.UserDetailsImpl@499916db]
-2020-10-29 17:50:18,750 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-8] Mapped to com.sloopsight.sandbox.app.controller.ProjectController#endpoints(Long, int, int)
-2020-10-29 17:50:18,756 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-8] Mapped to com.sloopsight.sandbox.app.controller.ProjectController#endpoints(Long, int, int)
-2020-10-29 17:50:18,767 DEBUG org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor [http-nio-8081-exec-8] Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
-2020-10-29 17:50:18,768 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8081-exec-8] Writing [Page 1 of 1 containing com.sloopsight.sandbox.app.entity.Endpoint instances]
-2020-10-29 17:50:18,785 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-9] Mapped to com.sloopsight.sandbox.app.controller.ProjectController#endpoints(Long, int, int)
-2020-10-29 17:50:18,792 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-9] Mapped to com.sloopsight.sandbox.app.controller.ProjectController#endpoints(Long, int, int)
-2020-10-29 17:50:18,796 DEBUG org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor [http-nio-8081-exec-9] Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
-2020-10-29 17:50:18,797 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8081-exec-9] Writing [Page 1 of 1 containing com.sloopsight.sandbox.app.entity.Endpoint instances]
-2020-10-29 17:50:21,809 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-10] Mapped to com.sloopsight.sandbox.app.controller.AuthController#isLoggedId()
-2020-10-29 17:50:21,818 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-10] Mapped to com.sloopsight.sandbox.app.controller.AuthController#isLoggedId()
-2020-10-29 17:50:21,819 DEBUG org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor [http-nio-8081-exec-10] Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
-2020-10-29 17:50:21,820 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8081-exec-10] Writing [com.sloopsight.sandbox.app.services.UserDetailsImpl@65ed666c]
-2020-10-29 17:50:22,109 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-1] Mapped to com.sloopsight.sandbox.app.controller.HintController#hint()
-2020-10-29 17:50:22,110 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-3] Mapped to com.sloopsight.sandbox.app.controller.EndpointController#findOne(Long)
-2020-10-29 17:50:22,115 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-1] Mapped to com.sloopsight.sandbox.app.controller.HintController#hint()
-2020-10-29 17:50:22,115 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-3] Mapped to com.sloopsight.sandbox.app.controller.EndpointController#findOne(Long)
-2020-10-29 17:50:22,127 DEBUG org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor [http-nio-8081-exec-3] Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
-2020-10-29 17:50:22,128 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8081-exec-3] Writing [com.sloopsight.sandbox.app.entity.Endpoint@3a]
-2020-10-29 17:50:22,376 INFO org.reflections.Reflections [http-nio-8081-exec-1] Reflections took 243 ms to scan 128 urls, producing 10 keys and 19 values 
-2020-10-29 17:50:22,389 DEBUG org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor [http-nio-8081-exec-1] Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
-2020-10-29 17:50:22,390 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8081-exec-1] Writing [[web.path(/*Path Variable Name*/); //Get Value of path variable, web.bearer(); //Get Bearer Value, w (truncated)...]
-2020-10-29 17:50:23,695 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-2] Mapped to com.sloopsight.sandbox.app.controller.AuthController#isLoggedId()
-2020-10-29 17:50:23,704 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-2] Mapped to com.sloopsight.sandbox.app.controller.AuthController#isLoggedId()
-2020-10-29 17:50:23,706 DEBUG org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor [http-nio-8081-exec-2] Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
-2020-10-29 17:50:23,706 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8081-exec-2] Writing [com.sloopsight.sandbox.app.services.UserDetailsImpl@2a72bf5f]
-2020-10-29 17:50:23,948 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-4] Mapped to com.sloopsight.sandbox.app.controller.ProjectController#projects(int, int)
-2020-10-29 17:50:23,957 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-4] Mapped to com.sloopsight.sandbox.app.controller.ProjectController#projects(int, int)
-2020-10-29 17:50:23,961 DEBUG org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor [http-nio-8081-exec-4] Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
-2020-10-29 17:50:23,961 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8081-exec-4] Writing [Page 1 of 1 containing com.sloopsight.sandbox.app.entity.Project instances]
-2020-10-29 17:50:23,980 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-5] Mapped to com.sloopsight.sandbox.app.controller.ProjectController#projects(int, int)
-2020-10-29 17:50:23,986 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-5] Mapped to com.sloopsight.sandbox.app.controller.ProjectController#projects(int, int)
-2020-10-29 17:50:23,993 DEBUG org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor [http-nio-8081-exec-5] Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
-2020-10-29 17:50:23,994 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8081-exec-5] Writing [Page 1 of 1 containing com.sloopsight.sandbox.app.entity.Project instances]
-2020-10-29 17:50:25,812 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-6] Mapped to com.sloopsight.sandbox.app.controller.AuthController#isLoggedId()
-2020-10-29 17:50:25,818 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-6] Mapped to com.sloopsight.sandbox.app.controller.AuthController#isLoggedId()
-2020-10-29 17:50:25,820 DEBUG org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor [http-nio-8081-exec-6] Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
-2020-10-29 17:50:25,820 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8081-exec-6] Writing [com.sloopsight.sandbox.app.services.UserDetailsImpl@2d25f7b]
-2020-10-29 17:50:26,095 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-7] Mapped to com.sloopsight.sandbox.app.controller.ProjectController#findOne(Long)
-2020-10-29 17:50:26,096 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-9] Mapped to com.sloopsight.sandbox.app.controller.ProjectController#findAvailableMembers(Long)
-2020-10-29 17:50:26,095 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-8] Mapped to com.sloopsight.sandbox.app.controller.ProjectController#findExistingMembers(Long)
-2020-10-29 17:50:26,101 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-7] Mapped to com.sloopsight.sandbox.app.controller.ProjectController#findOne(Long)
-2020-10-29 17:50:26,101 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-9] Mapped to com.sloopsight.sandbox.app.controller.ProjectController#findAvailableMembers(Long)
-2020-10-29 17:50:26,101 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-8] Mapped to com.sloopsight.sandbox.app.controller.ProjectController#findExistingMembers(Long)
-2020-10-29 17:50:26,107 DEBUG org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor [http-nio-8081-exec-7] Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
-2020-10-29 17:50:26,107 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8081-exec-7] Writing [com.sloopsight.sandbox.app.entity.Project@2e31d673]
-2020-10-29 17:50:26,118 DEBUG org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor [http-nio-8081-exec-8] Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
-2020-10-29 17:50:26,119 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8081-exec-8] Writing [[com.sloopsight.sandbox.app.dto.response.Member@eb21241]]
-2020-10-29 17:50:26,128 DEBUG org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor [http-nio-8081-exec-9] Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
-2020-10-29 17:50:26,129 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8081-exec-9] Writing [[com.sloopsight.sandbox.app.dto.response.Member@739fae9c, com.sloopsight.sandbox.app.dto.response.Me (truncated)...]
-2020-10-29 17:51:42,399 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-10] Mapped to com.sloopsight.sandbox.app.controller.ProjectController#update(Long, ProjectRequest)
-2020-10-29 17:51:42,404 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-10] Mapped to com.sloopsight.sandbox.app.controller.ProjectController#update(Long, ProjectRequest)
-2020-10-29 17:51:42,408 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8081-exec-10] Read "application/json;charset=utf-8" to [com.sloopsight.sandbox.app.dto.request.ProjectRequest@7b9ddb21]
-2020-10-29 17:51:42,522 DEBUG org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor [http-nio-8081-exec-10] Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
-2020-10-29 17:51:42,523 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8081-exec-10] Writing [com.sloopsight.sandbox.app.entity.Project@da92f07]
-2020-10-29 17:51:42,539 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-3] Mapped to com.sloopsight.sandbox.app.controller.AuthController#isLoggedId()
-2020-10-29 17:51:42,544 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-3] Mapped to com.sloopsight.sandbox.app.controller.AuthController#isLoggedId()
-2020-10-29 17:51:42,545 DEBUG org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor [http-nio-8081-exec-3] Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
-2020-10-29 17:51:42,546 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8081-exec-3] Writing [com.sloopsight.sandbox.app.services.UserDetailsImpl@16308fe1]
-2020-10-29 17:51:42,798 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-1] Mapped to com.sloopsight.sandbox.app.controller.ProjectController#projects(int, int)
-2020-10-29 17:51:42,805 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-1] Mapped to com.sloopsight.sandbox.app.controller.ProjectController#projects(int, int)
-2020-10-29 17:51:42,808 DEBUG org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor [http-nio-8081-exec-1] Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
-2020-10-29 17:51:42,808 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8081-exec-1] Writing [Page 1 of 1 containing com.sloopsight.sandbox.app.entity.Project instances]
-2020-10-29 17:51:42,826 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-2] Mapped to com.sloopsight.sandbox.app.controller.ProjectController#projects(int, int)
-2020-10-29 17:51:42,834 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-2] Mapped to com.sloopsight.sandbox.app.controller.ProjectController#projects(int, int)
-2020-10-29 17:51:42,839 DEBUG org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor [http-nio-8081-exec-2] Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
-2020-10-29 17:51:42,839 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8081-exec-2] Writing [Page 1 of 1 containing com.sloopsight.sandbox.app.entity.Project instances]
-2020-10-29 17:51:45,090 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-4] Mapped to com.sloopsight.sandbox.app.controller.AuthController#isLoggedId()
-2020-10-29 17:51:45,098 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-4] Mapped to com.sloopsight.sandbox.app.controller.AuthController#isLoggedId()
-2020-10-29 17:51:45,099 DEBUG org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor [http-nio-8081-exec-4] Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
-2020-10-29 17:51:45,100 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8081-exec-4] Writing [com.sloopsight.sandbox.app.services.UserDetailsImpl@429f24a6]
-2020-10-29 17:51:45,346 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-5] Mapped to com.sloopsight.sandbox.app.controller.ProjectController#endpoints(Long, int, int)
-2020-10-29 17:51:45,351 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-5] Mapped to com.sloopsight.sandbox.app.controller.ProjectController#endpoints(Long, int, int)
-2020-10-29 17:51:45,356 DEBUG org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor [http-nio-8081-exec-5] Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
-2020-10-29 17:51:45,357 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8081-exec-5] Writing [Page 1 of 1 containing com.sloopsight.sandbox.app.entity.Endpoint instances]
-2020-10-29 17:51:47,146 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-6] Mapped to com.sloopsight.sandbox.app.controller.AuthController#isLoggedId()
-2020-10-29 17:51:47,153 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-6] Mapped to com.sloopsight.sandbox.app.controller.AuthController#isLoggedId()
-2020-10-29 17:51:47,154 DEBUG org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor [http-nio-8081-exec-6] Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
-2020-10-29 17:51:47,154 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8081-exec-6] Writing [com.sloopsight.sandbox.app.services.UserDetailsImpl@40e7c419]
-2020-10-29 17:51:47,410 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-7] Mapped to com.sloopsight.sandbox.app.controller.HintController#hint()
-2020-10-29 17:51:47,410 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-8] Mapped to com.sloopsight.sandbox.app.controller.EndpointController#findOne(Long)
-2020-10-29 17:51:47,414 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-7] Mapped to com.sloopsight.sandbox.app.controller.HintController#hint()
-2020-10-29 17:51:47,415 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-8] Mapped to com.sloopsight.sandbox.app.controller.EndpointController#findOne(Long)
-2020-10-29 17:51:47,419 DEBUG org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor [http-nio-8081-exec-8] Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
-2020-10-29 17:51:47,420 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8081-exec-8] Writing [com.sloopsight.sandbox.app.entity.Endpoint@3b]
-2020-10-29 17:51:47,513 INFO org.reflections.Reflections [http-nio-8081-exec-7] Reflections took 97 ms to scan 128 urls, producing 10 keys and 19 values 
-2020-10-29 17:51:47,515 DEBUG org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor [http-nio-8081-exec-7] Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
-2020-10-29 17:51:47,515 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8081-exec-7] Writing [[web.path(/*Path Variable Name*/); //Get Value of path variable, web.bearer(); //Get Bearer Value, w (truncated)...]
-2020-10-29 17:58:15,627 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-9] Mapped to com.sloopsight.sandbox.app.controller.EndpointController#update(Long, LogicRequest)
-2020-10-29 17:58:15,636 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-9] Mapped to com.sloopsight.sandbox.app.controller.EndpointController#update(Long, LogicRequest)
-2020-10-29 17:58:15,638 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8081-exec-9] Read "application/json;charset=utf-8" to [com.sloopsight.sandbox.app.dto.request.LogicRequest@428de8fc]
-2020-10-29 17:58:15,645 DEBUG org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor [http-nio-8081-exec-9] Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
-2020-10-29 17:58:15,646 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8081-exec-9] Writing [com.sloopsight.sandbox.app.entity.Endpoint@3b]
-2020-10-29 17:58:15,658 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-10] Mapped to com.sloopsight.sandbox.app.controller.AuthController#isLoggedId()
-2020-10-29 17:58:15,663 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-10] Mapped to com.sloopsight.sandbox.app.controller.AuthController#isLoggedId()
-2020-10-29 17:58:15,663 DEBUG org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor [http-nio-8081-exec-10] Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
-2020-10-29 17:58:15,664 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8081-exec-10] Writing [com.sloopsight.sandbox.app.services.UserDetailsImpl@711cad11]
-2020-10-29 17:58:15,905 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-3] Mapped to com.sloopsight.sandbox.app.controller.ProjectController#endpoints(Long, int, int)
-2020-10-29 17:58:15,912 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-3] Mapped to com.sloopsight.sandbox.app.controller.ProjectController#endpoints(Long, int, int)
-2020-10-29 17:58:15,915 DEBUG org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor [http-nio-8081-exec-3] Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
-2020-10-29 17:58:15,915 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8081-exec-3] Writing [Page 1 of 1 containing com.sloopsight.sandbox.app.entity.Endpoint instances]
-2020-10-29 17:58:17,760 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-1] Mapped to com.sloopsight.sandbox.app.controller.AuthController#isLoggedId()
-2020-10-29 17:58:17,768 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-1] Mapped to com.sloopsight.sandbox.app.controller.AuthController#isLoggedId()
-2020-10-29 17:58:17,769 DEBUG org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor [http-nio-8081-exec-1] Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
-2020-10-29 17:58:17,770 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8081-exec-1] Writing [com.sloopsight.sandbox.app.services.UserDetailsImpl@5a163718]
-2020-10-29 17:58:18,017 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-2] Mapped to com.sloopsight.sandbox.app.controller.HintController#hint()
-2020-10-29 17:58:18,018 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-4] Mapped to com.sloopsight.sandbox.app.controller.EndpointController#findOne(Long)
-2020-10-29 17:58:18,022 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-4] Mapped to com.sloopsight.sandbox.app.controller.EndpointController#findOne(Long)
-2020-10-29 17:58:18,022 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-2] Mapped to com.sloopsight.sandbox.app.controller.HintController#hint()
-2020-10-29 17:58:18,026 DEBUG org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor [http-nio-8081-exec-4] Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
-2020-10-29 17:58:18,027 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8081-exec-4] Writing [com.sloopsight.sandbox.app.entity.Endpoint@3c]
-2020-10-29 17:58:18,110 INFO org.reflections.Reflections [http-nio-8081-exec-2] Reflections took 87 ms to scan 128 urls, producing 10 keys and 19 values 
-2020-10-29 17:58:18,111 DEBUG org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor [http-nio-8081-exec-2] Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
-2020-10-29 17:58:18,112 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8081-exec-2] Writing [[web.path(/*Path Variable Name*/); //Get Value of path variable, web.bearer(); //Get Bearer Value, w (truncated)...]
-2020-10-29 17:58:46,029 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-5] Mapped to com.sloopsight.sandbox.app.controller.EndpointController#update(Long, LogicRequest)
-2020-10-29 17:58:46,039 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-5] Mapped to com.sloopsight.sandbox.app.controller.EndpointController#update(Long, LogicRequest)
-2020-10-29 17:58:46,040 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8081-exec-5] Read "application/json;charset=utf-8" to [com.sloopsight.sandbox.app.dto.request.LogicRequest@5ddc57d5]
-2020-10-29 17:58:46,054 DEBUG org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor [http-nio-8081-exec-5] Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
-2020-10-29 17:58:46,054 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8081-exec-5] Writing [com.sloopsight.sandbox.app.entity.Endpoint@3c]
-2020-10-29 17:58:46,071 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-6] Mapped to com.sloopsight.sandbox.app.controller.AuthController#isLoggedId()
-2020-10-29 17:58:46,075 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-6] Mapped to com.sloopsight.sandbox.app.controller.AuthController#isLoggedId()
-2020-10-29 17:58:46,076 DEBUG org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor [http-nio-8081-exec-6] Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
-2020-10-29 17:58:46,076 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8081-exec-6] Writing [com.sloopsight.sandbox.app.services.UserDetailsImpl@293aaef]
-2020-10-29 17:58:46,315 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-8] Mapped to com.sloopsight.sandbox.app.controller.ProjectController#endpoints(Long, int, int)
-2020-10-29 17:58:46,321 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-8] Mapped to com.sloopsight.sandbox.app.controller.ProjectController#endpoints(Long, int, int)
-2020-10-29 17:58:46,325 DEBUG org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor [http-nio-8081-exec-8] Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
-2020-10-29 17:58:46,326 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8081-exec-8] Writing [Page 1 of 1 containing com.sloopsight.sandbox.app.entity.Endpoint instances]
-2020-10-29 17:58:48,655 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-7] Mapped to com.sloopsight.sandbox.app.controller.AuthController#isLoggedId()
-2020-10-29 17:58:48,660 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-7] Mapped to com.sloopsight.sandbox.app.controller.AuthController#isLoggedId()
-2020-10-29 17:58:48,661 DEBUG org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor [http-nio-8081-exec-7] Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
-2020-10-29 17:58:48,661 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8081-exec-7] Writing [com.sloopsight.sandbox.app.services.UserDetailsImpl@45c2eb13]
-2020-10-29 17:58:48,899 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-9] Mapped to com.sloopsight.sandbox.app.controller.ProjectController#projects(int, int)
-2020-10-29 17:58:48,904 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-9] Mapped to com.sloopsight.sandbox.app.controller.ProjectController#projects(int, int)
-2020-10-29 17:58:48,909 DEBUG org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor [http-nio-8081-exec-9] Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
-2020-10-29 17:58:48,910 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8081-exec-9] Writing [Page 1 of 1 containing com.sloopsight.sandbox.app.entity.Project instances]
-2020-10-29 17:58:48,924 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-10] Mapped to com.sloopsight.sandbox.app.controller.ProjectController#projects(int, int)
-2020-10-29 17:58:48,931 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-10] Mapped to com.sloopsight.sandbox.app.controller.ProjectController#projects(int, int)
-2020-10-29 17:58:48,934 DEBUG org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor [http-nio-8081-exec-10] Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
-2020-10-29 17:58:48,935 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8081-exec-10] Writing [Page 1 of 1 containing com.sloopsight.sandbox.app.entity.Project instances]
-2020-10-29 17:58:50,402 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-3] Mapped to com.sloopsight.sandbox.app.controller.AuthController#isLoggedId()
-2020-10-29 17:58:50,409 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-3] Mapped to com.sloopsight.sandbox.app.controller.AuthController#isLoggedId()
-2020-10-29 17:58:50,410 DEBUG org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor [http-nio-8081-exec-3] Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
-2020-10-29 17:58:50,411 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8081-exec-3] Writing [com.sloopsight.sandbox.app.services.UserDetailsImpl@4ce01ea3]
-2020-10-29 17:58:50,699 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-1] Mapped to com.sloopsight.sandbox.app.controller.ProjectController#docs(Long)
-2020-10-29 17:58:50,703 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-1] Mapped to com.sloopsight.sandbox.app.controller.ProjectController#docs(Long)
-2020-10-29 17:58:50,707 DEBUG org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor [http-nio-8081-exec-1] Using 'application/json', given [*/*] and supported [application/json]
-2020-10-29 17:58:50,714 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8081-exec-1] Writing [{"openapi":"3.0.0","info":{"title":"DBTEST","description":"DBTEST","contact":{"email":"sandbox@sandb (truncated)...]
-2020-10-29 17:58:56,686 INFO org.apache.camel.component.servlet.CamelHttpTransportServlet [http-nio-8081-exec-4] Initialized CamelHttpTransportServlet[name=CamelServlet, contextPath=/app]
-2020-10-29 17:58:56,748 WARN net.sf.ehcache.config.ConfigurationFactory [http-nio-8081-exec-4] No configuration found. Configuring ehcache from ehcache-failsafe.xml  found in the classpath: jar:file:/C:/Users/subhanshu/.m2/repository/net/sf/ehcache/ehcache/2.10.6/ehcache-2.10.6.jar!/ehcache-failsafe.xml
-2020-10-29 17:59:48,064 INFO org.springframework.boot.StartupInfoLogger [main] Starting Bootstrap on subhanshu-pc with PID 20812 (C:\Users\subhanshu\git\repository\sandbox\app\target\classes started by subhanshu in C:\Users\subhanshu\git\repository\sandbox\app)
-2020-10-29 17:59:48,070 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.3.1.RELEASE, Spring v5.2.7.RELEASE
-2020-10-29 17:59:48,070 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: dev
-2020-10-29 17:59:49,259 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2020-10-29 17:59:49,360 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 88ms. Found 6 JPA repository interfaces.
-2020-10-29 17:59:50,625 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@5700c9db' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-10-29 17:59:50,633 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-10-29 17:59:50,641 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'org.apache.camel.spring.boot.CamelAutoConfiguration' of type [org.apache.camel.spring.boot.CamelAutoConfiguration$$EnhancerBySpringCGLIB$$a845da3] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-10-29 17:59:51,339 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8081 (http)
-2020-10-29 17:59:51,352 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8081"]
-2020-10-29 17:59:51,353 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
-2020-10-29 17:59:51,353 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.36]
-2020-10-29 17:59:51,493 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
-2020-10-29 17:59:51,493 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 3317 ms
-2020-10-29 17:59:51,733 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
-2020-10-29 17:59:51,819 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.4.17.Final
-2020-10-29 17:59:52,063 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-2020-10-29 17:59:52,259 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
-2020-10-29 17:59:52,493 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
-2020-10-29 17:59:52,520 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL57InnoDBDialect
-2020-10-29 17:59:52,838 WARN com.vladmihalcea.hibernate.type.util.Configuration [main] You should use Hypersistence Optimizer to speed up your Hibernate application!
-2020-10-29 17:59:52,839 WARN com.vladmihalcea.hibernate.type.util.Configuration [main] For more details, go to https://vladmihalcea.com/hypersistence-optimizer/
-2020-10-29 17:59:52,840 INFO com.vladmihalcea.hibernate.type.util.Configuration [main] 
+2020-11-02 16:26:57,498 INFO com.vladmihalcea.hibernate.type.util.Configuration [main] Check out the README page for more info about the Hypersistence Optimizer banner https://github.com/vladmihalcea/hibernate-types#how-to-remove-the-hypersistence-optimizer-banner-from-the-log
+2020-11-02 16:26:57,567 WARN org.hibernate.mapping.RootClass [main] HHH000038: Composite-id class does not override equals(): com.sloopsight.sandbox.app.entity.MemberShipKey
+2020-11-02 16:26:57,567 WARN org.hibernate.mapping.RootClass [main] HHH000039: Composite-id class does not override hashCode(): com.sloopsight.sandbox.app.entity.MemberShipKey
+2020-11-02 16:26:58,216 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-11-02 16:26:58,224 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-11-02 16:26:59,128 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-11-02 16:26:59,193 INFO org.springframework.boot.web.servlet.DynamicRegistrationBean [main] Servlet CamelServlet was not registered (possibly already registered?)
+2020-11-02 16:26:59,222 DEBUG org.springframework.web.filter.GenericFilterBean [main] Filter 'authenticationJwtTokenFilter' configured for use
+2020-11-02 16:26:59,298 INFO org.springframework.ldap.core.support.AbstractContextSource [main] Property 'userDn' not set - anonymous context will be used for read-write operations
+2020-11-02 16:26:59,726 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMethodMapping [main] 31 mappings in 'requestMappingHandlerMapping'
+2020-11-02 16:27:00,319 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6b278b17, org.springframework.security.web.context.SecurityContextPersistenceFilter@560d6d2, org.springframework.security.web.header.HeaderWriterFilter@ec3944, org.springframework.web.filter.CorsFilter@2ae5580, org.springframework.security.web.authentication.logout.LogoutFilter@44e79e9e, com.sloopsight.sandbox.app.config.AuthTokenFilter@1ab268bd, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@520ee6b3, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@27210a3b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4203529f, org.springframework.security.web.session.SessionManagementFilter@3a0baec0, org.springframework.security.web.access.ExceptionTranslationFilter@ef85567, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@25e353dc]
+2020-11-02 16:27:00,387 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-02 16:27:00,402 DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter [main] ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2020-11-02 16:27:00,452 DEBUG org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver [main] ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2020-11-02 16:27:00,672 INFO org.apache.camel.impl.converter.DefaultTypeConverter [main] Type converters loaded (core: 195, classpath: 7)
+2020-11-02 16:27:01,100 INFO org.springframework.ldap.core.support.AbstractContextSource [main] Property 'userDn' not set - anonymous context will be used for read-write operations
+2020-11-02 16:27:01,178 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8081"]
+2020-11-02 16:27:01,204 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8081 (http) with context path '/app'
+2020-11-02 16:27:01,252 INFO org.apache.camel.spring.boot.RoutesCollector [main] Loading additional Camel XML routes from: classpath:camel/*.xml
+2020-11-02 16:27:01,252 INFO org.apache.camel.spring.boot.RoutesCollector [main] Loading additional Camel XML rests from: classpath:camel-rest/*.xml
+2020-11-02 16:27:01,262 INFO org.apache.camel.impl.DefaultCamelContext [main] Apache Camel 2.25.1 (CamelContext: camel-1) is starting
+2020-11-02 16:27:01,263 INFO org.apache.camel.management.ManagedManagementStrategy [main] JMX is enabled
+2020-11-02 16:27:01,520 INFO org.apache.camel.impl.DefaultCamelContext [main] StreamCaching is not in use. If using streams then its recommended to enable stream caching. See more details at http://camel.apache.org/stream-caching.html
+2020-11-02 16:27:01,561 INFO org.apache.camel.impl.DefaultCamelContext [main] Route: route1 started and consuming from: servlet:/exec?matchOnUriPrefix=true
+2020-11-02 16:27:01,561 INFO org.apache.camel.impl.DefaultCamelContext [main] Total 1 routes, of which 1 are started
+2020-11-02 16:27:01,562 INFO org.apache.camel.impl.DefaultCamelContext [main] Apache Camel 2.25.1 (CamelContext: camel-1) started in 0.300 seconds
+2020-11-02 16:27:01,565 INFO org.springframework.boot.StartupInfoLogger [main] Started Bootstrap in 8.253 seconds (JVM running for 8.702)
+2020-11-02 16:27:18,262 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8081-exec-2] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-11-02 16:27:18,263 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8081-exec-2] Initializing Servlet 'dispatcherServlet'
+2020-11-02 16:27:18,272 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8081-exec-2] Completed initialization in 9 ms
+2020-11-02 16:27:18,341 INFO com.sloopsight.sandbox.app.config.WebMvcConfig$1 [http-nio-8081-exec-2] Resource [true] availability is [true]:[{}]  
+2020-11-02 16:27:18,485 INFO com.sloopsight.sandbox.app.config.WebMvcConfig$1 [http-nio-8081-exec-3] Resource [true] availability is [true]:[{}]  
+2020-11-02 16:27:18,485 INFO com.sloopsight.sandbox.app.config.WebMvcConfig$1 [http-nio-8081-exec-4] Resource [true] availability is [true]:[{}]  
+2020-11-02 16:27:19,281 INFO com.sloopsight.sandbox.app.config.WebMvcConfig$1 [http-nio-8081-exec-6] Resource [false] availability is [false]:[{}]  
+2020-11-02 16:27:19,285 INFO com.sloopsight.sandbox.app.config.WebMvcConfig$1 [http-nio-8081-exec-7] Resource [false] availability is [false]:[{}]  
+2020-11-02 16:27:19,421 INFO com.sloopsight.sandbox.app.config.WebMvcConfig$1 [http-nio-8081-exec-8] Resource [true] availability is [true]:[{}]  
+2020-11-02 16:27:19,483 INFO com.sloopsight.sandbox.app.config.WebMvcConfig$1 [http-nio-8081-exec-9] Resource [true] availability is [true]:[{}]  
+2020-11-02 16:27:19,484 INFO com.sloopsight.sandbox.app.config.WebMvcConfig$1 [http-nio-8081-exec-10] Resource [true] availability is [true]:[{}]  
+2020-11-02 16:27:19,484 INFO com.sloopsight.sandbox.app.config.WebMvcConfig$1 [http-nio-8081-exec-1] Resource [true] availability is [true]:[{}]  
+2020-11-02 16:27:19,486 INFO com.sloopsight.sandbox.app.config.WebMvcConfig$1 [http-nio-8081-exec-2] Resource [true] availability is [true]:[{}]  
+2020-11-02 16:34:20,409 INFO org.springframework.boot.StartupInfoLogger [main] Starting Bootstrap on subhanshu-pc with PID 13904 (C:\Users\subhanshu\git\repository\sandbox\app\target\classes started by subhanshu in C:\Users\subhanshu\git\repository\sandbox\app)
+2020-11-02 16:34:20,412 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.3.1.RELEASE, Spring v5.2.7.RELEASE
+2020-11-02 16:34:20,413 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: dev
+2020-11-02 16:34:21,254 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-11-02 16:34:21,329 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 66ms. Found 6 JPA repository interfaces.
+2020-11-02 16:34:22,311 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@42b28ff1' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-02 16:34:22,318 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-02 16:34:22,325 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'org.apache.camel.spring.boot.CamelAutoConfiguration' of type [org.apache.camel.spring.boot.CamelAutoConfiguration$$EnhancerBySpringCGLIB$$4e6cfcb1] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-02 16:34:23,118 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8081 (http)
+2020-11-02 16:34:23,129 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8081"]
+2020-11-02 16:34:23,129 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2020-11-02 16:34:23,130 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.36]
+2020-11-02 16:34:23,266 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2020-11-02 16:34:23,267 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 2791 ms
+2020-11-02 16:34:23,492 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-11-02 16:34:23,570 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.4.17.Final
+2020-11-02 16:34:23,747 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-11-02 16:34:23,874 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2020-11-02 16:34:24,046 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2020-11-02 16:34:24,066 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL57InnoDBDialect
+2020-11-02 16:34:24,292 WARN com.vladmihalcea.hibernate.type.util.Configuration [main] You should use Hypersistence Optimizer to speed up your Hibernate application!
+2020-11-02 16:34:24,293 WARN com.vladmihalcea.hibernate.type.util.Configuration [main] For more details, go to https://vladmihalcea.com/hypersistence-optimizer/
+2020-11-02 16:34:24,294 INFO com.vladmihalcea.hibernate.type.util.Configuration [main] 
  _    _                           _     _
 | |  | |                         (_)   | |
 | |__| |_   _ _ __   ___ _ __ ___ _ ___| |_ ___ _ __   ___ ___
@@ -289,58 +120,56 @@
                 | |
                 |_|
 
-2020-10-29 17:59:52,840 INFO com.vladmihalcea.hibernate.type.util.Configuration [main] Check out the README page for more info about the Hypersistence Optimizer banner https://github.com/vladmihalcea/hibernate-types#how-to-remove-the-hypersistence-optimizer-banner-from-the-log
-2020-10-29 17:59:52,938 WARN org.hibernate.mapping.RootClass [main] HHH000038: Composite-id class does not override equals(): com.sloopsight.sandbox.app.entity.MemberShipKey
-2020-10-29 17:59:52,939 WARN org.hibernate.mapping.RootClass [main] HHH000039: Composite-id class does not override hashCode(): com.sloopsight.sandbox.app.entity.MemberShipKey
-2020-10-29 17:59:53,727 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2020-10-29 17:59:53,738 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
-2020-10-29 17:59:54,808 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2020-10-29 17:59:54,887 INFO org.springframework.boot.web.servlet.DynamicRegistrationBean [main] Servlet CamelServlet was not registered (possibly already registered?)
-2020-10-29 17:59:54,916 DEBUG org.springframework.web.filter.GenericFilterBean [main] Filter 'authenticationJwtTokenFilter' configured for use
-2020-10-29 17:59:54,980 INFO org.springframework.ldap.core.support.AbstractContextSource [main] Property 'userDn' not set - anonymous context will be used for read-write operations
-2020-10-29 17:59:55,453 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMethodMapping [main] 31 mappings in 'requestMappingHandlerMapping'
-2020-10-29 17:59:56,027 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7a8e484b, org.springframework.security.web.context.SecurityContextPersistenceFilter@6cee52e2, org.springframework.security.web.header.HeaderWriterFilter@1bb3e150, org.springframework.web.filter.CorsFilter@643f8ebe, org.springframework.security.web.authentication.logout.LogoutFilter@55e3b64d, com.sloopsight.sandbox.app.config.AuthTokenFilter@5f8a29ca, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7cb4d4ee, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4e23ddf0, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@65013d71, org.springframework.security.web.session.SessionManagementFilter@698daff6, org.springframework.security.web.access.ExceptionTranslationFilter@18c95fbb, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4ed90b04]
-2020-10-29 17:59:56,104 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
-2020-10-29 17:59:56,125 DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter [main] ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-2020-10-29 17:59:56,186 DEBUG org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver [main] ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
-2020-10-29 17:59:56,452 INFO org.apache.camel.impl.converter.DefaultTypeConverter [main] Type converters loaded (core: 195, classpath: 7)
-2020-10-29 17:59:56,939 INFO org.springframework.ldap.core.support.AbstractContextSource [main] Property 'userDn' not set - anonymous context will be used for read-write operations
-2020-10-29 17:59:57,043 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8081"]
-2020-10-29 17:59:57,079 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8081 (http) with context path '/app'
-2020-10-29 17:59:57,149 INFO org.apache.camel.spring.boot.RoutesCollector [main] Loading additional Camel XML routes from: classpath:camel/*.xml
-2020-10-29 17:59:57,150 INFO org.apache.camel.spring.boot.RoutesCollector [main] Loading additional Camel XML rests from: classpath:camel-rest/*.xml
-2020-10-29 17:59:57,158 INFO org.apache.camel.impl.DefaultCamelContext [main] Apache Camel 2.25.1 (CamelContext: camel-1) is starting
-2020-10-29 17:59:57,160 INFO org.apache.camel.management.ManagedManagementStrategy [main] JMX is enabled
-2020-10-29 17:59:57,461 INFO org.apache.camel.impl.DefaultCamelContext [main] StreamCaching is not in use. If using streams then its recommended to enable stream caching. See more details at http://camel.apache.org/stream-caching.html
-2020-10-29 17:59:57,509 INFO org.apache.camel.impl.DefaultCamelContext [main] Route: route1 started and consuming from: servlet:/exec?matchOnUriPrefix=true
-2020-10-29 17:59:57,509 INFO org.apache.camel.impl.DefaultCamelContext [main] Total 1 routes, of which 1 are started
-2020-10-29 17:59:57,510 INFO org.apache.camel.impl.DefaultCamelContext [main] Apache Camel 2.25.1 (CamelContext: camel-1) started in 0.351 seconds
-2020-10-29 17:59:57,513 INFO org.springframework.boot.StartupInfoLogger [main] Started Bootstrap in 10.133 seconds (JVM running for 11.015)
-2020-10-29 18:00:02,064 INFO org.apache.camel.component.servlet.CamelHttpTransportServlet [http-nio-8081-exec-1] Initialized CamelHttpTransportServlet[name=CamelServlet, contextPath=/app]
-2020-10-29 18:00:18,357 WARN net.sf.ehcache.config.ConfigurationFactory [http-nio-8081-exec-1] No configuration found. Configuring ehcache from ehcache-failsafe.xml  found in the classpath: jar:file:/C:/Users/subhanshu/.m2/repository/net/sf/ehcache/ehcache/2.10.6/ehcache-2.10.6.jar!/ehcache-failsafe.xml
-2020-10-29 18:02:50,702 INFO org.springframework.boot.StartupInfoLogger [main] Starting Bootstrap on subhanshu-pc with PID 7504 (C:\Users\subhanshu\git\repository\sandbox\app\target\classes started by subhanshu in C:\Users\subhanshu\git\repository\sandbox\app)
-2020-10-29 18:02:50,707 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.3.1.RELEASE, Spring v5.2.7.RELEASE
-2020-10-29 18:02:50,707 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: dev
-2020-10-29 18:02:52,092 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2020-10-29 18:02:52,211 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 104ms. Found 6 JPA repository interfaces.
-2020-10-29 18:02:53,478 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@4c19d42e' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-10-29 18:02:53,484 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-10-29 18:02:53,492 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'org.apache.camel.spring.boot.CamelAutoConfiguration' of type [org.apache.camel.spring.boot.CamelAutoConfiguration$$EnhancerBySpringCGLIB$$c639bc11] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-10-29 18:02:54,201 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8081 (http)
-2020-10-29 18:02:54,216 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8081"]
-2020-10-29 18:02:54,217 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
-2020-10-29 18:02:54,217 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.36]
-2020-10-29 18:02:54,368 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
-2020-10-29 18:02:54,368 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 3554 ms
-2020-10-29 18:02:54,608 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
-2020-10-29 18:02:54,693 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.4.17.Final
-2020-10-29 18:02:54,944 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-2020-10-29 18:02:55,181 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
-2020-10-29 18:02:55,412 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
-2020-10-29 18:02:55,440 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL57InnoDBDialect
-2020-10-29 18:02:55,752 WARN com.vladmihalcea.hibernate.type.util.Configuration [main] You should use Hypersistence Optimizer to speed up your Hibernate application!
-2020-10-29 18:02:55,752 WARN com.vladmihalcea.hibernate.type.util.Configuration [main] For more details, go to https://vladmihalcea.com/hypersistence-optimizer/
-2020-10-29 18:02:55,753 INFO com.vladmihalcea.hibernate.type.util.Configuration [main] 
+2020-11-02 16:34:24,294 INFO com.vladmihalcea.hibernate.type.util.Configuration [main] Check out the README page for more info about the Hypersistence Optimizer banner https://github.com/vladmihalcea/hibernate-types#how-to-remove-the-hypersistence-optimizer-banner-from-the-log
+2020-11-02 16:34:24,364 WARN org.hibernate.mapping.RootClass [main] HHH000038: Composite-id class does not override equals(): com.sloopsight.sandbox.app.entity.MemberShipKey
+2020-11-02 16:34:24,364 WARN org.hibernate.mapping.RootClass [main] HHH000039: Composite-id class does not override hashCode(): com.sloopsight.sandbox.app.entity.MemberShipKey
+2020-11-02 16:34:25,021 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-11-02 16:34:25,029 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-11-02 16:34:26,062 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-11-02 16:34:26,142 INFO org.springframework.boot.web.servlet.DynamicRegistrationBean [main] Servlet CamelServlet was not registered (possibly already registered?)
+2020-11-02 16:34:26,169 DEBUG org.springframework.web.filter.GenericFilterBean [main] Filter 'authenticationJwtTokenFilter' configured for use
+2020-11-02 16:34:26,250 INFO org.springframework.ldap.core.support.AbstractContextSource [main] Property 'userDn' not set - anonymous context will be used for read-write operations
+2020-11-02 16:34:26,726 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMethodMapping [main] 31 mappings in 'requestMappingHandlerMapping'
+2020-11-02 16:34:27,279 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4203529f, org.springframework.security.web.context.SecurityContextPersistenceFilter@720ffab4, org.springframework.security.web.header.HeaderWriterFilter@3514237f, org.springframework.web.filter.CorsFilter@7d82ca56, org.springframework.security.web.authentication.logout.LogoutFilter@49153009, com.sloopsight.sandbox.app.config.AuthTokenFilter@410f53b2, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5ebe903a, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@62808e9e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2aaa89c2, org.springframework.security.web.session.SessionManagementFilter@70700b8a, org.springframework.security.web.access.ExceptionTranslationFilter@50c2ef56, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@780a91d0]
+2020-11-02 16:34:27,341 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-02 16:34:27,354 DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter [main] ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2020-11-02 16:34:27,400 DEBUG org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver [main] ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2020-11-02 16:34:27,638 INFO org.apache.camel.impl.converter.DefaultTypeConverter [main] Type converters loaded (core: 195, classpath: 7)
+2020-11-02 16:34:28,025 INFO org.springframework.ldap.core.support.AbstractContextSource [main] Property 'userDn' not set - anonymous context will be used for read-write operations
+2020-11-02 16:34:28,104 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8081"]
+2020-11-02 16:34:28,137 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8081 (http) with context path '/app'
+2020-11-02 16:34:28,192 INFO org.apache.camel.spring.boot.RoutesCollector [main] Loading additional Camel XML routes from: classpath:camel/*.xml
+2020-11-02 16:34:28,193 INFO org.apache.camel.spring.boot.RoutesCollector [main] Loading additional Camel XML rests from: classpath:camel-rest/*.xml
+2020-11-02 16:34:28,200 INFO org.apache.camel.impl.DefaultCamelContext [main] Apache Camel 2.25.1 (CamelContext: camel-1) is starting
+2020-11-02 16:34:28,201 INFO org.apache.camel.management.ManagedManagementStrategy [main] JMX is enabled
+2020-11-02 16:34:28,451 INFO org.apache.camel.impl.DefaultCamelContext [main] StreamCaching is not in use. If using streams then its recommended to enable stream caching. See more details at http://camel.apache.org/stream-caching.html
+2020-11-02 16:34:28,492 INFO org.apache.camel.impl.DefaultCamelContext [main] Route: route1 started and consuming from: servlet:/exec?matchOnUriPrefix=true
+2020-11-02 16:34:28,493 INFO org.apache.camel.impl.DefaultCamelContext [main] Total 1 routes, of which 1 are started
+2020-11-02 16:34:28,494 INFO org.apache.camel.impl.DefaultCamelContext [main] Apache Camel 2.25.1 (CamelContext: camel-1) started in 0.293 seconds
+2020-11-02 16:34:28,497 INFO org.springframework.boot.StartupInfoLogger [main] Started Bootstrap in 8.506 seconds (JVM running for 8.951)
+2020-11-02 16:35:59,168 INFO org.springframework.boot.StartupInfoLogger [main] Starting Bootstrap on subhanshu-pc with PID 23020 (C:\Users\subhanshu\git\repository\sandbox\app\target\classes started by subhanshu in C:\Users\subhanshu\git\repository\sandbox\app)
+2020-11-02 16:35:59,170 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.3.1.RELEASE, Spring v5.2.7.RELEASE
+2020-11-02 16:35:59,171 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: dev
+2020-11-02 16:35:59,999 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-11-02 16:36:00,079 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 71ms. Found 6 JPA repository interfaces.
+2020-11-02 16:36:01,130 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@41b1f51e' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-02 16:36:01,138 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-02 16:36:01,146 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'org.apache.camel.spring.boot.CamelAutoConfiguration' of type [org.apache.camel.spring.boot.CamelAutoConfiguration$$EnhancerBySpringCGLIB$$64025d68] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-02 16:36:01,878 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8081 (http)
+2020-11-02 16:36:01,891 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8081"]
+2020-11-02 16:36:01,891 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2020-11-02 16:36:01,891 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.36]
+2020-11-02 16:36:02,041 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2020-11-02 16:36:02,042 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 2809 ms
+2020-11-02 16:36:02,253 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-11-02 16:36:02,326 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.4.17.Final
+2020-11-02 16:36:02,563 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-11-02 16:36:02,743 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2020-11-02 16:36:02,936 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2020-11-02 16:36:02,957 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL57InnoDBDialect
+2020-11-02 16:36:03,191 WARN com.vladmihalcea.hibernate.type.util.Configuration [main] You should use Hypersistence Optimizer to speed up your Hibernate application!
+2020-11-02 16:36:03,192 WARN com.vladmihalcea.hibernate.type.util.Configuration [main] For more details, go to https://vladmihalcea.com/hypersistence-optimizer/
+2020-11-02 16:36:03,192 INFO com.vladmihalcea.hibernate.type.util.Configuration [main] 
  _    _                           _     _
 | |  | |                         (_)   | |
 | |__| |_   _ _ __   ___ _ __ ___ _ ___| |_ ___ _ __   ___ ___
@@ -359,183 +188,332 @@
                 | |
                 |_|
 
-2020-10-29 18:02:55,753 INFO com.vladmihalcea.hibernate.type.util.Configuration [main] Check out the README page for more info about the Hypersistence Optimizer banner https://github.com/vladmihalcea/hibernate-types#how-to-remove-the-hypersistence-optimizer-banner-from-the-log
-2020-10-29 18:02:55,843 WARN org.hibernate.mapping.RootClass [main] HHH000038: Composite-id class does not override equals(): com.sloopsight.sandbox.app.entity.MemberShipKey
-2020-10-29 18:02:55,844 WARN org.hibernate.mapping.RootClass [main] HHH000039: Composite-id class does not override hashCode(): com.sloopsight.sandbox.app.entity.MemberShipKey
-2020-10-29 18:02:56,770 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2020-10-29 18:02:56,786 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
-2020-10-29 18:02:57,880 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2020-10-29 18:02:57,948 INFO org.springframework.boot.web.servlet.DynamicRegistrationBean [main] Servlet CamelServlet was not registered (possibly already registered?)
-2020-10-29 18:02:57,976 DEBUG org.springframework.web.filter.GenericFilterBean [main] Filter 'authenticationJwtTokenFilter' configured for use
-2020-10-29 18:02:58,058 INFO org.springframework.ldap.core.support.AbstractContextSource [main] Property 'userDn' not set - anonymous context will be used for read-write operations
-2020-10-29 18:02:58,568 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMethodMapping [main] 31 mappings in 'requestMappingHandlerMapping'
-2020-10-29 18:02:59,426 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@70a8654, org.springframework.security.web.context.SecurityContextPersistenceFilter@76d220eb, org.springframework.security.web.header.HeaderWriterFilter@6af02de0, org.springframework.web.filter.CorsFilter@671c71e8, org.springframework.security.web.authentication.logout.LogoutFilter@659565ed, com.sloopsight.sandbox.app.config.AuthTokenFilter@30b29f55, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@29dcad7e, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@90b9695, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7d5176d6, org.springframework.security.web.session.SessionManagementFilter@4ee80a94, org.springframework.security.web.access.ExceptionTranslationFilter@36e11b60, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5dfb078]
-2020-10-29 18:02:59,514 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
-2020-10-29 18:02:59,534 DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter [main] ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-2020-10-29 18:02:59,597 DEBUG org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver [main] ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
-2020-10-29 18:02:59,902 INFO org.apache.camel.impl.converter.DefaultTypeConverter [main] Type converters loaded (core: 195, classpath: 7)
-2020-10-29 18:03:00,317 INFO org.springframework.ldap.core.support.AbstractContextSource [main] Property 'userDn' not set - anonymous context will be used for read-write operations
-2020-10-29 18:03:00,391 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8081"]
-2020-10-29 18:03:00,425 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8081 (http) with context path '/app'
-2020-10-29 18:03:00,522 INFO org.apache.camel.spring.boot.RoutesCollector [main] Loading additional Camel XML routes from: classpath:camel/*.xml
-2020-10-29 18:03:00,523 INFO org.apache.camel.spring.boot.RoutesCollector [main] Loading additional Camel XML rests from: classpath:camel-rest/*.xml
-2020-10-29 18:03:00,532 INFO org.apache.camel.impl.DefaultCamelContext [main] Apache Camel 2.25.1 (CamelContext: camel-1) is starting
-2020-10-29 18:03:00,535 INFO org.apache.camel.management.ManagedManagementStrategy [main] JMX is enabled
-2020-10-29 18:03:00,874 INFO org.apache.camel.impl.DefaultCamelContext [main] StreamCaching is not in use. If using streams then its recommended to enable stream caching. See more details at http://camel.apache.org/stream-caching.html
-2020-10-29 18:03:00,937 INFO org.apache.camel.impl.DefaultCamelContext [main] Route: route1 started and consuming from: servlet:/exec?matchOnUriPrefix=true
-2020-10-29 18:03:00,938 INFO org.apache.camel.impl.DefaultCamelContext [main] Total 1 routes, of which 1 are started
-2020-10-29 18:03:00,940 INFO org.apache.camel.impl.DefaultCamelContext [main] Apache Camel 2.25.1 (CamelContext: camel-1) started in 0.407 seconds
-2020-10-29 18:03:00,944 INFO org.springframework.boot.StartupInfoLogger [main] Started Bootstrap in 10.894 seconds (JVM running for 11.673)
-2020-10-29 18:03:06,085 INFO org.apache.camel.component.servlet.CamelHttpTransportServlet [http-nio-8081-exec-2] Initialized CamelHttpTransportServlet[name=CamelServlet, contextPath=/app]
-2020-10-29 18:03:06,222 WARN net.sf.ehcache.config.ConfigurationFactory [http-nio-8081-exec-2] No configuration found. Configuring ehcache from ehcache-failsafe.xml  found in the classpath: jar:file:/C:/Users/subhanshu/.m2/repository/net/sf/ehcache/ehcache/2.10.6/ehcache-2.10.6.jar!/ehcache-failsafe.xml
-2020-10-29 18:03:44,022 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8081-exec-3] Initializing Spring DispatcherServlet 'dispatcherServlet'
-2020-10-29 18:03:44,022 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8081-exec-3] Initializing Servlet 'dispatcherServlet'
-2020-10-29 18:03:44,030 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8081-exec-3] Completed initialization in 8 ms
-2020-10-29 18:03:44,032 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-3] Mapped to com.sloopsight.sandbox.app.controller.AuthController#isLoggedId()
-2020-10-29 18:03:44,558 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-3] Mapped to com.sloopsight.sandbox.app.controller.AuthController#isLoggedId()
-2020-10-29 18:03:44,650 DEBUG org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor [http-nio-8081-exec-3] Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
-2020-10-29 18:03:44,651 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8081-exec-3] Writing [com.sloopsight.sandbox.app.services.UserDetailsImpl@23366d80]
-2020-10-29 18:03:44,850 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-4] Mapped to com.sloopsight.sandbox.app.controller.AuthController#isLoggedId()
-2020-10-29 18:03:44,860 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-4] Mapped to com.sloopsight.sandbox.app.controller.AuthController#isLoggedId()
-2020-10-29 18:03:44,861 DEBUG org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor [http-nio-8081-exec-4] Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
-2020-10-29 18:03:44,862 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8081-exec-4] Writing [com.sloopsight.sandbox.app.services.UserDetailsImpl@4413f935]
-2020-10-29 18:03:44,935 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-5] Mapped to com.sloopsight.sandbox.app.controller.ProjectController#projects(int, int)
-2020-10-29 18:03:44,943 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-5] Mapped to com.sloopsight.sandbox.app.controller.ProjectController#projects(int, int)
-2020-10-29 18:03:44,990 DEBUG org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor [http-nio-8081-exec-5] Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
-2020-10-29 18:03:44,992 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8081-exec-5] Writing [Page 1 of 1 containing com.sloopsight.sandbox.app.entity.Project instances]
-2020-10-29 18:03:45,039 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-6] Mapped to com.sloopsight.sandbox.app.controller.ProjectController#projects(int, int)
-2020-10-29 18:03:45,048 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-6] Mapped to com.sloopsight.sandbox.app.controller.ProjectController#projects(int, int)
-2020-10-29 18:03:45,052 DEBUG org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor [http-nio-8081-exec-6] Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
-2020-10-29 18:03:45,053 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8081-exec-6] Writing [Page 1 of 1 containing com.sloopsight.sandbox.app.entity.Project instances]
-2020-10-29 18:03:47,376 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-7] Mapped to com.sloopsight.sandbox.app.controller.AuthController#isLoggedId()
-2020-10-29 18:03:47,381 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-7] Mapped to com.sloopsight.sandbox.app.controller.AuthController#isLoggedId()
-2020-10-29 18:03:47,382 DEBUG org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor [http-nio-8081-exec-7] Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
-2020-10-29 18:03:47,382 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8081-exec-7] Writing [com.sloopsight.sandbox.app.services.UserDetailsImpl@1459db17]
-2020-10-29 18:03:47,617 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-8] Mapped to com.sloopsight.sandbox.app.controller.ProjectController#endpoints(Long, int, int)
-2020-10-29 18:03:47,625 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-8] Mapped to com.sloopsight.sandbox.app.controller.ProjectController#endpoints(Long, int, int)
-2020-10-29 18:03:47,634 DEBUG org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor [http-nio-8081-exec-8] Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
-2020-10-29 18:03:47,635 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8081-exec-8] Writing [Page 1 of 1 containing com.sloopsight.sandbox.app.entity.Endpoint instances]
-2020-10-29 18:03:49,387 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-9] Mapped to com.sloopsight.sandbox.app.controller.AuthController#isLoggedId()
-2020-10-29 18:03:49,397 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-9] Mapped to com.sloopsight.sandbox.app.controller.AuthController#isLoggedId()
-2020-10-29 18:03:49,404 DEBUG org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor [http-nio-8081-exec-9] Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
-2020-10-29 18:03:49,405 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8081-exec-9] Writing [com.sloopsight.sandbox.app.services.UserDetailsImpl@1e00b8a0]
-2020-10-29 18:03:49,662 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-10] Mapped to com.sloopsight.sandbox.app.controller.HintController#hint()
-2020-10-29 18:03:49,666 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-2] Mapped to com.sloopsight.sandbox.app.controller.EndpointController#findOne(Long)
-2020-10-29 18:03:49,671 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-10] Mapped to com.sloopsight.sandbox.app.controller.HintController#hint()
-2020-10-29 18:03:49,674 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-2] Mapped to com.sloopsight.sandbox.app.controller.EndpointController#findOne(Long)
-2020-10-29 18:03:49,688 DEBUG org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor [http-nio-8081-exec-2] Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
-2020-10-29 18:03:49,688 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8081-exec-2] Writing [com.sloopsight.sandbox.app.entity.Endpoint@3c]
-2020-10-29 18:03:49,888 INFO org.reflections.Reflections [http-nio-8081-exec-10] Reflections took 194 ms to scan 129 urls, producing 10 keys and 19 values 
-2020-10-29 18:03:49,897 DEBUG org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor [http-nio-8081-exec-10] Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
-2020-10-29 18:03:49,898 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8081-exec-10] Writing [[web.path(/*Path Variable Name*/); //Get Value of path variable, web.body(); //Get request body, web (truncated)...]
-2020-10-29 18:03:56,074 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-1] Mapped to com.sloopsight.sandbox.app.controller.EndpointController#update(Long, LogicRequest)
-2020-10-29 18:03:56,083 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-1] Mapped to com.sloopsight.sandbox.app.controller.EndpointController#update(Long, LogicRequest)
-2020-10-29 18:03:56,113 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8081-exec-1] Read "application/json;charset=utf-8" to [com.sloopsight.sandbox.app.dto.request.LogicRequest@11aa7a70]
-2020-10-29 18:03:56,149 DEBUG org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor [http-nio-8081-exec-1] Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
-2020-10-29 18:03:56,150 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8081-exec-1] Writing [com.sloopsight.sandbox.app.entity.Endpoint@3c]
-2020-10-29 18:03:56,161 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-3] Mapped to com.sloopsight.sandbox.app.controller.AuthController#isLoggedId()
-2020-10-29 18:03:56,168 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-3] Mapped to com.sloopsight.sandbox.app.controller.AuthController#isLoggedId()
-2020-10-29 18:03:56,170 DEBUG org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor [http-nio-8081-exec-3] Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
-2020-10-29 18:03:56,170 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8081-exec-3] Writing [com.sloopsight.sandbox.app.services.UserDetailsImpl@75781f3d]
-2020-10-29 18:03:56,418 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-4] Mapped to com.sloopsight.sandbox.app.controller.ProjectController#endpoints(Long, int, int)
-2020-10-29 18:03:56,424 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-4] Mapped to com.sloopsight.sandbox.app.controller.ProjectController#endpoints(Long, int, int)
-2020-10-29 18:03:56,429 DEBUG org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor [http-nio-8081-exec-4] Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
-2020-10-29 18:03:56,429 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8081-exec-4] Writing [Page 1 of 1 containing com.sloopsight.sandbox.app.entity.Endpoint instances]
-2020-10-29 18:03:57,981 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-5] Mapped to com.sloopsight.sandbox.app.controller.AuthController#isLoggedId()
-2020-10-29 18:03:57,987 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-5] Mapped to com.sloopsight.sandbox.app.controller.AuthController#isLoggedId()
-2020-10-29 18:03:57,988 DEBUG org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor [http-nio-8081-exec-5] Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
-2020-10-29 18:03:57,989 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8081-exec-5] Writing [com.sloopsight.sandbox.app.services.UserDetailsImpl@5cf9d6d2]
-2020-10-29 18:03:58,227 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-6] Mapped to com.sloopsight.sandbox.app.controller.ProjectController#projects(int, int)
-2020-10-29 18:03:58,235 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-6] Mapped to com.sloopsight.sandbox.app.controller.ProjectController#projects(int, int)
-2020-10-29 18:03:58,238 DEBUG org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor [http-nio-8081-exec-6] Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
-2020-10-29 18:03:58,239 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8081-exec-6] Writing [Page 1 of 1 containing com.sloopsight.sandbox.app.entity.Project instances]
-2020-10-29 18:03:58,254 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-7] Mapped to com.sloopsight.sandbox.app.controller.ProjectController#projects(int, int)
-2020-10-29 18:03:58,260 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-7] Mapped to com.sloopsight.sandbox.app.controller.ProjectController#projects(int, int)
-2020-10-29 18:03:58,263 DEBUG org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor [http-nio-8081-exec-7] Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
-2020-10-29 18:03:58,264 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8081-exec-7] Writing [Page 1 of 1 containing com.sloopsight.sandbox.app.entity.Project instances]
-2020-10-29 18:03:59,554 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-8] Mapped to com.sloopsight.sandbox.app.controller.AuthController#isLoggedId()
-2020-10-29 18:03:59,563 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-8] Mapped to com.sloopsight.sandbox.app.controller.AuthController#isLoggedId()
-2020-10-29 18:03:59,564 DEBUG org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor [http-nio-8081-exec-8] Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
-2020-10-29 18:03:59,565 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8081-exec-8] Writing [com.sloopsight.sandbox.app.services.UserDetailsImpl@7fe5a03c]
-2020-10-29 18:03:59,807 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-9] Mapped to com.sloopsight.sandbox.app.controller.ProjectController#docs(Long)
-2020-10-29 18:03:59,812 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-9] Mapped to com.sloopsight.sandbox.app.controller.ProjectController#docs(Long)
-2020-10-29 18:03:59,823 DEBUG org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor [http-nio-8081-exec-9] Using 'application/json', given [*/*] and supported [application/json]
-2020-10-29 18:03:59,829 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8081-exec-9] Writing [{"openapi":"3.0.0","info":{"title":"DBTEST","description":"DBTEST","contact":{"email":"sandbox@sandb (truncated)...]
-2020-10-29 18:05:00,435 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-10] Mapped to com.sloopsight.sandbox.app.controller.AuthController#isLoggedId()
-2020-10-29 18:05:00,444 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-10] Mapped to com.sloopsight.sandbox.app.controller.AuthController#isLoggedId()
-2020-10-29 18:05:00,446 DEBUG org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor [http-nio-8081-exec-10] Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
-2020-10-29 18:05:00,447 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8081-exec-10] Writing [com.sloopsight.sandbox.app.services.UserDetailsImpl@4f086770]
-2020-10-29 18:05:00,689 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-1] Mapped to com.sloopsight.sandbox.app.controller.ProjectController#projects(int, int)
-2020-10-29 18:05:00,697 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-1] Mapped to com.sloopsight.sandbox.app.controller.ProjectController#projects(int, int)
-2020-10-29 18:05:00,701 DEBUG org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor [http-nio-8081-exec-1] Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
-2020-10-29 18:05:00,701 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8081-exec-1] Writing [Page 1 of 1 containing com.sloopsight.sandbox.app.entity.Project instances]
-2020-10-29 18:05:00,717 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-3] Mapped to com.sloopsight.sandbox.app.controller.ProjectController#projects(int, int)
-2020-10-29 18:05:00,722 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-3] Mapped to com.sloopsight.sandbox.app.controller.ProjectController#projects(int, int)
-2020-10-29 18:05:00,726 DEBUG org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor [http-nio-8081-exec-3] Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
-2020-10-29 18:05:00,726 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8081-exec-3] Writing [Page 1 of 1 containing com.sloopsight.sandbox.app.entity.Project instances]
-2020-10-29 18:05:02,944 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-4] Mapped to com.sloopsight.sandbox.app.controller.AuthController#isLoggedId()
-2020-10-29 18:05:02,950 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-4] Mapped to com.sloopsight.sandbox.app.controller.AuthController#isLoggedId()
-2020-10-29 18:05:02,951 DEBUG org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor [http-nio-8081-exec-4] Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
-2020-10-29 18:05:02,951 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8081-exec-4] Writing [com.sloopsight.sandbox.app.services.UserDetailsImpl@c08632e]
-2020-10-29 18:05:03,188 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-5] Mapped to com.sloopsight.sandbox.app.controller.ProjectController#endpoints(Long, int, int)
-2020-10-29 18:05:03,193 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-5] Mapped to com.sloopsight.sandbox.app.controller.ProjectController#endpoints(Long, int, int)
-2020-10-29 18:05:03,198 DEBUG org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor [http-nio-8081-exec-5] Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
-2020-10-29 18:05:03,199 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8081-exec-5] Writing [Page 1 of 1 containing com.sloopsight.sandbox.app.entity.Endpoint instances]
-2020-10-29 18:05:05,273 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-6] Mapped to com.sloopsight.sandbox.app.controller.AuthController#isLoggedId()
-2020-10-29 18:05:05,280 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-6] Mapped to com.sloopsight.sandbox.app.controller.AuthController#isLoggedId()
-2020-10-29 18:05:05,281 DEBUG org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor [http-nio-8081-exec-6] Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
-2020-10-29 18:05:05,282 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8081-exec-6] Writing [com.sloopsight.sandbox.app.services.UserDetailsImpl@60f9069e]
-2020-10-29 18:05:05,534 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-7] Mapped to com.sloopsight.sandbox.app.controller.HintController#hint()
-2020-10-29 18:05:05,538 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-8] Mapped to com.sloopsight.sandbox.app.controller.EndpointController#findOne(Long)
-2020-10-29 18:05:05,540 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-7] Mapped to com.sloopsight.sandbox.app.controller.HintController#hint()
-2020-10-29 18:05:05,543 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-8] Mapped to com.sloopsight.sandbox.app.controller.EndpointController#findOne(Long)
-2020-10-29 18:05:05,547 DEBUG org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor [http-nio-8081-exec-8] Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
-2020-10-29 18:05:05,548 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8081-exec-8] Writing [com.sloopsight.sandbox.app.entity.Endpoint@3c]
-2020-10-29 18:05:05,634 INFO org.reflections.Reflections [http-nio-8081-exec-7] Reflections took 94 ms to scan 129 urls, producing 10 keys and 19 values 
-2020-10-29 18:05:05,637 DEBUG org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor [http-nio-8081-exec-7] Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
-2020-10-29 18:05:05,638 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8081-exec-7] Writing [[web.path(/*Path Variable Name*/); //Get Value of path variable, web.body(); //Get request body, web (truncated)...]
-2020-10-29 18:05:30,763 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-9] Mapped to com.sloopsight.sandbox.app.controller.EndpointController#update(Long, LogicRequest)
-2020-10-29 18:05:30,769 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-9] Mapped to com.sloopsight.sandbox.app.controller.EndpointController#update(Long, LogicRequest)
-2020-10-29 18:05:30,770 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8081-exec-9] Read "application/json;charset=utf-8" to [com.sloopsight.sandbox.app.dto.request.LogicRequest@1ac9b310]
-2020-10-29 18:05:30,778 DEBUG org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor [http-nio-8081-exec-9] Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
-2020-10-29 18:05:30,778 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8081-exec-9] Writing [com.sloopsight.sandbox.app.entity.Endpoint@3c]
-2020-10-29 18:05:30,792 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-2] Mapped to com.sloopsight.sandbox.app.controller.AuthController#isLoggedId()
-2020-10-29 18:05:30,797 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-2] Mapped to com.sloopsight.sandbox.app.controller.AuthController#isLoggedId()
-2020-10-29 18:05:30,798 DEBUG org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor [http-nio-8081-exec-2] Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
-2020-10-29 18:05:30,798 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8081-exec-2] Writing [com.sloopsight.sandbox.app.services.UserDetailsImpl@19a8dc90]
-2020-10-29 18:05:31,037 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-10] Mapped to com.sloopsight.sandbox.app.controller.ProjectController#endpoints(Long, int, int)
-2020-10-29 18:05:31,046 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-10] Mapped to com.sloopsight.sandbox.app.controller.ProjectController#endpoints(Long, int, int)
-2020-10-29 18:05:31,049 DEBUG org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor [http-nio-8081-exec-10] Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
-2020-10-29 18:05:31,050 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8081-exec-10] Writing [Page 1 of 1 containing com.sloopsight.sandbox.app.entity.Endpoint instances]
-2020-10-29 18:05:33,758 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-1] Mapped to com.sloopsight.sandbox.app.controller.AuthController#isLoggedId()
-2020-10-29 18:05:33,763 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-1] Mapped to com.sloopsight.sandbox.app.controller.AuthController#isLoggedId()
-2020-10-29 18:05:33,764 DEBUG org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor [http-nio-8081-exec-1] Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
-2020-10-29 18:05:33,765 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8081-exec-1] Writing [com.sloopsight.sandbox.app.services.UserDetailsImpl@39de2eed]
-2020-10-29 18:05:34,003 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-3] Mapped to com.sloopsight.sandbox.app.controller.ProjectController#projects(int, int)
-2020-10-29 18:05:34,008 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-3] Mapped to com.sloopsight.sandbox.app.controller.ProjectController#projects(int, int)
-2020-10-29 18:05:34,012 DEBUG org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor [http-nio-8081-exec-3] Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
-2020-10-29 18:05:34,013 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8081-exec-3] Writing [Page 1 of 1 containing com.sloopsight.sandbox.app.entity.Project instances]
-2020-10-29 18:05:34,024 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-4] Mapped to com.sloopsight.sandbox.app.controller.ProjectController#projects(int, int)
-2020-10-29 18:05:34,031 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-4] Mapped to com.sloopsight.sandbox.app.controller.ProjectController#projects(int, int)
-2020-10-29 18:05:34,034 DEBUG org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor [http-nio-8081-exec-4] Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
-2020-10-29 18:05:34,035 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8081-exec-4] Writing [Page 1 of 1 containing com.sloopsight.sandbox.app.entity.Project instances]
-2020-10-29 18:05:35,587 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-5] Mapped to com.sloopsight.sandbox.app.controller.AuthController#isLoggedId()
-2020-10-29 18:05:35,594 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-5] Mapped to com.sloopsight.sandbox.app.controller.AuthController#isLoggedId()
-2020-10-29 18:05:35,595 DEBUG org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor [http-nio-8081-exec-5] Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
-2020-10-29 18:05:35,596 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8081-exec-5] Writing [com.sloopsight.sandbox.app.services.UserDetailsImpl@4fea79bf]
-2020-10-29 18:05:35,844 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-6] Mapped to com.sloopsight.sandbox.app.controller.ProjectController#docs(Long)
-2020-10-29 18:05:35,852 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-6] Mapped to com.sloopsight.sandbox.app.controller.ProjectController#docs(Long)
-2020-10-29 18:05:35,856 DEBUG org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor [http-nio-8081-exec-6] Using 'application/json', given [*/*] and supported [application/json]
-2020-10-29 18:05:35,857 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8081-exec-6] Writing [{"openapi":"3.0.0","info":{"title":"DBTEST","description":"DBTEST","contact":{"email":"sandbox@sandb (truncated)...]
-2020-10-29 18:05:54,988 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-7] Mapped to com.sloopsight.sandbox.app.controller.AuthController#isLoggedId()
-2020-10-29 18:05:54,993 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-7] Mapped to com.sloopsight.sandbox.app.controller.AuthController#isLoggedId()
-2020-10-29 18:05:54,994 DEBUG org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor [http-nio-8081-exec-7] Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json, application/json, application/*+json]
-2020-10-29 18:05:54,994 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8081-exec-7] Writing [com.sloopsight.sandbox.app.services.UserDetailsImpl@7bee7984]
-2020-10-29 18:05:55,241 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-9] Mapped to com.sloopsight.sandbox.app.controller.ProjectController#projects(int, int)
-2020-10-29 18:05:55,245 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-9] Mapped to com.sloopsight.sandbox.app.controller.ProjectController#projects(int, int)
-2020-10-29 18:05:55,250 DEBUG org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor [http-nio-8081-exec-9] Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
-2020-10-29 18:05:55,251 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8081-exec-9] Writing [Page 1 of 1 containing com.sloopsight.sandbox.app.entity.Project instances]
-2020-10-29 18:05:55,264 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-2] Mapped to com.sloopsight.sandbox.app.controller.ProjectController#projects(int, int)
-2020-10-29 18:05:55,271 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8081-exec-2] Mapped to com.sloopsight.sandbox.app.controller.ProjectController#projects(int, int)
-2020-10-29 18:05:55,274 DEBUG org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor [http-nio-8081-exec-2] Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
-2020-10-29 18:05:55,274 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8081-exec-2] Writing [Page 1 of 1 containing com.sloopsight.sandbox.app.entity.Project instances]
+2020-11-02 16:36:03,192 INFO com.vladmihalcea.hibernate.type.util.Configuration [main] Check out the README page for more info about the Hypersistence Optimizer banner https://github.com/vladmihalcea/hibernate-types#how-to-remove-the-hypersistence-optimizer-banner-from-the-log
+2020-11-02 16:36:03,275 WARN org.hibernate.mapping.RootClass [main] HHH000038: Composite-id class does not override equals(): com.sloopsight.sandbox.app.entity.MemberShipKey
+2020-11-02 16:36:03,275 WARN org.hibernate.mapping.RootClass [main] HHH000039: Composite-id class does not override hashCode(): com.sloopsight.sandbox.app.entity.MemberShipKey
+2020-11-02 16:36:03,920 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-11-02 16:36:03,928 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-11-02 16:36:04,892 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-11-02 16:36:04,956 INFO org.springframework.boot.web.servlet.DynamicRegistrationBean [main] Servlet CamelServlet was not registered (possibly already registered?)
+2020-11-02 16:36:04,980 DEBUG org.springframework.web.filter.GenericFilterBean [main] Filter 'authenticationJwtTokenFilter' configured for use
+2020-11-02 16:36:05,046 INFO org.springframework.ldap.core.support.AbstractContextSource [main] Property 'userDn' not set - anonymous context will be used for read-write operations
+2020-11-02 16:36:05,457 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMethodMapping [main] 31 mappings in 'requestMappingHandlerMapping'
+2020-11-02 16:36:06,341 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@36eb8e07, org.springframework.security.web.context.SecurityContextPersistenceFilter@720ffab4, org.springframework.security.web.header.HeaderWriterFilter@3514237f, org.springframework.web.filter.CorsFilter@3df6494f, org.springframework.security.web.authentication.logout.LogoutFilter@49153009, com.sloopsight.sandbox.app.config.AuthTokenFilter@2bc59ab7, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5ebe903a, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@62808e9e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1b5f960a, org.springframework.security.web.session.SessionManagementFilter@70700b8a, org.springframework.security.web.access.ExceptionTranslationFilter@50c2ef56, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@2aaa89c2]
+2020-11-02 16:36:06,410 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-02 16:36:06,425 DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter [main] ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2020-11-02 16:36:06,477 DEBUG org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver [main] ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2020-11-02 16:36:06,747 INFO org.apache.camel.impl.converter.DefaultTypeConverter [main] Type converters loaded (core: 195, classpath: 7)
+2020-11-02 16:36:07,131 INFO org.springframework.ldap.core.support.AbstractContextSource [main] Property 'userDn' not set - anonymous context will be used for read-write operations
+2020-11-02 16:36:07,201 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8081"]
+2020-11-02 16:36:07,229 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8081 (http) with context path '/app'
+2020-11-02 16:36:07,278 INFO org.apache.camel.spring.boot.RoutesCollector [main] Loading additional Camel XML routes from: classpath:camel/*.xml
+2020-11-02 16:36:07,278 INFO org.apache.camel.spring.boot.RoutesCollector [main] Loading additional Camel XML rests from: classpath:camel-rest/*.xml
+2020-11-02 16:36:07,286 INFO org.apache.camel.impl.DefaultCamelContext [main] Apache Camel 2.25.1 (CamelContext: camel-1) is starting
+2020-11-02 16:36:07,288 INFO org.apache.camel.management.ManagedManagementStrategy [main] JMX is enabled
+2020-11-02 16:36:07,504 INFO org.apache.camel.impl.DefaultCamelContext [main] StreamCaching is not in use. If using streams then its recommended to enable stream caching. See more details at http://camel.apache.org/stream-caching.html
+2020-11-02 16:36:07,547 INFO org.apache.camel.impl.DefaultCamelContext [main] Route: route1 started and consuming from: servlet:/exec?matchOnUriPrefix=true
+2020-11-02 16:36:07,547 INFO org.apache.camel.impl.DefaultCamelContext [main] Total 1 routes, of which 1 are started
+2020-11-02 16:36:07,548 INFO org.apache.camel.impl.DefaultCamelContext [main] Apache Camel 2.25.1 (CamelContext: camel-1) started in 0.262 seconds
+2020-11-02 16:36:07,551 INFO org.springframework.boot.StartupInfoLogger [main] Started Bootstrap in 8.846 seconds (JVM running for 9.357)
+2020-11-02 16:36:24,908 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8081-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-11-02 16:36:24,908 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8081-exec-1] Initializing Servlet 'dispatcherServlet'
+2020-11-02 16:36:24,915 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8081-exec-1] Completed initialization in 7 ms
+2020-11-02 16:36:24,966 INFO com.sloopsight.sandbox.app.config.WebMvcConfig$1 [http-nio-8081-exec-1] Resource [true] availability is [true]:[{}]  
+2020-11-02 16:36:25,047 INFO com.sloopsight.sandbox.app.config.WebMvcConfig$1 [http-nio-8081-exec-2] Resource [true] availability is [true]:[{}]  
+2020-11-02 16:36:25,134 INFO com.sloopsight.sandbox.app.config.WebMvcConfig$1 [http-nio-8081-exec-3] Resource [true] availability is [true]:[{}]  
+2020-11-02 16:36:25,138 INFO com.sloopsight.sandbox.app.config.WebMvcConfig$1 [http-nio-8081-exec-4] Resource [true] availability is [true]:[{}]  
+2020-11-02 16:36:25,141 INFO com.sloopsight.sandbox.app.config.WebMvcConfig$1 [http-nio-8081-exec-5] Resource [true] availability is [true]:[{}]  
+2020-11-02 16:36:25,143 INFO com.sloopsight.sandbox.app.config.WebMvcConfig$1 [http-nio-8081-exec-7] Resource [true] availability is [true]:[{}]  
+2020-11-02 16:36:25,143 INFO com.sloopsight.sandbox.app.config.WebMvcConfig$1 [http-nio-8081-exec-6] Resource [true] availability is [true]:[{}]  
+2020-11-02 16:36:29,745 INFO com.sloopsight.sandbox.app.config.WebMvcConfig$1 [http-nio-8081-exec-2] Resource [true] availability is [true]:[{}]  
+2020-11-02 16:36:29,746 INFO com.sloopsight.sandbox.app.config.WebMvcConfig$1 [http-nio-8081-exec-10] Resource [true] availability is [true]:[{}]  
+2020-11-02 16:36:29,752 INFO com.sloopsight.sandbox.app.config.WebMvcConfig$1 [http-nio-8081-exec-5] Resource [true] availability is [true]:[{}]  
+2020-11-02 16:36:29,850 INFO com.sloopsight.sandbox.app.config.WebMvcConfig$1 [http-nio-8081-exec-8] Resource [true] availability is [true]:[{}]  
+2020-11-02 16:36:29,850 INFO com.sloopsight.sandbox.app.config.WebMvcConfig$1 [http-nio-8081-exec-1] Resource [true] availability is [true]:[{}]  
+2020-11-02 16:43:29,710 INFO org.springframework.boot.StartupInfoLogger [main] Starting Bootstrap on subhanshu-pc with PID 4888 (C:\Users\subhanshu\git\repository\sandbox\app\target\classes started by subhanshu in C:\Users\subhanshu\git\repository\sandbox\app)
+2020-11-02 16:43:29,713 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.3.1.RELEASE, Spring v5.2.7.RELEASE
+2020-11-02 16:43:29,713 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: dev
+2020-11-02 16:43:30,510 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-11-02 16:43:30,578 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 59ms. Found 6 JPA repository interfaces.
+2020-11-02 16:43:31,459 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@4cb40e3b' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-02 16:43:31,466 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-02 16:43:31,473 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'org.apache.camel.spring.boot.CamelAutoConfiguration' of type [org.apache.camel.spring.boot.CamelAutoConfiguration$$EnhancerBySpringCGLIB$$c05ace5] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-02 16:43:32,166 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8081 (http)
+2020-11-02 16:43:32,177 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8081"]
+2020-11-02 16:43:32,177 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2020-11-02 16:43:32,177 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.36]
+2020-11-02 16:43:32,301 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2020-11-02 16:43:32,302 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 2531 ms
+2020-11-02 16:43:32,502 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-11-02 16:43:32,575 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.4.17.Final
+2020-11-02 16:43:32,765 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-11-02 16:43:32,892 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2020-11-02 16:43:33,048 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2020-11-02 16:43:33,067 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL57InnoDBDialect
+2020-11-02 16:43:33,292 WARN com.vladmihalcea.hibernate.type.util.Configuration [main] You should use Hypersistence Optimizer to speed up your Hibernate application!
+2020-11-02 16:43:33,293 WARN com.vladmihalcea.hibernate.type.util.Configuration [main] For more details, go to https://vladmihalcea.com/hypersistence-optimizer/
+2020-11-02 16:43:33,293 INFO com.vladmihalcea.hibernate.type.util.Configuration [main] 
+ _    _                           _     _
+| |  | |                         (_)   | |
+| |__| |_   _ _ __   ___ _ __ ___ _ ___| |_ ___ _ __   ___ ___
+|  __  | | | | '_ \ / _ \ '__/ __| / __| __/ _ \ '_ \ / __/ _ \
+| |  | | |_| | |_) |  __/ |  \__ \ \__ \ ||  __/ | | | (_|  __/
+|_|  |_|\__, | .__/ \___|_|  |___/_|___/\__\___|_| |_|\___\___|
+         __/ | |
+        |___/|_|
+
+           ____        _   _           _
+          / __ \      | | (_)         (_)
+         | |  | |_ __ | |_ _ _ __ ___  _ _______ _ __
+         | |  | | '_ \| __| | '_ ` _ \| |_  / _ \ '__|
+         | |__| | |_) | |_| | | | | | | |/ /  __/ |
+          \____/| .__/ \__|_|_| |_| |_|_/___\___|_|
+                | |
+                |_|
+
+2020-11-02 16:43:33,294 INFO com.vladmihalcea.hibernate.type.util.Configuration [main] Check out the README page for more info about the Hypersistence Optimizer banner https://github.com/vladmihalcea/hibernate-types#how-to-remove-the-hypersistence-optimizer-banner-from-the-log
+2020-11-02 16:43:33,367 WARN org.hibernate.mapping.RootClass [main] HHH000038: Composite-id class does not override equals(): com.sloopsight.sandbox.app.entity.MemberShipKey
+2020-11-02 16:43:33,367 WARN org.hibernate.mapping.RootClass [main] HHH000039: Composite-id class does not override hashCode(): com.sloopsight.sandbox.app.entity.MemberShipKey
+2020-11-02 16:43:33,980 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-11-02 16:43:33,988 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-11-02 16:43:34,874 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-11-02 16:43:34,944 INFO org.springframework.boot.web.servlet.DynamicRegistrationBean [main] Servlet CamelServlet was not registered (possibly already registered?)
+2020-11-02 16:43:34,969 DEBUG org.springframework.web.filter.GenericFilterBean [main] Filter 'authenticationJwtTokenFilter' configured for use
+2020-11-02 16:43:35,026 INFO org.springframework.ldap.core.support.AbstractContextSource [main] Property 'userDn' not set - anonymous context will be used for read-write operations
+2020-11-02 16:44:50,061 INFO org.springframework.boot.StartupInfoLogger [main] Starting Bootstrap on subhanshu-pc with PID 9512 (C:\Users\subhanshu\git\repository\sandbox\app\target\classes started by subhanshu in C:\Users\subhanshu\git\repository\sandbox\app)
+2020-11-02 16:44:50,064 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.3.1.RELEASE, Spring v5.2.7.RELEASE
+2020-11-02 16:44:50,064 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: dev
+2020-11-02 16:44:50,931 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-11-02 16:44:50,997 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 57ms. Found 6 JPA repository interfaces.
+2020-11-02 16:44:51,984 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@383864d5' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-02 16:44:51,989 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-02 16:44:51,997 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'org.apache.camel.spring.boot.CamelAutoConfiguration' of type [org.apache.camel.spring.boot.CamelAutoConfiguration$$EnhancerBySpringCGLIB$$327f8f1e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-02 16:44:52,779 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8081 (http)
+2020-11-02 16:44:52,789 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8081"]
+2020-11-02 16:44:52,790 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2020-11-02 16:44:52,790 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.36]
+2020-11-02 16:44:52,931 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2020-11-02 16:44:52,931 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 2803 ms
+2020-11-02 16:44:53,164 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-11-02 16:44:53,247 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.4.17.Final
+2020-11-02 16:44:53,428 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-11-02 16:44:53,570 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2020-11-02 16:44:53,736 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2020-11-02 16:44:53,756 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL57InnoDBDialect
+2020-11-02 16:44:53,994 WARN com.vladmihalcea.hibernate.type.util.Configuration [main] You should use Hypersistence Optimizer to speed up your Hibernate application!
+2020-11-02 16:44:53,994 WARN com.vladmihalcea.hibernate.type.util.Configuration [main] For more details, go to https://vladmihalcea.com/hypersistence-optimizer/
+2020-11-02 16:44:53,995 INFO com.vladmihalcea.hibernate.type.util.Configuration [main] 
+ _    _                           _     _
+| |  | |                         (_)   | |
+| |__| |_   _ _ __   ___ _ __ ___ _ ___| |_ ___ _ __   ___ ___
+|  __  | | | | '_ \ / _ \ '__/ __| / __| __/ _ \ '_ \ / __/ _ \
+| |  | | |_| | |_) |  __/ |  \__ \ \__ \ ||  __/ | | | (_|  __/
+|_|  |_|\__, | .__/ \___|_|  |___/_|___/\__\___|_| |_|\___\___|
+         __/ | |
+        |___/|_|
+
+           ____        _   _           _
+          / __ \      | | (_)         (_)
+         | |  | |_ __ | |_ _ _ __ ___  _ _______ _ __
+         | |  | | '_ \| __| | '_ ` _ \| |_  / _ \ '__|
+         | |__| | |_) | |_| | | | | | | |/ /  __/ |
+          \____/| .__/ \__|_|_| |_| |_|_/___\___|_|
+                | |
+                |_|
+
+2020-11-02 16:44:53,995 INFO com.vladmihalcea.hibernate.type.util.Configuration [main] Check out the README page for more info about the Hypersistence Optimizer banner https://github.com/vladmihalcea/hibernate-types#how-to-remove-the-hypersistence-optimizer-banner-from-the-log
+2020-11-02 16:44:54,076 WARN org.hibernate.mapping.RootClass [main] HHH000038: Composite-id class does not override equals(): com.sloopsight.sandbox.app.entity.MemberShipKey
+2020-11-02 16:44:54,076 WARN org.hibernate.mapping.RootClass [main] HHH000039: Composite-id class does not override hashCode(): com.sloopsight.sandbox.app.entity.MemberShipKey
+2020-11-02 16:44:54,711 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-11-02 16:44:54,719 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-11-02 16:44:55,716 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-11-02 16:44:55,792 INFO org.springframework.boot.web.servlet.DynamicRegistrationBean [main] Servlet CamelServlet was not registered (possibly already registered?)
+2020-11-02 16:44:55,819 DEBUG org.springframework.web.filter.GenericFilterBean [main] Filter 'authenticationJwtTokenFilter' configured for use
+2020-11-02 16:44:55,886 INFO org.springframework.ldap.core.support.AbstractContextSource [main] Property 'userDn' not set - anonymous context will be used for read-write operations
+2020-11-02 16:44:56,369 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMethodMapping [main] 31 mappings in 'requestMappingHandlerMapping'
+2020-11-02 16:44:57,287 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@22ee7fdc, org.springframework.security.web.context.SecurityContextPersistenceFilter@621a387f, org.springframework.security.web.header.HeaderWriterFilter@5383bf08, org.springframework.web.filter.CorsFilter@1a88d194, org.springframework.security.web.authentication.logout.LogoutFilter@720ffab4, com.sloopsight.sandbox.app.config.AuthTokenFilter@2fafa7b5, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@57eed461, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7fd3fd06, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6949cead, org.springframework.security.web.session.SessionManagementFilter@62dc1203, org.springframework.security.web.access.ExceptionTranslationFilter@5f803481, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@18b30951]
+2020-11-02 16:44:57,375 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-02 16:44:57,394 DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter [main] ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2020-11-02 16:44:57,448 DEBUG org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver [main] ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2020-11-02 16:44:57,660 INFO org.apache.camel.impl.converter.DefaultTypeConverter [main] Type converters loaded (core: 195, classpath: 7)
+2020-11-02 16:44:58,042 INFO org.springframework.ldap.core.support.AbstractContextSource [main] Property 'userDn' not set - anonymous context will be used for read-write operations
+2020-11-02 16:44:58,122 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8081"]
+2020-11-02 16:44:58,152 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8081 (http) with context path '/app'
+2020-11-02 16:44:58,198 INFO org.apache.camel.spring.boot.RoutesCollector [main] Loading additional Camel XML routes from: classpath:camel/*.xml
+2020-11-02 16:44:58,199 INFO org.apache.camel.spring.boot.RoutesCollector [main] Loading additional Camel XML rests from: classpath:camel-rest/*.xml
+2020-11-02 16:44:58,206 INFO org.apache.camel.impl.DefaultCamelContext [main] Apache Camel 2.25.1 (CamelContext: camel-1) is starting
+2020-11-02 16:44:58,207 INFO org.apache.camel.management.ManagedManagementStrategy [main] JMX is enabled
+2020-11-02 16:44:58,446 INFO org.apache.camel.impl.DefaultCamelContext [main] StreamCaching is not in use. If using streams then its recommended to enable stream caching. See more details at http://camel.apache.org/stream-caching.html
+2020-11-02 16:44:58,491 INFO org.apache.camel.impl.DefaultCamelContext [main] Route: route1 started and consuming from: servlet:/exec?matchOnUriPrefix=true
+2020-11-02 16:44:58,491 INFO org.apache.camel.impl.DefaultCamelContext [main] Total 1 routes, of which 1 are started
+2020-11-02 16:44:58,493 INFO org.apache.camel.impl.DefaultCamelContext [main] Apache Camel 2.25.1 (CamelContext: camel-1) started in 0.286 seconds
+2020-11-02 16:44:58,495 INFO org.springframework.boot.StartupInfoLogger [main] Started Bootstrap in 8.885 seconds (JVM running for 9.401)
+2020-11-02 16:45:13,488 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8081-exec-2] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-11-02 16:45:13,488 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8081-exec-2] Initializing Servlet 'dispatcherServlet'
+2020-11-02 16:45:13,496 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8081-exec-2] Completed initialization in 7 ms
+2020-11-02 16:45:13,594 INFO com.sloopsight.sandbox.app.config.WebMvcConfig$1 [http-nio-8081-exec-4] Resource [true] availability is [true]:[{}]  
+2020-11-02 16:45:13,594 INFO com.sloopsight.sandbox.app.config.WebMvcConfig$1 [http-nio-8081-exec-3] Resource [true] availability is [true]:[{}]  
+2020-11-02 16:45:13,594 INFO com.sloopsight.sandbox.app.config.WebMvcConfig$1 [http-nio-8081-exec-5] Resource [true] availability is [true]:[{}]  
+2020-11-02 16:45:13,595 INFO com.sloopsight.sandbox.app.config.WebMvcConfig$1 [http-nio-8081-exec-6] Resource [true] availability is [true]:[{}]  
+2020-11-02 16:45:14,408 INFO com.sloopsight.sandbox.app.config.WebMvcConfig$1 [http-nio-8081-exec-7] Resource [true] availability is [true]:[{}]  
+2020-11-02 16:45:14,408 INFO com.sloopsight.sandbox.app.config.WebMvcConfig$1 [http-nio-8081-exec-8] Resource [true] availability is [true]:[{}]  
+2020-11-02 16:45:14,421 INFO com.sloopsight.sandbox.app.config.WebMvcConfig$1 [http-nio-8081-exec-9] Resource [true] availability is [true]:[{}]  
+2020-11-02 16:45:14,424 INFO com.sloopsight.sandbox.app.config.WebMvcConfig$1 [http-nio-8081-exec-10] Resource [true] availability is [true]:[{}]  
+2020-11-02 16:45:14,482 INFO com.sloopsight.sandbox.app.config.WebMvcConfig$1 [http-nio-8081-exec-1] Resource [true] availability is [true]:[{}]  
+2020-11-02 16:45:14,495 INFO com.sloopsight.sandbox.app.config.WebMvcConfig$1 [http-nio-8081-exec-2] Resource [true] availability is [true]:[{}]  
+2020-11-02 16:45:18,977 INFO com.sloopsight.sandbox.app.config.WebMvcConfig$1 [http-nio-8081-exec-6] Resource [true] availability is [true]:[{}]  
+2020-11-02 16:45:19,010 INFO com.sloopsight.sandbox.app.config.WebMvcConfig$1 [http-nio-8081-exec-3] Resource [true] availability is [true]:[{}]  
+2020-11-02 16:48:04,489 INFO org.springframework.boot.StartupInfoLogger [main] Starting Bootstrap on subhanshu-pc with PID 21924 (C:\Users\subhanshu\git\repository\sandbox\app\target\classes started by subhanshu in C:\Users\subhanshu\git\repository\sandbox\app)
+2020-11-02 16:48:04,492 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.3.1.RELEASE, Spring v5.2.7.RELEASE
+2020-11-02 16:48:04,492 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: dev
+2020-11-02 16:48:05,307 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-11-02 16:48:05,374 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 58ms. Found 6 JPA repository interfaces.
+2020-11-02 16:48:06,304 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@e8e0dec' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-02 16:48:06,308 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-02 16:48:06,315 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'org.apache.camel.spring.boot.CamelAutoConfiguration' of type [org.apache.camel.spring.boot.CamelAutoConfiguration$$EnhancerBySpringCGLIB$$a0f13994] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-02 16:48:07,053 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8081 (http)
+2020-11-02 16:48:07,063 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8081"]
+2020-11-02 16:48:07,064 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2020-11-02 16:48:07,064 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.36]
+2020-11-02 16:48:07,190 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2020-11-02 16:48:07,190 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 2639 ms
+2020-11-02 16:48:07,395 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-11-02 16:48:07,474 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.4.17.Final
+2020-11-02 16:48:07,632 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-11-02 16:48:07,755 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2020-11-02 16:48:07,908 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2020-11-02 16:48:07,927 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL57InnoDBDialect
+2020-11-02 16:48:08,146 WARN com.vladmihalcea.hibernate.type.util.Configuration [main] You should use Hypersistence Optimizer to speed up your Hibernate application!
+2020-11-02 16:48:08,146 WARN com.vladmihalcea.hibernate.type.util.Configuration [main] For more details, go to https://vladmihalcea.com/hypersistence-optimizer/
+2020-11-02 16:48:08,147 INFO com.vladmihalcea.hibernate.type.util.Configuration [main] 
+ _    _                           _     _
+| |  | |                         (_)   | |
+| |__| |_   _ _ __   ___ _ __ ___ _ ___| |_ ___ _ __   ___ ___
+|  __  | | | | '_ \ / _ \ '__/ __| / __| __/ _ \ '_ \ / __/ _ \
+| |  | | |_| | |_) |  __/ |  \__ \ \__ \ ||  __/ | | | (_|  __/
+|_|  |_|\__, | .__/ \___|_|  |___/_|___/\__\___|_| |_|\___\___|
+         __/ | |
+        |___/|_|
+
+           ____        _   _           _
+          / __ \      | | (_)         (_)
+         | |  | |_ __ | |_ _ _ __ ___  _ _______ _ __
+         | |  | | '_ \| __| | '_ ` _ \| |_  / _ \ '__|
+         | |__| | |_) | |_| | | | | | | |/ /  __/ |
+          \____/| .__/ \__|_|_| |_| |_|_/___\___|_|
+                | |
+                |_|
+
+2020-11-02 16:48:08,147 INFO com.vladmihalcea.hibernate.type.util.Configuration [main] Check out the README page for more info about the Hypersistence Optimizer banner https://github.com/vladmihalcea/hibernate-types#how-to-remove-the-hypersistence-optimizer-banner-from-the-log
+2020-11-02 16:48:08,216 WARN org.hibernate.mapping.RootClass [main] HHH000038: Composite-id class does not override equals(): com.sloopsight.sandbox.app.entity.MemberShipKey
+2020-11-02 16:48:08,216 WARN org.hibernate.mapping.RootClass [main] HHH000039: Composite-id class does not override hashCode(): com.sloopsight.sandbox.app.entity.MemberShipKey
+2020-11-02 16:48:08,843 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-11-02 16:48:08,851 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-11-02 16:48:09,792 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-11-02 16:48:09,866 INFO org.springframework.boot.web.servlet.DynamicRegistrationBean [main] Servlet CamelServlet was not registered (possibly already registered?)
+2020-11-02 16:48:09,893 DEBUG org.springframework.web.filter.GenericFilterBean [main] Filter 'authenticationJwtTokenFilter' configured for use
+2020-11-02 16:48:09,957 INFO org.springframework.ldap.core.support.AbstractContextSource [main] Property 'userDn' not set - anonymous context will be used for read-write operations
+2020-11-02 16:48:10,375 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMethodMapping [main] 31 mappings in 'requestMappingHandlerMapping'
+2020-11-02 16:48:11,182 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@30ed4034, org.springframework.security.web.context.SecurityContextPersistenceFilter@5a57cf90, org.springframework.security.web.header.HeaderWriterFilter@38394dc3, org.springframework.web.filter.CorsFilter@1700d089, org.springframework.security.web.authentication.logout.LogoutFilter@404dc999, com.sloopsight.sandbox.app.config.AuthTokenFilter@2e44cb34, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@425f94d7, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@14d1032a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@77e6053, org.springframework.security.web.session.SessionManagementFilter@121dce2, org.springframework.security.web.access.ExceptionTranslationFilter@5d6b5d3d, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@3a917017]
+2020-11-02 16:48:11,246 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-02 16:48:11,259 DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter [main] ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2020-11-02 16:48:11,306 DEBUG org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver [main] ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2020-11-02 16:48:11,523 INFO org.apache.camel.impl.converter.DefaultTypeConverter [main] Type converters loaded (core: 195, classpath: 7)
+2020-11-02 16:48:11,889 INFO org.springframework.ldap.core.support.AbstractContextSource [main] Property 'userDn' not set - anonymous context will be used for read-write operations
+2020-11-02 16:48:11,954 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8081"]
+2020-11-02 16:48:11,980 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8081 (http) with context path '/app'
+2020-11-02 16:48:12,029 INFO org.apache.camel.spring.boot.RoutesCollector [main] Loading additional Camel XML routes from: classpath:camel/*.xml
+2020-11-02 16:48:12,030 INFO org.apache.camel.spring.boot.RoutesCollector [main] Loading additional Camel XML rests from: classpath:camel-rest/*.xml
+2020-11-02 16:48:12,037 INFO org.apache.camel.impl.DefaultCamelContext [main] Apache Camel 2.25.1 (CamelContext: camel-1) is starting
+2020-11-02 16:48:12,038 INFO org.apache.camel.management.ManagedManagementStrategy [main] JMX is enabled
+2020-11-02 16:48:12,243 INFO org.apache.camel.impl.DefaultCamelContext [main] StreamCaching is not in use. If using streams then its recommended to enable stream caching. See more details at http://camel.apache.org/stream-caching.html
+2020-11-02 16:48:12,284 INFO org.apache.camel.impl.DefaultCamelContext [main] Route: route1 started and consuming from: servlet:/exec?matchOnUriPrefix=true
+2020-11-02 16:48:12,285 INFO org.apache.camel.impl.DefaultCamelContext [main] Total 1 routes, of which 1 are started
+2020-11-02 16:48:12,286 INFO org.apache.camel.impl.DefaultCamelContext [main] Apache Camel 2.25.1 (CamelContext: camel-1) started in 0.249 seconds
+2020-11-02 16:48:12,288 INFO org.springframework.boot.StartupInfoLogger [main] Started Bootstrap in 8.231 seconds (JVM running for 8.673)
+2020-11-02 16:48:17,679 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8081-exec-2] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-11-02 16:48:17,679 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8081-exec-2] Initializing Servlet 'dispatcherServlet'
+2020-11-02 16:48:17,686 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8081-exec-2] Completed initialization in 7 ms
+2020-11-02 16:48:17,791 INFO com.sloopsight.sandbox.app.config.WebMvcConfig$1 [http-nio-8081-exec-5] Resource [true] availability is [true]:[{}]  
+2020-11-02 16:48:17,791 INFO com.sloopsight.sandbox.app.config.WebMvcConfig$1 [http-nio-8081-exec-6] Resource [true] availability is [true]:[{}]  
+2020-11-02 16:48:17,791 INFO com.sloopsight.sandbox.app.config.WebMvcConfig$1 [http-nio-8081-exec-3] Resource [true] availability is [true]:[{}]  
+2020-11-02 16:48:17,791 INFO com.sloopsight.sandbox.app.config.WebMvcConfig$1 [http-nio-8081-exec-4] Resource [true] availability is [true]:[{}]  
+2020-11-02 16:48:18,542 INFO com.sloopsight.sandbox.app.config.WebMvcConfig$1 [http-nio-8081-exec-7] Resource [true] availability is [true]:[{}]  
+2020-11-02 16:48:18,543 INFO com.sloopsight.sandbox.app.config.WebMvcConfig$1 [http-nio-8081-exec-9] Resource [true] availability is [true]:[{}]  
+2020-11-02 16:48:18,544 INFO com.sloopsight.sandbox.app.config.WebMvcConfig$1 [http-nio-8081-exec-8] Resource [true] availability is [true]:[{}]  
+2020-11-02 16:48:18,607 INFO com.sloopsight.sandbox.app.config.WebMvcConfig$1 [http-nio-8081-exec-10] Resource [true] availability is [true]:[{}]  
+2020-11-02 16:48:18,623 INFO com.sloopsight.sandbox.app.config.WebMvcConfig$1 [http-nio-8081-exec-1] Resource [true] availability is [true]:[{}]  
+2020-11-02 16:48:22,389 INFO com.sloopsight.sandbox.app.config.WebMvcConfig$1 [http-nio-8081-exec-2] Resource [false] availability is [false]:[{}]  
+2020-11-02 16:54:05,340 INFO org.springframework.boot.StartupInfoLogger [main] Starting Bootstrap on subhanshu-pc with PID 18532 (C:\Users\subhanshu\git\repository\sandbox\app\target\classes started by subhanshu in C:\Users\subhanshu\git\repository\sandbox\app)
+2020-11-02 16:54:05,342 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.3.1.RELEASE, Spring v5.2.7.RELEASE
+2020-11-02 16:54:05,343 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: dev
+2020-11-02 16:54:06,197 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-11-02 16:54:06,265 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 60ms. Found 6 JPA repository interfaces.
+2020-11-02 16:54:07,175 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@7fd8c559' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-02 16:54:07,180 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-02 16:54:07,188 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'org.apache.camel.spring.boot.CamelAutoConfiguration' of type [org.apache.camel.spring.boot.CamelAutoConfiguration$$EnhancerBySpringCGLIB$$6e54187f] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-02 16:54:07,931 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8081 (http)
+2020-11-02 16:54:07,941 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8081"]
+2020-11-02 16:54:07,942 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2020-11-02 16:54:07,942 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.36]
+2020-11-02 16:54:08,064 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2020-11-02 16:54:08,064 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 2656 ms
+2020-11-02 16:54:08,286 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-11-02 16:54:08,356 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.4.17.Final
+2020-11-02 16:54:08,513 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-11-02 16:54:08,638 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2020-11-02 16:54:08,790 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2020-11-02 16:54:08,809 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL57InnoDBDialect
+2020-11-02 16:54:09,027 WARN com.vladmihalcea.hibernate.type.util.Configuration [main] You should use Hypersistence Optimizer to speed up your Hibernate application!
+2020-11-02 16:54:09,027 WARN com.vladmihalcea.hibernate.type.util.Configuration [main] For more details, go to https://vladmihalcea.com/hypersistence-optimizer/
+2020-11-02 16:54:09,028 INFO com.vladmihalcea.hibernate.type.util.Configuration [main] 
+ _    _                           _     _
+| |  | |                         (_)   | |
+| |__| |_   _ _ __   ___ _ __ ___ _ ___| |_ ___ _ __   ___ ___
+|  __  | | | | '_ \ / _ \ '__/ __| / __| __/ _ \ '_ \ / __/ _ \
+| |  | | |_| | |_) |  __/ |  \__ \ \__ \ ||  __/ | | | (_|  __/
+|_|  |_|\__, | .__/ \___|_|  |___/_|___/\__\___|_| |_|\___\___|
+         __/ | |
+        |___/|_|
+
+           ____        _   _           _
+          / __ \      | | (_)         (_)
+         | |  | |_ __ | |_ _ _ __ ___  _ _______ _ __
+         | |  | | '_ \| __| | '_ ` _ \| |_  / _ \ '__|
+         | |__| | |_) | |_| | | | | | | |/ /  __/ |
+          \____/| .__/ \__|_|_| |_| |_|_/___\___|_|
+                | |
+                |_|
+
+2020-11-02 16:54:09,028 INFO com.vladmihalcea.hibernate.type.util.Configuration [main] Check out the README page for more info about the Hypersistence Optimizer banner https://github.com/vladmihalcea/hibernate-types#how-to-remove-the-hypersistence-optimizer-banner-from-the-log
+2020-11-02 16:54:09,096 WARN org.hibernate.mapping.RootClass [main] HHH000038: Composite-id class does not override equals(): com.sloopsight.sandbox.app.entity.MemberShipKey
+2020-11-02 16:54:09,097 WARN org.hibernate.mapping.RootClass [main] HHH000039: Composite-id class does not override hashCode(): com.sloopsight.sandbox.app.entity.MemberShipKey
+2020-11-02 16:54:09,739 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-11-02 16:54:09,747 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-11-02 16:54:10,692 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-11-02 16:54:10,758 INFO org.springframework.boot.web.servlet.DynamicRegistrationBean [main] Servlet CamelServlet was not registered (possibly already registered?)
+2020-11-02 16:54:10,781 DEBUG org.springframework.web.filter.GenericFilterBean [main] Filter 'authenticationJwtTokenFilter' configured for use
+2020-11-02 16:54:10,847 INFO org.springframework.ldap.core.support.AbstractContextSource [main] Property 'userDn' not set - anonymous context will be used for read-write operations
+2020-11-02 16:54:11,278 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMethodMapping [main] 31 mappings in 'requestMappingHandlerMapping'
+2020-11-02 16:54:11,997 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7aab98b6, org.springframework.security.web.context.SecurityContextPersistenceFilter@2e4339c1, org.springframework.security.web.header.HeaderWriterFilter@44864ebe, org.springframework.web.filter.CorsFilter@5e3405a1, org.springframework.security.web.authentication.logout.LogoutFilter@84a9f65, com.sloopsight.sandbox.app.config.AuthTokenFilter@2a984952, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@35d0749, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3c62f69a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@22bfd4b, org.springframework.security.web.session.SessionManagementFilter@1c2fb9e8, org.springframework.security.web.access.ExceptionTranslationFilter@5ca86715, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@180f33b2]
+2020-11-02 16:54:12,060 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-02 16:54:12,072 DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter [main] ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2020-11-02 16:54:12,122 DEBUG org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver [main] ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2020-11-02 16:54:12,320 INFO org.apache.camel.impl.converter.DefaultTypeConverter [main] Type converters loaded (core: 195, classpath: 7)
+2020-11-02 16:54:12,658 INFO org.springframework.ldap.core.support.AbstractContextSource [main] Property 'userDn' not set - anonymous context will be used for read-write operations
+2020-11-02 16:54:12,723 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8081"]
+2020-11-02 16:54:12,754 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8081 (http) with context path '/app'
+2020-11-02 16:54:12,802 INFO org.apache.camel.spring.boot.RoutesCollector [main] Loading additional Camel XML routes from: classpath:camel/*.xml
+2020-11-02 16:54:12,803 INFO org.apache.camel.spring.boot.RoutesCollector [main] Loading additional Camel XML rests from: classpath:camel-rest/*.xml
+2020-11-02 16:54:12,810 INFO org.apache.camel.impl.DefaultCamelContext [main] Apache Camel 2.25.1 (CamelContext: camel-1) is starting
+2020-11-02 16:54:12,811 INFO org.apache.camel.management.ManagedManagementStrategy [main] JMX is enabled
+2020-11-02 16:54:13,009 INFO org.apache.camel.impl.DefaultCamelContext [main] StreamCaching is not in use. If using streams then its recommended to enable stream caching. See more details at http://camel.apache.org/stream-caching.html
+2020-11-02 16:54:13,046 INFO org.apache.camel.impl.DefaultCamelContext [main] Route: route1 started and consuming from: servlet:/exec?matchOnUriPrefix=true
+2020-11-02 16:54:13,046 INFO org.apache.camel.impl.DefaultCamelContext [main] Total 1 routes, of which 1 are started
+2020-11-02 16:54:13,047 INFO org.apache.camel.impl.DefaultCamelContext [main] Apache Camel 2.25.1 (CamelContext: camel-1) started in 0.237 seconds
+2020-11-02 16:54:13,050 INFO org.springframework.boot.StartupInfoLogger [main] Started Bootstrap in 8.169 seconds (JVM running for 8.612)
+2020-11-02 16:54:25,490 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8081-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-11-02 16:54:25,491 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8081-exec-1] Initializing Servlet 'dispatcherServlet'
+2020-11-02 16:54:25,499 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8081-exec-1] Completed initialization in 8 ms
+2020-11-02 16:54:25,596 INFO com.sloopsight.sandbox.app.config.WebMvcConfig$1 [http-nio-8081-exec-2] Resource [true] availability is [true]:[{}]  
+2020-11-02 16:54:25,597 INFO com.sloopsight.sandbox.app.config.WebMvcConfig$1 [http-nio-8081-exec-3] Resource [true] availability is [true]:[{}]  
