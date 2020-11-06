@@ -98,7 +98,7 @@
 				<artifactId>maven-release-plugin</artifactId>
 				<version>2.3.2</version>
 				<configuration>
-					<tagNameFormat>LPR-@{project.version}</tagNameFormat>
+					<tagNameFormat>MPR-@{project.version}</tagNameFormat>
 					<autoVersionSubmodules>true</autoVersionSubmodules>
 					<releaseProfiles>release</releaseProfiles>
 				</configuration>
@@ -111,9 +111,9 @@
 		<module>../app</module>
 	</modules>
 	<scm>
-	        <url>${GIT_URL}</url>
+		<url>${GIT_URL}</url>
 		<connection>scm:git:${GIT_URL}</connection>
-		<developerConnection>scm:git:${GIT_URL}</developerConnection>
+		<developerConnection>scm:git:[fetch=]${GIT_URL}[push=]${GIT_URL}=</developerConnection>
 		<tag>HEAD</tag>
 	</scm>
 
