@@ -112,8 +112,8 @@
 	</modules>
 	<scm>
 		<url>${GIT_URL}</url>
-		<connection>scm:git:ssh://github.com/sloopsight-com/sandbox.git</connection>
-		<developerConnection>scm:git:ssh://github.com/sloopsight-com/sandbox.git</developerConnection>
+		<connection>scm:git:ssh://git@github.com/sloopsight-com/sandbox.git</connection>
+		<developerConnection>scm:git:ssh://git@github.com/sloopsight-com/sandbox.git</developerConnection>
 		<tag>HEAD</tag>
 	</scm>
 
