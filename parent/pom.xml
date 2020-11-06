@@ -98,7 +98,7 @@
 				<artifactId>maven-release-plugin</artifactId>
 				<version>2.3.2</version>
 				<configuration>
-					<tagNameFormat>NPR-@{project.version}</tagNameFormat>
+					<tagNameFormat>OPR-@{project.version}</tagNameFormat>
 					<autoVersionSubmodules>true</autoVersionSubmodules>
 					<releaseProfiles>release</releaseProfiles>
 				</configuration>
