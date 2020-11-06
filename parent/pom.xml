@@ -22,6 +22,11 @@
 	<properties>
 		<java.version>1.8</java.version>
 		<maven-check-style-version>3.1.0</maven-check-style-version>
+		<scm.connection.url>https://${GIT_USER}:${GIT_PASSWORD}@github.com/sloopsight-com/sandbox.git</scm.connection.url>
+		<releaseRepoUrl>https://oss.sonatype.org/content/repositories/snapshots/</releaseRepoUrl>
+		<releaseRepoId>release-repo</releaseRepoId>
+		<snapshotRepoUrl>https://repo1.maven.org/maven2/</snapshotRepoUrl>
+		<snapshotRepoId>snapshot-repo</snapshotRepoId>
 
 	</properties>
 
@@ -97,5 +102,17 @@
 		<module>../app</module>
 	</modules>
 
+	<distributionManagement>
+		<snapshotRepository>
+			<id>snapshot-repo</id>
+			<name>Snapshots Repo</name>
+			<url>${snapshotRepoUrl}</url>
+		</snapshotRepository>
+		<repository>
+			<id>release-repo</id>
+			<name>Releases Repo</name>
+			<url>${releaseRepoUrl}</url>
+		</repository>
+	</distributionManagement>
 
 </project>
