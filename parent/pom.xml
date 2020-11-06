@@ -22,7 +22,6 @@
 	<properties>
 		<java.version>1.8</java.version>
 		<maven-check-style-version>3.1.0</maven-check-style-version>
-		<scm.connection.url>https://github.com/sloopsight-com/sandbox.git</scm.connection.url>
 		<releaseRepoUrl>https://oss.sonatype.org/service/local/staging/deploy/maven2/</releaseRepoUrl>
 		<releaseRepoId>release-repo</releaseRepoId>
 		<snapshotRepoUrl>https://oss.sonatype.org/content/repositories/snapshots/</snapshotRepoUrl>
@@ -112,8 +111,8 @@
 		<module>../app</module>
 	</modules>
 	<scm>
-		<connection>scm:git:${scm.connection.url}</connection>
-		<developerConnection>scm:git:${scm.connection.url}</developerConnection>
+		<connection>scm:git:${GIT_URL}</connection>
+		<developerConnection>scm:git:${GIT_URL}</developerConnection>
 		<tag>HEAD</tag>
 	</scm>
 
