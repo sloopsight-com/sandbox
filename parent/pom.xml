@@ -111,9 +111,9 @@
 		<module>../app</module>
 	</modules>
 	<scm>
-		<url>${GIT_URL}</url>
-		<connection>scm:git:${GIT_URL}</connection>
-		<developerConnection>scm:git:[fetch=]${GIT_URL}[push=]${GIT_URL}</developerConnection>
+		<url>git@github.com:sloopsight-com/sandbox.git</url>
+		<connection>scm:git:git@github.com:sloopsight-com/sandbox.git</connection>
+		<developerConnection>scm:git:git@github.com:sloopsight-com/sandbox.git</developerConnection>
 		<tag>HEAD</tag>
 	</scm>
 
