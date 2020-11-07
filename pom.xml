@@ -4,7 +4,7 @@
 
 	<groupId>com.sloopsight.sandbox</groupId>
 	<artifactId>sandbox-parent</artifactId>
-	<version>0.0.1</version>
+	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<name>sandbox</name>
@@ -102,7 +102,7 @@
 				<artifactId>maven-release-plugin</artifactId>
 				<version>	2.5.3</version>
 				<configuration>
-					<tagNameFormat>TPR2-@{project.version}</tagNameFormat>
+					<tagNameFormat>TQR2-@{project.version}</tagNameFormat>
 					<autoVersionSubmodules>true</autoVersionSubmodules>
 					<releaseProfiles>release</releaseProfiles>
 				</configuration>
@@ -118,8 +118,7 @@
 		<url>${GIT_URL}</url>
 		<connection>scm:git:https://github.com/sloopsight-com/sandbox.git</connection>
 		<developerConnection>scm:git:https://github.com/sloopsight-com/sandbox.git</developerConnection>
- 	  <tag>TPR2-0.0.1</tag>
-  </scm>
+   </scm>
 
 	<distributionManagement>
 		<snapshotRepository>
