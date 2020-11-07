@@ -4,7 +4,7 @@
 
 	<groupId>com.sloopsight.sandbox</groupId>
 	<artifactId>sandbox-parent</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.2</version>
 	<packaging>pom</packaging>
 
 	<name>sandbox</name>
@@ -118,7 +118,8 @@
 		<url>${GIT_URL}</url>
 		<connection>scm:git:https://github.com/sloopsight-com/sandbox.git</connection>
 		<developerConnection>scm:git:https://github.com/sloopsight-com/sandbox.git</developerConnection>
-   </scm>
+     <tag>TQR2-0.0.2</tag>
+  </scm>
 
 	<distributionManagement>
 		<snapshotRepository>
