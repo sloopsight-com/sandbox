@@ -11,8 +11,8 @@
 	<parent>
 		<groupId>com.sloopsight.sandbox</groupId>
 		<artifactId>sandbox-parent</artifactId>
-		<version>0.0.1</version>
-		<relativePath>../parent/pom.xml</relativePath>
+		<version>0.0.1-SNAPSHOT</version>
+		<relativePath>../pom.xml</relativePath>
 	</parent>
 
 	<properties>
@@ -42,7 +42,7 @@
 		<dependency>
 			<groupId>com.sloopsight.sandbox</groupId>
 			<artifactId>sandbox-ui</artifactId>
-			<version>0.0.1</version>
+			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-text -->
