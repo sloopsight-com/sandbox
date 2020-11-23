@@ -27,6 +27,7 @@ public class LogicHelper {
     private Map<String, String> path;
     private String body;
     private ApplicationContext context;
+    private Exchange exchange;
 
     public LogicHelper(Exchange exchange, Map<String, String> path, ApplicationContext context) throws IOException {
         super();
@@ -35,12 +36,14 @@ public class LogicHelper {
         this.httpServletResponse = exchange.getMessage(HttpServletResponse.class);
         this.body = exchange.getIn().getBody(String.class);
         this.context = context;
-        this.path=path;
+        this.path = path;
+        this.exchange = exchange;
     }
 
     @MethodHint(name = "param", comment = "Get request parameter")
     public String param(@ParamHint("Request Param Name") String param) {
-        return this.httpServletRequest.getParameter(param);
+        String defaultParam = this.httpServletRequest.getParameter(param);
+        return exchange.getIn().getHeader(param, defaultParam, String.class);
     }
 
     @MethodHint(name = "body", comment = "Get request body")
