@@ -108,7 +108,7 @@ export default {
         schema: { type: "string" },
         schemaString: ""
       },
-      types: ["query", "path"]
+      types: ["query", "path", "formData"]
     };
   }
 };
