@@ -264,15 +264,30 @@ export default {
         this.apiSpec.paths[apiData.path] = {};
 
         if (apiData.method == "post" || apiData.method == "put") {
-          this.apiSpec.paths[apiData.path][apiData.method] = {
-            tags: apiData.tags,
-            summary: apiData.description,
-            description: apiData.description,
-            operationId: apiData.operationId,
-            parameters: apiData.params,
-            requestBody: apiData.requestBody,
-            responses: this.defaultResponses
-          };
+          if (apiData.requestBody && apiData.requestBody.content) {
+            this.apiSpec.paths[apiData.path][apiData.method] = {
+              tags: apiData.tags,
+              summary: apiData.description,
+              description: apiData.description,
+              operationId: apiData.operationId,
+              parameters: apiData.params,
+              requestBody: apiData.requestBody,
+              responses: this.defaultResponses,
+              produces: ["*/*"],
+              consumes: apiData.consumes
+            };
+          } else {
+            this.apiSpec.paths[apiData.path][apiData.method] = {
+              tags: apiData.tags,
+              summary: apiData.description,
+              description: apiData.description,
+              operationId: apiData.operationId,
+              parameters: apiData.params,
+              responses: this.defaultResponses,
+              consumes: apiData.consumes,
+              produces: ["*/*"]
+            };
+          }
         } else {
           this.apiSpec.paths[apiData.path][apiData.method] = {
             tags: apiData.tags,
@@ -280,7 +295,9 @@ export default {
             description: apiData.description,
             operationId: apiData.operationId,
             parameters: apiData.params,
-            responses: this.defaultResponses
+            responses: this.defaultResponses,
+            consumes: apiData.consumes,
+            produces: ["*/*"]
           };
         }
       }
@@ -386,7 +403,8 @@ export default {
                 operationId: method.operationId,
                 requestBodyString: JSON.stringify(method.requestBody),
                 requestBody: method.requestBody,
-                params: params
+                params: params,
+                consumes: method.consumes
               });
             });
           });

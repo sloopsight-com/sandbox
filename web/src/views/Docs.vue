@@ -15,15 +15,12 @@
                 </div>
               </div>
             </div>
-            <base-alert v-show="error" dismissible type="danger">{{error_message}}</base-alert>
+            <base-alert v-show="error" dismissible type="danger">{{
+              error_message
+            }}</base-alert>
 
             <template>
-              <open-api
-                v-if="jsonApi"
-                :api="jsonApi"
-                :query-params="queryParams"
-                :headers="headers"
-              ></open-api>
+              <div id="swagger-ui"></div>
             </template>
           </card>
         </div>
@@ -31,10 +28,10 @@
     </div>
   </div>
 </template>
- <script>
-import OpenApi from "vue-openapi";
+<script>
+import "../swagger/css/swagger-ui.css";
 import ProjectService from "../services/project-service";
-
+import { SwaggerUIBundle } from "swagger-ui-dist";
 export default {
   name: "docs",
   data() {
@@ -43,30 +40,49 @@ export default {
       error_message: null,
       jsonApi: null,
       headers: null,
-      queryParams: {},
+      queryParams: {}
     };
   },
-  components: {
-    OpenApi,
-  },
+  components: {},
   methods: {
     loadDocument(id) {
       if (id) {
         ProjectService.getDocs(id)
-          .then((response) => {
+          .then(response => {
             this.jsonApi = response.data;
+
+            const ui = SwaggerUIBundle({
+              spec: response.data,
+              dom_id: "#swagger-ui",
+              layout: "BaseLayout"
+            });
+            window.ui = ui;
           })
-          .catch((error) => {
+          .catch(error => {
             this.error = true;
             this.error_message = error;
           });
       }
-    },
+    }
   },
   mounted() {
     this.$log.info("Loading document for " + this.$route.params.projectId);
     this.loadDocument(this.$route.params.projectId);
-  },
+  }
 };
 </script>
-<style></style>
+<style>
+.download-contents {
+  width: unset !important;
+}
+.scheme-container {
+  display: none !important;
+}
+.information-container {
+  display: none !important;
+}
+code {
+  background-color: unset !important;
+  color: unset !important;
+}
+</style>

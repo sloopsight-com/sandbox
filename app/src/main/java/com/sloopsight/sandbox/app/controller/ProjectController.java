@@ -86,6 +86,13 @@ public class ProjectController {
 
     }
 
+    @Operation(summary = "Get swaggger Json", security = @SecurityRequirement(name = "bearerAuth"))
+    @GetMapping(value = "/project/{projectId}/docs.json", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<JsonNode> docsJson(@PathVariable("projectId") Long projectId) {
+        return ResponseEntity.of(projectService.getDocs(projectId));
+
+    }
+
     @Operation(summary = "Save project", security = @SecurityRequirement(name = "bearerAuth"))
     @PostMapping("/project")
     @PreAuthorize("hasRole('USER')")

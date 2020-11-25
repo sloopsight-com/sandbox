@@ -50,7 +50,7 @@
 
         <v-select
           placeholder="Select Type"
-          v-model="model.type"
+          v-model="model.in"
           :options="types"
         ></v-select>
 
@@ -115,13 +115,15 @@ export default {
         in: "query",
         style: "form",
         schema: { type: "string" },
-        schemaString: ""
+        schemaString: "",
+        type: "string"
       },
-      types: ["query", "path"]
+      types: ["query", "path", "formData", "header"]
     };
   },
   methods: {
     onSubmit() {
+      this.model.type = "string";
       this.$emit("on-close");
       this.state = false;
     },

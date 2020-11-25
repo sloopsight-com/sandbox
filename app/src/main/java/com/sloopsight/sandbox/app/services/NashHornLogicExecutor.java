@@ -28,6 +28,7 @@ public class NashHornLogicExecutor implements LogicExecutor {
         } catch (Exception e) {
             res.setStatus(500);
             res.setContentType("text/html");
+            res.setHeader("X-ERROR", e.getMessage());
             IOUtils.write(e.getMessage(), res.getOutputStream(), "UTF-8");
         }
         return false;

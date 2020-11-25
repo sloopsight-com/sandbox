@@ -14,7 +14,7 @@ module.exports = {
         }
       },
       "/camel/*": {
-        target: "http://localhost:8081/app/camel",
+        target: "http://localhost:8081/app/",
         ws: true,
         changeOrigin: true,
         pathRewrite: {

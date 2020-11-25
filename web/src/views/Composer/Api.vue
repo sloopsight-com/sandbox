@@ -36,7 +36,7 @@
         ></v-select>
         <v-select
           placeholder="Select Tag"
-          style="padding-top:20px"
+          style="padding-top:20px;"
           v-model="model.tags"
           label="name"
           value="name"
@@ -44,6 +44,19 @@
           multiple
           :reduce="tag => tag.name"
         ></v-select>
+
+        <label style="padding-top:20px;" class="typo__label form-control-label"
+          >Consumes</label
+        >
+        <multiselect
+          style="padding-bottom:20px;"
+          v-model="model.consumes"
+          tag-placeholder="Add this user to project"
+          placeholder="Select content type"
+          :options="contentTypes"
+          :multiple="true"
+          :taggable="true"
+        ></multiselect>
 
         <textarea
           class="form-control form-control-alternative"
@@ -64,6 +77,8 @@
 <script>
 import vSelect from "vue-select";
 import "vue-select/dist/vue-select.css";
+import Multiselect from "vue-multiselect";
+
 export default {
   props: {
     show: Boolean,
@@ -75,6 +90,7 @@ export default {
           return {
             requestBody: {},
             path: "",
+            consumes: [],
             requestBodyString: {},
             description: "",
             tags: ["default"],
@@ -91,12 +107,20 @@ export default {
   },
   computed: {
     validForm() {
-      return (
-        !this.model.path.startsWith("/") &&
+      const idem = false;
+      const hasData =
+        this.model.requestBodyString && this.model.requestBodyString.length > 0;
+
+      const valid =
         this.model.path.length > 0 &&
         this.model.description.length > 5 &&
-        this.model.operationId.length > 0
-      );
+        this.model.operationId.length > 0;
+
+      if (idem) {
+        return hasData && valid;
+      } else {
+        return valid;
+      }
     }
   },
   methods: {
@@ -106,7 +130,10 @@ export default {
     },
     addApi() {
       this.$emit("on-add", this.model);
-      if (this.model.requestBodyString.length > 0) {
+      if (
+        this.model.requestBodyString &&
+        this.model.requestBodyString.length > 0
+      ) {
         try {
           this.model.requestBody = JSON.parse(this.model.requestBodyString);
         } catch (e) {
@@ -116,7 +143,7 @@ export default {
       this.$emit("on-close");
     }
   },
-  components: { vSelect },
+  components: { vSelect, Multiselect },
   data() {
     return {
       model: {
@@ -130,7 +157,14 @@ export default {
         params: []
       },
       state: false,
-      options: ["get", "put", "post", "delete"]
+      options: ["get", "put", "post", "delete"],
+      contentTypes: [
+        "application/json",
+        "multipart/form-data",
+        "application/x-www-form-urlencoded",
+        "application/xml",
+        "text/plain"
+      ]
     };
   },
   mounted() {
