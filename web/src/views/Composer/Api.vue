@@ -113,6 +113,7 @@ export default {
 
       const valid =
         this.model.path.length > 0 &&
+        this.model.path.startsWith("/") &&
         this.model.description.length > 5 &&
         this.model.operationId.length > 0;
 
