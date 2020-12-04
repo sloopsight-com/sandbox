@@ -50,7 +50,7 @@
 
         <v-select
           placeholder="Select Type"
-          v-model="model.in"
+          v-model="model.type"
           :options="types"
         ></v-select>
 
@@ -58,7 +58,7 @@
           placeholder="Select Input"
           v-model="model.in"
           :options="inputs"
-          style="padding-top:20px;padding-botton:20px;"
+          style="padding-top:20px;padding-bottom:20px;"
         ></v-select>
 
         <base-checkbox class="mb-3" v-model="model.required">

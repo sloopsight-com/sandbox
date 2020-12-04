@@ -31,7 +31,7 @@
 
           <v-select
             placeholder="Select Type"
-            style="padding-top:20px;padding-botton:20px;"
+            style="padding-top:20px;padding-bottom:20px;"
             v-model="model.type"
             :options="types"
           ></v-select>
