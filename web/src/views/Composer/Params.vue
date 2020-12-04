@@ -5,6 +5,7 @@
     </template>
     <template>
       <base-table
+        v-if="!showEdit"
         class="table align-items-center table-flush"
         :class="type === 'dark' ? 'table-dark' : ''"
         :thead-classes="type === 'dark' ? 'thead-dark' : 'thead-light'"
@@ -28,8 +29,7 @@
           </td>
         </template>
       </base-table>
-    </template>
-    <template slot="footer">
+
       <form role="form" style="width:100%" v-if="showEdit">
         <base-input
           alternative
@@ -84,6 +84,7 @@
         </div>
       </form>
     </template>
+    <template slot="footer"> </template>
   </modal>
 </template>
 <script>
@@ -127,9 +128,20 @@ export default {
   },
   methods: {
     onSubmit() {
-      this.model.type = "string";
-      this.$emit("on-close");
-      this.state = false;
+      if (this.isJsonString(this.model.schemaString)) {
+        this.model.schema = JSON.parse(this.model.schemaString);
+      } else {
+        this.model.schema = { type: "string" };
+      }
+      this.showEdit = false;
+    },
+    isJsonString(str) {
+      try {
+        JSON.parse(str);
+      } catch (e) {
+        return false;
+      }
+      return true;
     },
     close() {
       this.$emit("on-close");

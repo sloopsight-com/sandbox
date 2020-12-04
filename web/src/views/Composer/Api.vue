@@ -138,7 +138,7 @@ export default {
         try {
           this.model.requestBody = JSON.parse(this.model.requestBodyString);
         } catch (e) {
-          this.$log.console.error(e);
+          this.$log.error(e);
         }
       }
       this.$emit("on-close");
