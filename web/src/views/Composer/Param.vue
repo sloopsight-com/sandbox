@@ -26,6 +26,12 @@
           <v-select
             placeholder="Select Type"
             v-model="model.in"
+            :options="inputs"
+          ></v-select>
+
+          <v-select
+            placeholder="Select Type"
+            v-model="model.type"
             :options="types"
           ></v-select>
 
@@ -68,7 +74,6 @@ export default {
       } else {
         this.model.schema = { type: "string" };
       }
-      this.model.type = "string";
       this.$emit("onSubmit", this.model);
       this.api.params.push(this.model);
       this.state = false;
@@ -110,7 +115,8 @@ export default {
         schemaString: "",
         type: "string"
       },
-      types: ["query", "path", "formData", "header"]
+      types: ["string", "file"],
+      inputs: ["query", "path", "formData", "header"]
     };
   }
 };
