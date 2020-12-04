@@ -54,11 +54,14 @@
           :options="types"
         ></v-select>
 
-        <base-checkbox
-          class="mb-3"
-          style="padding-top:20px"
-          v-model="model.required"
-        >
+        <v-select
+          placeholder="Select Input"
+          v-model="model.in"
+          :options="inputs"
+          style="padding-top:20px;padding-botton:20px;"
+        ></v-select>
+
+        <base-checkbox class="mb-3" v-model="model.required">
           Required
         </base-checkbox>
         <textarea
@@ -118,7 +121,8 @@ export default {
         schemaString: "",
         type: "string"
       },
-      types: ["query", "path", "formData", "header"]
+      inputs: ["query", "path", "formData", "header"],
+      types: ["string", "file"]
     };
   },
   methods: {

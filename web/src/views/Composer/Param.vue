@@ -24,13 +24,14 @@
           </base-input>
 
           <v-select
-            placeholder="Select Type"
+            placeholder="Select Input"
             v-model="model.in"
             :options="inputs"
           ></v-select>
 
           <v-select
             placeholder="Select Type"
+            style="padding-top:20px;padding-botton:20px;"
             v-model="model.type"
             :options="types"
           ></v-select>
