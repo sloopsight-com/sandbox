@@ -17,6 +17,8 @@
     "chart.js": "2.8.0",
     "core-js": "2.6.5",
     "flatpickr": "4.5.7",
+    "monaco-editor-vue": "^1.0.10",
+    "monaco-editor-webpack-plugin": "^1.9.1",
     "nouislider": "13.1.4",
     "swagger-ui-dist": "^3.37.0",
     "vue": "2.6.6",

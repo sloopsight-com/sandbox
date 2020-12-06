@@ -15,6 +15,7 @@ import org.reflections.util.ConfigurationBuilder;
 import org.reflections.util.FilterBuilder;
 import org.springframework.stereotype.Component;
 
+import com.sloopsight.sandbox.app.dto.response.Hint;
 import com.sloopsight.sandbox.app.meta.Intellisense;
 import com.sloopsight.sandbox.app.meta.MethodHint;
 import com.sloopsight.sandbox.app.meta.ParamHint;
@@ -22,10 +23,9 @@ import com.sloopsight.sandbox.app.meta.ParamHint;
 @Component
 public class HintGenerator {
 
+    public List<Hint> get() {
 
-    public List<String> get() {
-
-        List<String> hints = new LinkedList<>();
+        List<Hint> hints = new LinkedList<>();
 
         List<ClassLoader> classLoadersList = new LinkedList<ClassLoader>();
         classLoadersList.add(ClasspathHelper.contextClassLoader());
@@ -63,9 +63,9 @@ public class HintGenerator {
                             if (argument.endsWith(",")) {
                                 argument = argument.substring(0, argument.length() - 1);
                             }
-                            hints.add(intellisense.value() + "." + methodHint.name() + "(" + argument + "); //"
-                                    + methodHint.comment());
-                        }
+                            String snippet=intellisense.value() + "." + methodHint.name() + "(" + argument + ");";
+                            hints.add(new Hint(methodHint.name(), snippet, methodHint.comment()));
+                         }
                     }
                 }
             }

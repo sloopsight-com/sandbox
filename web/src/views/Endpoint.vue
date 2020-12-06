@@ -30,10 +30,14 @@
                 <div class="pl-lg-4">
                   <div class="form-group">
                     <base-input alternative label="Logic in Nashorn Javasript">
-                      <codemirror
+                      <MonacoEditor
+                        :editorMounted="setUpHint"
+                        height="500"
+                        theme="vs-dark"
+                        language="javascript"
                         v-model="model.logic"
-                        :options="cmOptions"
-                      ></codemirror>
+                        :options="options"
+                      ></MonacoEditor>
                     </base-input>
                   </div>
                 </div>
@@ -56,10 +60,6 @@
   </div>
 </template>
 <script>
-import CodeMirror from "codemirror";
-
-import { codemirror } from "vue-codemirror";
-
 // require styles
 import "codemirror/lib/codemirror.css";
 import "codemirror/theme/base16-dark.css";
@@ -70,13 +70,34 @@ import "codemirror/mode/javascript/javascript.js";
 import "codemirror/addon/hint/show-hint.js";
 
 import "codemirror/addon/hint/javascript-hint.js";
-
+import MonacoEditor from "monaco-editor-vue";
 import EndpointService from "../services/endpoint-service";
 
 export default {
   name: "edit-endpoint",
   data() {
     return {
+      hints: [],
+      options: {
+        //Monaco Editor Options
+        //minimap:true,
+        automaticLayout: true,
+        matchBrackets: "always",
+        //renderIndentGuides:true,
+        dragAndDrop: true,
+        suggest: {
+          showWords: true
+        },
+        suggestOnTriggerCharacters: true,
+        parameterHints: {
+          cycle: true,
+          enabled: true
+        },
+        scrollBeyondLastLine: false,
+        statusBar: {
+          visible: true
+        }
+      },
       error: null,
       error_message: null,
       model: {
@@ -96,9 +117,42 @@ export default {
     };
   },
   components: {
-    codemirror
+    MonacoEditor
   },
   methods: {
+    setUpHint(editor, monaco) {
+      EndpointService.getHint().then(response => {
+        const loadedHints = response.data;
+        monaco.languages.registerCompletionItemProvider("javascript", {
+          provideCompletionItems: function(model, position) {
+            // find out if we are completing a property in the 'dependencies' object.
+
+            var word = model.getWordUntilPosition(position);
+            var range = {
+              startLineNumber: position.lineNumber,
+              endLineNumber: position.lineNumber,
+              startColumn: word.startColumn,
+              endColumn: word.endColumn
+            };
+            const monacoHints = [];
+            for (let i = 0; i < loadedHints.length; i++) {
+              let loadedHint = loadedHints[i];
+              monacoHints.push({
+                label: '"' + loadedHint.keyword + '"',
+                kind: monaco.languages.CompletionItemKind.Function,
+                documentation: loadedHint.description,
+                insertText: loadedHint.snippet,
+                range: range
+              });
+            }
+
+            return {
+              suggestions: monacoHints
+            };
+          }
+        });
+      });
+    },
     checkForm() {
       if (!this.model.logic) {
         this.error = true;
@@ -108,6 +162,7 @@ export default {
       return true;
     },
     init() {},
+
     saveEndpoint() {
       if (this.checkForm()) {
         var projectPromise = null;
@@ -141,39 +196,6 @@ export default {
   },
   mounted() {
     this.$log.info(this.$route.params.id);
-
-    EndpointService.getHint().then(response => {
-      this.$log.info("********************");
-
-      this.$log.info(response);
-      CodeMirror.hint.javascript = function(editor) {
-        var list = response.data;
-        var cursor = editor.getCursor();
-        var currentLine = editor.getLine(cursor.line);
-        var start = cursor.ch;
-        var end = start;
-        while (
-          end < currentLine.length &&
-          /[\w$]+/.test(currentLine.charAt(end))
-        )
-          ++end;
-        while (start && /[\w$]+/.test(currentLine.charAt(start - 1))) --start;
-        var curWord = start != end && currentLine.slice(start, end);
-        var regex = new RegExp("^" + curWord, "i");
-        var result = {
-          list: (!curWord
-            ? list
-            : list.filter(function(item) {
-                return item.match(regex);
-              })
-          ).sort(),
-          from: CodeMirror.Pos(cursor.line, start),
-          to: CodeMirror.Pos(cursor.line, end)
-        };
-
-        return result;
-      };
-    });
 
     if (this.$route.params.id) {
       EndpointService.getOne(this.$route.params.id)

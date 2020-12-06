@@ -1,7 +1,16 @@
+const MonacoWebpackPlugin = require("monaco-editor-webpack-plugin");
 // vue.config.js
 module.exports = {
   // options...
 
+  chainWebpack: config => {
+    config.plugin("monaco-editor").use(MonacoWebpackPlugin, [
+      {
+        // Languages are loaded on demand at runtime
+        languages: ["javascript"]
+      }
+    ]);
+  },
   publicPath: "/app",
   devServer: {
     proxy: {
