@@ -40,25 +40,25 @@ public class LogicHelper {
         this.exchange = exchange;
     }
 
-    @MethodHint(name = "param", comment = "Get request parameter")
+    @MethodHint(name = "getRequestParam", comment = "Get request parameter")
     public String param(@ParamHint("Request Param Name") String param) {
         String defaultParam = this.httpServletRequest.getParameter(param);
         return exchange.getIn().getHeader(param, defaultParam, String.class);
     }
 
-    @MethodHint(name = "body", comment = "Get request body")
+    @MethodHint(name = "getBody", comment = "Get request body")
     public String body() throws IOException {
         return body;
     }
 
-    @MethodHint(name = "reply", comment = "Send reply to, should be called once")
+    @MethodHint(name = "sendReply", comment = "Send reply to, should be called once")
     public void reply(@ParamHint("HTTP Response Code") int code, @ParamHint("HTTP Response body") String body)
             throws IOException {
         httpServletResponse.setStatus(code);
         IOUtils.write(body, httpServletResponse.getOutputStream(), "UTF-8");
     }
 
-    @MethodHint(name = "reply", comment = "Send reply to, should be called once")
+    @MethodHint(name = "replyWithContentType", comment = "Send reply to, should be called once")
     public void reply(@ParamHint("HTTP Response Code") int code, @ParamHint("body") Object body,
             @ParamHint("Content Type") String mediaType) throws IOException {
 
@@ -73,23 +73,23 @@ public class LogicHelper {
         httpServletResponse.setContentType(mediaType);
     }
 
-    @MethodHint(name = "header", comment = "Set Repsonse Header")
+    @MethodHint(name = "setHeader", comment = "Set Repsonse Header")
     public void header(@ParamHint("Header name") String param, @ParamHint("Header value") String value) throws IOException {
 
         httpServletResponse.setHeader(param, value);
     }
 
-    @MethodHint(name = "header", comment = "Get Request Header")
+    @MethodHint(name = "getHeader", comment = "Get Request Header")
     public String header(@ParamHint("Header name") String param) throws IOException {
         return httpServletRequest.getHeader(param);
     }
 
-    @MethodHint(name = "path", comment = "Get Value of path variable")
+    @MethodHint(name = "getPath", comment = "Get Value of path variable")
     public String path(@ParamHint("Path Variable Name") String param) {
         return path.getOrDefault(param, StringUtils.EMPTY);
     }
 
-    @MethodHint(name = "bearer", comment = "Get Bearer Value")
+    @MethodHint(name = "getOauthBearerToken", comment = "Get Bearer Value")
     public String bearer() {
         String auth = httpServletRequest.getHeader("Authorization");
         if (StringUtils.isNotBlank(auth) && auth.contains(" ")) {
@@ -98,7 +98,7 @@ public class LogicHelper {
         return StringUtils.EMPTY;
     }
 
-    @MethodHint(name = "bearer", comment = "Get Basic Auth Map [user:<username>,password:<password>]")
+    @MethodHint(name = "getBasicBearerToken", comment = "Get Basic Auth Map [user:<username>,password:<password>]")
     public Map<String, String> basic() {
         try {
             String auth = httpServletRequest.getHeader("Authorization");

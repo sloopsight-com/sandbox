@@ -63,7 +63,7 @@ public class HintGenerator {
                             if (argument.endsWith(",")) {
                                 argument = argument.substring(0, argument.length() - 1);
                             }
-                            String snippet=intellisense.value() + "." + methodHint.name() + "(" + argument + ");";
+                            String snippet=intellisense.value() + "." + m.getName() + "(" + argument + ");";
                             hints.add(new Hint(methodHint.name(), snippet, methodHint.comment()));
                          }
                     }
