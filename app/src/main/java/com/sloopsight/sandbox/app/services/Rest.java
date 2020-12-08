@@ -140,7 +140,7 @@ public class Rest {
         return withData(url, jo, HttpMethod.PUT);
     }
 
-    @MethodHint(name = "http{ost", comment = "Execute POST API response : ({headers:{},object:{},code:200})")
+    @MethodHint(name = "httpPost", comment = "Execute POST API response : ({headers:{},object:{},code:200})")
     public String post(@ParamHint(value = "endpoint") String url, @ParamHint("{params:{},headers:{},body:{}}") Object jo)
             throws JsonProcessingException {
 
