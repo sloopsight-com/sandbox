@@ -33,18 +33,19 @@ public class LocalDb {
         cache.put(new Element(key, value, 24 * 3600, 24 * 3600));
     }
 
-    @MethodHint(name = "dbGet", comment = "get value for key")
+    @MethodHint(name = "dbGet", comment = "get value as ([{\\\"ttl\\\":\\\"time to live\\\",\\\"value\\\":\\\"Value stored \\\"}]) in db")
     public Map<String, Object> get(@ParamHint("key") String key) {
         Element element = cache.get(key);
         if (element != null) {
             Map<String, Object> result = new HashMap<>();
             result.put("ttl", element.getTimeToLive());
             result.put("value", element.getObjectValue());
+            return result;
         }
         return null;
     }
 
-    @MethodHint(name = "getAll", comment = "get value as ({\"ttl\":\"time to live\",\"value\":\"Value stored \"}) in db")
+    @MethodHint(name = "dbGetAll", comment = "get value as ([{\"ttl\":\"time to live\",\"value\":\"Value stored \"}]) in db")
     public List<Map<String, Object>> getAll() {
         List<Map<String, Object>> entires = new LinkedList<>();
         for (Object key : cache.getKeys()) {
