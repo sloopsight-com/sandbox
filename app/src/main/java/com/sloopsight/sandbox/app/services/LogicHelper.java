@@ -43,6 +43,15 @@ public class LogicHelper {
     @MethodHint(name = "getRequestParam", comment = "Get request parameter")
     public String param(@ParamHint("Request Param Name") String param) {
         String defaultParam = this.httpServletRequest.getParameter(param);
+        String part = null;
+        try {
+            part =IOUtils.toString(httpServletRequest.getPart(param).getInputStream(),"UTF-8");
+        } catch (Exception e) {
+        }
+        if (StringUtils.isNoneBlank(part))
+        {
+            defaultParam=part;
+        }
         return exchange.getIn().getHeader(param, defaultParam, String.class);
     }
 
