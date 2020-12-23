@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.camel.Exchange;
+import org.apache.commons.fileupload.FileItemIterator;
+import org.apache.commons.fileupload.FileItemStream;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.context.ApplicationContext;
@@ -19,6 +21,8 @@ import com.sloopsight.sandbox.app.meta.MethodHint;
 import com.sloopsight.sandbox.app.meta.ParamHint;
 import com.sloopsight.sandbox.app.util.Mapper;
 
+import delight.fileupload.FileUpload;
+
 @Intellisense("web")
 public class LogicHelper {
 
@@ -28,6 +32,7 @@ public class LogicHelper {
     private String body;
     private ApplicationContext context;
     private Exchange exchange;
+    Map<String, String> fields = new HashMap<String, String>();
 
     public LogicHelper(Exchange exchange, Map<String, String> path, ApplicationContext context) throws IOException {
         super();
@@ -38,20 +43,32 @@ public class LogicHelper {
         this.context = context;
         this.path = path;
         this.exchange = exchange;
+        FileItemIterator iterator = null;
+        if (exchange.getIn().getHeader("Content-Type", "", String.class).trim().startsWith("multipart/form-data")) {
+            try {
+                iterator = FileUpload.parse(this.body.getBytes(),
+                        (exchange.getIn().getHeader("Content-Type", "", String.class)));
+
+                while (iterator.hasNext()) {
+                    FileItemStream item = iterator.next();
+
+                    if (item.isFormField()) {
+                        fields.put(item.getFieldName(), IOUtils.toString(item.openStream(), "UTF-8"));
+                    }
+
+                }
+            } catch (Exception e) {
+                // TODO: handle exception
+                e.printStackTrace();
+            }
+        }
+
     }
 
     @MethodHint(name = "getRequestParam", comment = "Get request parameter")
     public String param(@ParamHint("Request Param Name") String param) {
-        String defaultParam = this.httpServletRequest.getParameter(param);
-        String part = null;
-        try {
-            part =IOUtils.toString(httpServletRequest.getPart(param).getInputStream(),"UTF-8");
-        } catch (Exception e) {
-        }
-        if (StringUtils.isNoneBlank(part))
-        {
-            defaultParam=part;
-        }
+
+        String defaultParam =fields.getOrDefault(param, this.httpServletRequest.getParameter(param));
         return exchange.getIn().getHeader(param, defaultParam, String.class);
     }
 

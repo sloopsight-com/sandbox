@@ -66,8 +66,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.cors().and().csrf().disable().exceptionHandling().authenticationEntryPoint(unauthorizedHandler).and()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and().authorizeRequests()
-                .antMatchers("/api/auth/**","/service-worker.js","/robots.txt", "/swagger-ui/**","/css/**","/","/fonts/**","/img/**","/precache-manifest**","/js/**","/favicon.ico","/manifest.json", "/index.html","/swagger-ui.html", "/v3/**").permitAll()
-                .antMatchers("/api/test/**", "/camel/**").permitAll().anyRequest().authenticated();
+                .antMatchers("/api/auth/**", "/service-worker.js", "/robots.txt", "/swagger-ui/**", "/css/**", "/", "/fonts/**",
+                        "/img/**", "/precache-manifest**", "/js/**", "/favicon.ico", "/manifest.json", "/index.html",
+                        "/swagger-ui.html", "/v3/**","/api/v1/document/**")
+                .permitAll().antMatchers("/api/test/**", "/camel/**").permitAll().anyRequest().authenticated();
 
         http.addFilterBefore(authenticationJwtTokenFilter(), UsernamePasswordAuthenticationFilter.class);
     }
@@ -76,4 +78,5 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     public ObjectMapper getObjectMapper() {
         return new ObjectMapper();
     }
+
 }

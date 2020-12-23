@@ -1,12 +1,23 @@
 <template>
-  <div class="card shadow" :class="type === 'dark' ? 'bg-default': ''" style="width:100%">
-    <div class="card-header border-0" :class="type === 'dark' ? 'bg-transparent': ''">
+  <div
+    class="card shadow"
+    :class="type === 'dark' ? 'bg-default' : ''"
+    style="width:100%"
+  >
+    <div
+      class="card-header border-0"
+      :class="type === 'dark' ? 'bg-transparent' : ''"
+    >
       <div class="row align-items-center">
         <div class="col">
-          <h3 class="mb-0" :class="type === 'dark' ? 'text-white': ''">{{label}}</h3>
+          <h3 class="mb-0" :class="type === 'dark' ? 'text-white' : ''">
+            {{ label }}
+          </h3>
         </div>
         <div class="col text-right">
-          <base-button type="primary" v-on:click="goToCreate()" size="sm">Create New</base-button>
+          <base-button type="primary" v-on:click="goToCreate()" size="sm"
+            >Create New</base-button
+          >
         </div>
       </div>
     </div>
@@ -14,8 +25,8 @@
     <div class="table-responsive" style="min-height: 400px;">
       <base-table
         class="table align-items-center table-flush"
-        :class="type === 'dark' ? 'table-dark': ''"
-        :thead-classes="type === 'dark' ? 'thead-dark': 'thead-light'"
+        :class="type === 'dark' ? 'table-dark' : ''"
+        :thead-classes="type === 'dark' ? 'thead-dark' : 'thead-light'"
         tbody-classes="list"
         :data="tableData"
       >
@@ -27,10 +38,10 @@
           <th></th>
         </template>
 
-        <template slot-scope="{row}">
-          <td class="budget">{{row.id}}</td>
-          <td class="budget">{{row.name}}</td>
-          <td class="budget">{{row.description}}</td>
+        <template slot-scope="{ row }">
+          <td class="budget">{{ row.id }}</td>
+          <td class="budget">{{ row.name }}</td>
+          <td class="budget">{{ row.description }}</td>
 
           <td class="text-right">
             <base-dropdown class="dropdown" position="right">
@@ -47,10 +58,18 @@
               </a>
 
               <template>
-                <a class="dropdown-item" @click.prevent="goToEdit(row.id)">Edit</a>
-                <a class="dropdown-item" @click.prevent="deleteProject(row.id)">Delete</a>
-                <a class="dropdown-item" @click.prevent="loadEndpoints(row.id)">Endpoint</a>
-                <a class="dropdown-item" @click.prevent="viewDocument(row.id)">Swagger Docs</a>
+                <a class="dropdown-item" @click.prevent="goToEdit(row.id)"
+                  >Edit</a
+                >
+                <a class="dropdown-item" @click.prevent="deleteProject(row.id)"
+                  >Delete</a
+                >
+                <a class="dropdown-item" @click.prevent="loadEndpoints(row.id)"
+                  >Endpoint</a
+                >
+                <a class="dropdown-item" @click.prevent="viewDocument(row.id)"
+                  >Swagger Docs</a
+                >
               </template>
             </base-dropdown>
           </td>
@@ -60,7 +79,7 @@
 
     <div
       class="card-footer d-flex justify-content-end"
-      :class="type === 'dark' ? 'bg-transparent': ''"
+      :class="type === 'dark' ? 'bg-transparent' : ''"
     >
       <base-pagination
         :total="total"
@@ -77,9 +96,9 @@ import ProjectService from "../../services/project-service";
 export default {
   props: {
     type: {
-      type: String,
+      type: String
     },
-    title: String,
+    title: String
   },
   data() {
     return {
@@ -88,13 +107,13 @@ export default {
       value: 0,
       perPage: 5,
       label: "My Projects",
-      tableData: [],
+      tableData: []
     };
   },
   methods: {
     async pageChangeHandle(value) {
       const loader = this.$loading.show({ loader: "bars", color: "#2dce89" });
-      ProjectService.get(value - 1, this.perPage).then((response) => {
+      ProjectService.get(value - 1, this.perPage).then(response => {
         this.tableData = response.data.content;
         this.total = response.data.totalElements;
         loader.hide();
@@ -102,7 +121,7 @@ export default {
     },
     init() {
       const loader = this.$loading.show({ loader: "bars", color: "#2dce89" });
-      ProjectService.get(0, this.perPage).then((response) => {
+      ProjectService.get(0, this.perPage).then(response => {
         this.tableData = response.data.content;
         this.total = response.data.totalElements;
         loader.hide();
@@ -124,16 +143,35 @@ export default {
       this.$router.push("/docs/" + id);
     },
     deleteProject(id) {
-      ProjectService.delete(id).then((response) => {
-        this.$log.info(response);
-        this.init();
-      });
-    },
+      this.$swal
+        .fire({
+          title: "Are you sure?",
+          text: "You won't be able to revert this!",
+          type: "warning",
+          showCancelButton: true,
+          confirmButtonClass: "md-button md-success btn-fill",
+          cancelButtonClass: "md-button md-danger btn-fill",
+          confirmButtonText: "Yes, delete it!",
+          buttonsStyling: false
+        })
+        .then(result => {
+          if (result.value) {
+            const loader = this.$loading.show({
+              loader: "bars",
+              color: "#2dce89"
+            });
+            ProjectService.delete(id).then(response => {
+              this.$log.info(response);
+              this.init();
+              loader.hide();
+            });
+          }
+        });
+    }
   },
   mounted() {
     this.init();
-  },
+  }
 };
 </script>
-<style>
-</style>
+<style></style>

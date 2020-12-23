@@ -23,11 +23,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.fasterxml.jackson.databind.JsonNode;
 import com.sloopsight.sandbox.app.config.JwtUtils;
 import com.sloopsight.sandbox.app.dto.request.AuthConfigRequest;
 import com.sloopsight.sandbox.app.dto.request.LoginRequest;
 import com.sloopsight.sandbox.app.dto.response.JwtResponse;
 import com.sloopsight.sandbox.app.services.AuthConfigService;
+import com.sloopsight.sandbox.app.services.ProjectService;
 import com.sloopsight.sandbox.app.services.UserDetailsImpl;
 
 import io.swagger.v3.oas.annotations.Operation;
@@ -46,6 +48,9 @@ public class AuthController {
     @Autowired
     private JwtUtils jwtUtils;
 
+    @Autowired
+    private ProjectService projectService;
+
     @Operation(summary = "Save provided config", security = @SecurityRequirement(name = "bearerAuth"))
     @PreAuthorize("hasRole('ADMIN')")
     @PutMapping("/config/{name}")
@@ -56,6 +61,12 @@ public class AuthController {
     @PostMapping("/upload")
     public String handleFileUpload(@RequestParam("file") MultipartFile file) {
         return "ok";
+    }
+
+    @PostMapping("/document/{projectId}")
+    public ResponseEntity<JsonNode> docs(@PathVariable("projectId") Long projectId) {
+        return ResponseEntity.of(projectService.getDocs(projectId));
+
     }
 
     @Operation(summary = "Read provided config", security = @SecurityRequirement(name = "bearerAuth"))

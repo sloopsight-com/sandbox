@@ -1,164 +1,177 @@
-import Vue from 'vue'
-import Router from 'vue-router'
-import DashboardLayout from '@/layout/DashboardLayout'
-import AuthLayout from '@/layout/AuthLayout'
-import store from './store'
-import guards from './services/guards'
+import Vue from "vue";
+import Router from "vue-router";
+import DashboardLayout from "@/layout/DashboardLayout";
+import AuthLayout from "@/layout/AuthLayout";
+import OpenApi from "./views/OpenApi.vue";
 
-Vue.use(Router)
+import store from "./store";
+import guards from "./services/guards";
+
+Vue.use(Router);
 
 const router = new Router({
-  linkExactActiveClass: 'active',
-  base: '/app',
+  linkExactActiveClass: "active",
+  base: "/app",
   routes: [
     {
-      path: '/',
-      redirect: 'dashboard',
+      path: "/",
+      redirect: "dashboard",
       component: DashboardLayout,
       children: [
         {
-          path: '/dashboard',
-          name: 'dashboard',
+          path: "/dashboard",
+          name: "dashboard",
           // route level code-splitting
           // this generates a separate chunk (about.[hash].js) for this route
           // which is lazy-loaded when the route is visited.
-          component: () => import(/* webpackChunkName: "demo" */ './views/Dashboard.vue'),
+          component: () =>
+            import(/* webpackChunkName: "demo" */ "./views/Dashboard.vue"),
           meta: {
             requiresAuth: true
           }
         },
         {
-          path: '/users',
-          name: 'users',
+          path: "/users",
+          name: "users",
           // route level code-splitting
           // this generates a separate chunk (about.[hash].js) for this route
           // which is lazy-loaded when the route is visited.
-          component: () => import(/* webpackChunkName: "demo" */ './views/Users.vue'),
+          component: () =>
+            import(/* webpackChunkName: "demo" */ "./views/Users.vue"),
           meta: {
             requiresAuth: true
           }
         },
         {
-          path: '/user',
-          name: 'Create User',
+          path: "/user",
+          name: "Create User",
           // route level code-splitting
           // this generates a separate chunk (about.[hash].js) for this route
           // which is lazy-loaded when the route is visited.
-          component: () => import(/* webpackChunkName: "demo" */ './views/User.vue'),
+          component: () =>
+            import(/* webpackChunkName: "demo" */ "./views/User.vue"),
           meta: {
             requiresAuth: true
           }
         },
         {
-          path: '/user/:id',
-          name: 'Edit User',
+          path: "/user/:id",
+          name: "Edit User",
           // route level code-splitting
           // this generates a separate chunk (about.[hash].js) for this route
           // which is lazy-loaded when the route is visited.
-          component: () => import(/* webpackChunkName: "demo" */ './views/User.vue'),
-          meta: {
-            requiresAuth: true
-          }
-        }
-        ,
-        {
-          path: '/projects',
-          name: 'projects',
-          // route level code-splitting
-          // this generates a separate chunk (about.[hash].js) for this route
-          // which is lazy-loaded when the route is visited.
-          component: () => import(/* webpackChunkName: "demo" */ './views/Projects.vue'),
-          meta: {
-            requiresAuth: true
-          }
-        }
-        ,
-        {
-          path: '/project',
-          name: 'Create Project',
-          // route level code-splitting
-          // this generates a separate chunk (about.[hash].js) for this route
-          // which is lazy-loaded when the route is visited.
-          component: () => import(/* webpackChunkName: "demo" */ './views/Project.vue'),
-          meta: {
-            requiresAuth: true
-          }
-        }
-        ,
-        {
-          path: '/settings',
-          name: 'Settings',
-          // route level code-splitting
-          // this generates a separate chunk (about.[hash].js) for this route
-          // which is lazy-loaded when the route is visited.
-          component: () => import(/* webpackChunkName: "demo" */ './views/Settings.vue'),
-          meta: {
-            requiresAuth: true
-          }
-        }
-        , {
-          path: '/project/:id',
-          name: 'Edit Project',
-          // route level code-splitting
-          // this generates a separate chunk (about.[hash].js) for this route
-          // which is lazy-loaded when the route is visited.
-          component: () => import(/* webpackChunkName: "demo" */ './views/Project.vue'),
+          component: () =>
+            import(/* webpackChunkName: "demo" */ "./views/User.vue"),
           meta: {
             requiresAuth: true
           }
         },
         {
-          path: '/project/:id/endpoint',
-          name: 'Endpoints',
+          path: "/projects",
+          name: "projects",
           // route level code-splitting
           // this generates a separate chunk (about.[hash].js) for this route
           // which is lazy-loaded when the route is visited.
-          component: () => import(/* webpackChunkName: "demo" */ './views/Endpoints.vue'),
+          component: () =>
+            import(/* webpackChunkName: "demo" */ "./views/Projects.vue"),
           meta: {
             requiresAuth: true
           }
         },
         {
-          path: '/project/:projectId/endpoint/:id',
-          name: 'Edit Endpoint',
+          path: "/project",
+          name: "Create Project",
           // route level code-splitting
           // this generates a separate chunk (about.[hash].js) for this route
           // which is lazy-loaded when the route is visited.
-          component: () => import(/* webpackChunkName: "demo" */ './views/Endpoint.vue'),
+          component: () =>
+            import(/* webpackChunkName: "demo" */ "./views/Project.vue"),
           meta: {
             requiresAuth: true
           }
-        }
-        ,
+        },
         {
-          path: '/docs/:projectId',
-          name: 'vIEW dOCUMENT',
+          path: "/settings",
+          name: "Settings",
           // route level code-splitting
           // this generates a separate chunk (about.[hash].js) for this route
           // which is lazy-loaded when the route is visited.
-          component: () => import(/* webpackChunkName: "demo" */ './views/Docs.vue'),
+          component: () =>
+            import(/* webpackChunkName: "demo" */ "./views/Settings.vue"),
           meta: {
             requiresAuth: true
           }
-
+        },
+        {
+          path: "/project/:id",
+          name: "Edit Project",
+          // route level code-splitting
+          // this generates a separate chunk (about.[hash].js) for this route
+          // which is lazy-loaded when the route is visited.
+          component: () =>
+            import(/* webpackChunkName: "demo" */ "./views/Project.vue"),
+          meta: {
+            requiresAuth: true
+          }
+        },
+        {
+          path: "/project/:id/endpoint",
+          name: "Endpoints",
+          // route level code-splitting
+          // this generates a separate chunk (about.[hash].js) for this route
+          // which is lazy-loaded when the route is visited.
+          component: () =>
+            import(/* webpackChunkName: "demo" */ "./views/Endpoints.vue"),
+          meta: {
+            requiresAuth: true
+          }
+        },
+        {
+          path: "/project/:projectId/endpoint/:id",
+          name: "Edit Endpoint",
+          // route level code-splitting
+          // this generates a separate chunk (about.[hash].js) for this route
+          // which is lazy-loaded when the route is visited.
+          component: () =>
+            import(/* webpackChunkName: "demo" */ "./views/Endpoint.vue"),
+          meta: {
+            requiresAuth: true
+          }
+        },
+        {
+          path: "/docs/:projectId",
+          name: "vIEW dOCUMENT",
+          // route level code-splitting
+          // this generates a separate chunk (about.[hash].js) for this route
+          // which is lazy-loaded when the route is visited.
+          component: () =>
+            import(/* webpackChunkName: "demo" */ "./views/Docs.vue"),
+          meta: {
+            requiresAuth: true
+          }
         }
       ]
     },
     {
-      path: '/',
-      redirect: 'login',
+      path: "/",
+      redirect: "login",
       component: AuthLayout,
       children: [
         {
-          path: '/login',
-          name: 'login',
-          component: () => import(/* webpackChunkName: "demo" */ './views/Login.vue')
+          path: "/login",
+          name: "login",
+          component: () =>
+            import(/* webpackChunkName: "demo" */ "./views/Login.vue")
         }
       ]
+    },
+    {
+      path: "/open-api/:projectId",
+      name: "openApi",
+      component: OpenApi
     }
-
   ]
-})
+});
 
 router.beforeEach((to, from, next) => {
   if (to.matched.some(record => record.meta.requiresAuth)) {
@@ -170,32 +183,30 @@ router.beforeEach((to, from, next) => {
 
     if (!store.getters.isLoggedIn) {
       next({
-        path: '/login'
-      })
+        path: "/login"
+      });
     } else {
+      guards
+        .isLoggedId(store.getters.getToken)
+        .then(() => {
+          next();
+        })
+        .catch(e => {
+          Vue.$log.info(e);
 
-      guards.isLoggedId(store.getters.getToken).then(() => {
-        next();
-      }).catch(e => {
-        Vue.$log.info(e);
-
-
-        this.$store
-          .dispatch("logout", {
-            user: this.model.email,
-            password: this.model.password
-          })
-          .then(() => {
-            this.$router.push("/login");
-          })
-          .catch(error => {
-            this.error = true;
-            this.error_message = error;
-          });
-
-      })
-
-
+          this.$store
+            .dispatch("logout", {
+              user: this.model.email,
+              password: this.model.password
+            })
+            .then(() => {
+              this.$router.push("/login");
+            })
+            .catch(error => {
+              this.error = true;
+              this.error_message = error;
+            });
+        });
     }
   } else {
     next(); // make sure to always call next()!

@@ -79,9 +79,14 @@ public class ProjectController {
         return ResponseEntity.ok(projectService.getExisitingMembers(projectId));
     }
 
-    @Operation(summary = "Get swaggger Json", security = @SecurityRequirement(name = "bearerAuth"))
     @GetMapping(value = "/project/{projectId}/docs", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<JsonNode> docs(@PathVariable("projectId") Long projectId) {
+        return ResponseEntity.of(projectService.getDocs(projectId));
+
+    }
+
+    @GetMapping(value = "/document/{projectId}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<JsonNode> document(@PathVariable("projectId") Long projectId) {
         return ResponseEntity.of(projectService.getDocs(projectId));
 
     }
