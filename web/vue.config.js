@@ -15,7 +15,7 @@ module.exports = {
   devServer: {
     proxy: {
       "/api/*": {
-        target: "http://localhost:8081/app/api",
+        target: "https://sandbox.generalmobi.mobi/app/api",
         ws: true,
         changeOrigin: true,
         pathRewrite: {
@@ -23,7 +23,7 @@ module.exports = {
         }
       },
       "/camel/*": {
-        target: "http://localhost:8081/app/camel/",
+        target: "https://sandbox.generalmobi.mobi/app/camel/",
         ws: true,
         changeOrigin: true,
         pathRewrite: {
