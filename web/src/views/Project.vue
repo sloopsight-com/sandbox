@@ -272,8 +272,8 @@ export default {
               operationId: apiData.operationId,
               parameters: apiData.params,
               requestBody: apiData.requestBody,
-              responses: this.defaultResponses,
-              produces: ["*/*"],
+              responses: apiData.responses,
+              produces: apiData.produces,
               consumes: apiData.consumes
             };
           } else {
@@ -283,9 +283,9 @@ export default {
               description: apiData.description,
               operationId: apiData.operationId,
               parameters: apiData.params,
-              responses: this.defaultResponses,
+              responses: apiData.responses,
               consumes: apiData.consumes,
-              produces: ["*/*"]
+              produces: apiData.produces
             };
           }
         } else {
@@ -295,9 +295,9 @@ export default {
             description: apiData.description,
             operationId: apiData.operationId,
             parameters: apiData.params,
-            responses: this.defaultResponses,
+            responses: apiData.responses,
             consumes: apiData.consumes,
-            produces: ["*/*"]
+            produces: apiData.produces
           };
         }
       }
@@ -403,8 +403,11 @@ export default {
                 operationId: method.operationId,
                 requestBodyString: JSON.stringify(method.requestBody),
                 requestBody: method.requestBody,
+                responsesString: JSON.stringify(method.responses),
+                responses: method.responses,
                 params: params,
-                consumes: method.consumes
+                consumes: method.consumes,
+                produces: method.produces
               });
             });
           });

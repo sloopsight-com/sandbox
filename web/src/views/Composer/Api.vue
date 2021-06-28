@@ -1,7 +1,9 @@
 <template>
   <modal :show.sync="state" @close="close">
     <template slot="header">
-      <h5 class="modal-title" id="apiModel">Add New API</h5>
+      <h5 class="modal-title" id="apiModel">
+        Add New API
+      </h5>
     </template>
     <template>
       <form role="form">
@@ -64,6 +66,26 @@
           v-if="model.method === 'post' || model.method === 'put'"
           v-model="model.requestBodyString"
           placeholder="Request Body Info"
+        ></textarea>
+
+        <label style="padding-top:20px;" class="typo__label form-control-label"
+          >Produces</label
+        >
+        <multiselect
+          style="padding-bottom:20px;"
+          v-model="model.produces"
+          tag-placeholder="Select"
+          placeholder="Select content type"
+          :options="contentTypes"
+          :multiple="true"
+          :taggable="true"
+        ></multiselect>
+
+        <textarea
+          class="form-control form-control-alternative"
+          rows="3"
+          v-model="model.responsesString"
+          placeholder="Response Body Info"
         ></textarea>
       </form>
     </template>
@@ -130,7 +152,6 @@ export default {
       this.$emit("on-close");
     },
     addApi() {
-      this.$emit("on-add", this.model);
       if (
         this.model.requestBodyString &&
         this.model.requestBodyString.length > 0
@@ -141,6 +162,28 @@ export default {
           this.$log.error(e);
         }
       }
+
+      if (this.model.responsesString && this.model.responsesString.length > 0) {
+        try {
+          this.model.responses = JSON.parse(this.model.responsesString);
+        } catch (e) {
+          this.$log.error(e);
+        }
+      } else {
+        this.model.responses = {
+          "200": {
+            description: "Request accepted successfully!"
+          },
+          "400": {
+            description: "bad input parameter"
+          },
+          "500": {
+            description: "Internal server error"
+          }
+        };
+      }
+
+      this.$emit("on-add", this.model);
       this.$emit("on-close");
     }
   },
@@ -149,8 +192,12 @@ export default {
     return {
       model: {
         requestBody: {},
+        produces: [],
+        consumes: [],
+        responses: {},
         path: "",
         requestBodyString: {},
+        responsesString: {},
         description: "",
         tags: ["default"],
         method: "get",
@@ -173,6 +220,7 @@ export default {
     if (this.edit) {
       this.model = this.currentApi;
       this.model.requestBodyString = JSON.stringify(this.model.requestBody);
+      this.model.responsesString = JSON.stringify(this.model.responses);
     }
   }
 };
