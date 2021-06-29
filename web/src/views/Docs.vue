@@ -75,9 +75,6 @@ export default {
 .download-contents {
   width: unset !important;
 }
-.scheme-container {
-  display: none !important;
-}
 .information-container {
   display: none !important;
 }
