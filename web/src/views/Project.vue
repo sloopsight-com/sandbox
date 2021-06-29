@@ -75,6 +75,39 @@
                     </div>
                   </div>
                 </div>
+
+                <div class="pl-lg-4" style="padding-top:25px">
+                  <div class="row">
+                    <div class="col-lg-6">
+                      <label class="typo__label form-control-label"
+                        >Security schemes</label
+                      >
+                      <v-jsoneditor
+                        :options="joptions"
+                        v-model="apiSpec.components.securitySchemes"
+                        :plus="true"
+                        width="100%"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="pl-lg-4" style="padding-top:25px">
+                  <div class="row">
+                    <div class="col-lg-6">
+                      <label class="typo__label form-control-label"
+                        >Security</label
+                      >
+                      <v-jsoneditor
+                        :options="joptions"
+                        v-model="apiSpec.security"
+                        :plus="true"
+                        width="100%"
+                      />
+                    </div>
+                  </div>
+                </div>
+
                 <!-- Description -->
 
                 <div class="pl-lg-4">
@@ -168,12 +201,15 @@ import Params from "./Composer/Params";
 import Api from "./Composer/Api";
 import ApiParam from "./Composer/Param";
 import SwaggerTemplate from "./swagger-template.json";
+import VJsoneditor from "v-jsoneditor";
+
 export default {
   name: "user-profile",
   data() {
     return {
+      joptions: { mode: "code", search: false, mainMenuBar: true },
       editApiPopUp: false,
-      apiSpec: { paths: {} },
+      apiSpec: { paths: {}, components: {} },
       showParams: false,
       currentApi: {},
       apisData: [],
@@ -197,7 +233,7 @@ export default {
       },
       model: {
         name: "",
-        openApiSpec: "",
+        openApiSpec: { securitySchemes: { connet: {} } },
         members: []
       }
     };
@@ -207,7 +243,8 @@ export default {
     Apis,
     Api,
     ApiParam,
-    Params
+    Params,
+    VJsoneditor
   },
   methods: {
     createNewParam(item) {
@@ -323,7 +360,9 @@ export default {
     saveProject() {
       if (this.checkForm()) {
         this.prepareSpec();
-
+        if (this.apiSpec.securitySchemes) {
+          delete this.apiSpec.securitySchemes;
+        }
         var projectPromise = null;
         const loader = this.$loading.show({ loader: "bars", color: "#2dce89" });
         if (this.$route.params.id) {
@@ -378,6 +417,9 @@ export default {
           this.model.description = response.data.description;
           let apiSpec = JSON.parse(this.model.openApiSpec);
           this.apiSpec = apiSpec;
+          if (!this.apiSpec.components) {
+            this.apiSpec.components = {};
+          }
           let data = this.apisData;
           this.tags = apiSpec.tags;
           this.selectedTags = apiSpec.tags;
@@ -442,4 +484,11 @@ export default {
   }
 };
 </script>
-<style></style>
+<style lang="scss">
+.lb {
+  element {
+    position: relative;
+    left: 15px;
+  }
+}
+</style>
