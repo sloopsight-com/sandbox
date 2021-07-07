@@ -45,12 +45,10 @@ public class ApiExecutor extends RouteBuilder {
 
     @Override
     public void configure() throws Exception {
-        // TODO Auto-generated method stub
         from("servlet:///exec?matchOnUriPrefix=true").streamCaching().process(new Processor() {
 
             @Override
             public void process(Exchange exchange) throws Exception {
-                // TODO Auto-generated method stub
                 HttpServletRequest request = exchange.getIn().getBody(HttpServletRequest.class);
                 HttpServletResponse response = exchange.getMessage(HttpServletResponse.class);
                 UriTemplate template = new UriTemplate(contextPath + "/camel/exec/{projectId}/");
@@ -76,6 +74,7 @@ public class ApiExecutor extends RouteBuilder {
                             bindings.put("localDb", new LocalDb(projectId));
                             bindings.put("http", new Rest());
                             executor.execute(request, response, endpoint.getLogic(), bindings);
+                            exchange.getMessage().setBody(null);
                             exchange.getMessage().removeHeaders(".*");
                             response.getHeaderNames().forEach(h -> {
                                 exchange.getMessage().setHeader(h, response.getHeader(h));
@@ -97,7 +96,6 @@ public class ApiExecutor extends RouteBuilder {
             response.setStatus(500);
             response.getWriter().write(error);
         } catch (Exception e) {
-            // TODO: handle exception
         }
 
     }
