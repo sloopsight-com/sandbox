@@ -10,13 +10,18 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.io.IOUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
 @Component
 public class NashHornLogicExecutor implements LogicExecutor {
 
+    Logger logger = LoggerFactory.getLogger(getClass());
+
     @Override
-    public boolean execute(HttpServletRequest req, HttpServletResponse res, String logic, Map<String, Object> context) throws IOException {
+    public boolean execute(HttpServletRequest req, HttpServletResponse res, String logic, Map<String, Object> context)
+            throws IOException {
         try {
             ScriptEngine engine = new ScriptEngineManager().getEngineByName("nashorn");
             Bindings bindings = engine.createBindings();
@@ -26,16 +31,13 @@ public class NashHornLogicExecutor implements LogicExecutor {
             });
             engine.eval(logic, bindings);
         } catch (Exception e) {
+            logger.error(e.getMessage(), e);
             res.setStatus(500);
             res.setContentType("text/html");
             res.setHeader("X-ERROR", e.getMessage());
             IOUtils.write(e.getMessage(), res.getOutputStream(), "UTF-8");
         }
         return false;
-    }
-
-    public static void main(String[] args) {
-
     }
 
 }
