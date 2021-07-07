@@ -1,16 +1,20 @@
 package com.sloopsight.sandbox.app.services;
 
+import java.io.ByteArrayInputStream;
+import java.io.File;
 import java.io.IOException;
 import java.util.Base64;
 import java.util.HashMap;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletRequestWrapper;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.camel.Exchange;
 import org.apache.commons.fileupload.FileItemIterator;
 import org.apache.commons.fileupload.FileItemStream;
+import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.context.ApplicationContext;
@@ -27,6 +31,7 @@ import delight.fileupload.FileUpload;
 public class LogicHelper {
 
     private HttpServletRequest httpServletRequest;
+
     private HttpServletResponse httpServletResponse;
     private Map<String, String> path;
     private String body;
@@ -38,29 +43,35 @@ public class LogicHelper {
         super();
 
         this.httpServletRequest = exchange.getIn().getBody(HttpServletRequest.class);
+
         this.httpServletResponse = exchange.getMessage(HttpServletResponse.class);
-        this.body = exchange.getIn().getBody(String.class);
         this.context = context;
         this.path = path;
         this.exchange = exchange;
         FileItemIterator iterator = null;
-        if (exchange.getIn().getHeader("Content-Type", "", String.class).trim().startsWith("multipart/form-data")) {
-            try {
-                iterator = FileUpload.parse(this.body.getBytes(),
-                        (exchange.getIn().getHeader("Content-Type", "", String.class)));
+        String ct = exchange.getIn().getHeader("Content-Type", "", String.class).trim();
 
+        if (ct.startsWith("multipart/form-data")) {
+            try {
+                iterator = FileUpload.parse(exchange.getIn().getBody(byte[].class), (ct));
                 while (iterator.hasNext()) {
                     FileItemStream item = iterator.next();
 
                     if (item.isFormField()) {
                         fields.put(item.getFieldName(), IOUtils.toString(item.openStream(), "UTF-8"));
+                    } else {
+                        byte[] data = IOUtils.toByteArray(item.openStream());
+
+                        fields.put(item.getFieldName(), "file:" + item.getName() + ":data:" + item.getContentType()
+                                + ";base64, " + Base64.getEncoder().encodeToString(data));
                     }
 
                 }
             } catch (Exception e) {
-                // TODO: handle exception
                 e.printStackTrace();
             }
+        } else {
+            this.body = exchange.getIn().getBody(String.class);
         }
 
     }
@@ -68,7 +79,7 @@ public class LogicHelper {
     @MethodHint(name = "getRequestParam", comment = "Get request parameter")
     public String param(@ParamHint("Request Param Name") String param) {
 
-        String defaultParam =fields.getOrDefault(param, this.httpServletRequest.getParameter(param));
+        String defaultParam = fields.getOrDefault(param, this.httpServletRequest.getParameter(param));
         return exchange.getIn().getHeader(param, defaultParam, String.class);
     }
 
@@ -80,8 +91,25 @@ public class LogicHelper {
     @MethodHint(name = "sendReply", comment = "Send reply to, should be called once")
     public void reply(@ParamHint("HTTP Response Code") int code, @ParamHint("HTTP Response body") String body)
             throws IOException {
-        httpServletResponse.setStatus(code);
-        IOUtils.write(body, httpServletResponse.getOutputStream(), "UTF-8");
+
+        if (body.contains(";base64")) {
+            String contentType = StringUtils.substringBetween(body, "data:", ";base64").trim();
+            String data = StringUtils.substringAfter(body, ";base64,").trim();
+            String file = StringUtils.substringBetween(body, "file:", ":data").trim();
+
+            httpServletResponse.setContentType(contentType);
+            if (contentType.startsWith("image")) {
+                httpServletResponse.setHeader("Content-Disposition", "inline");
+            } else {
+                httpServletResponse.setHeader("Content-Disposition", "attachment; filename=" + file);
+            }
+            httpServletResponse.setStatus(code);
+            IOUtils.copyLarge(new ByteArrayInputStream(Base64.getDecoder().decode(data)),
+                    httpServletResponse.getOutputStream());
+        } else {
+            httpServletResponse.setStatus(code);
+            IOUtils.write(body, httpServletResponse.getOutputStream(), "UTF-8");
+        }
     }
 
     @MethodHint(name = "replyWithContentType", comment = "Send reply to, should be called once")
@@ -136,7 +164,6 @@ public class LogicHelper {
                 return cred;
             }
         } catch (Exception e) {
-            // TODO: handle exception
         }
 
         return new HashMap<String, String>();

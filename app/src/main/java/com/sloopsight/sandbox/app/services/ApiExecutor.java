@@ -46,7 +46,7 @@ public class ApiExecutor extends RouteBuilder {
     @Override
     public void configure() throws Exception {
         // TODO Auto-generated method stub
-        from("servlet:///exec?matchOnUriPrefix=true").process(new Processor() {
+        from("servlet:///exec?matchOnUriPrefix=true").streamCaching().process(new Processor() {
 
             @Override
             public void process(Exchange exchange) throws Exception {
